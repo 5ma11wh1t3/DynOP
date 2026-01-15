@@ -1,0 +1,24 @@
+rax            0x0	0
+rbx            0xcacacacacacacaca  -3834029160418063670
+rcx            0x33	               51
+rdx            0x4	               4
+rsi            0x7fffd04e84e0	   140736688194784
+rdi            0x607540	           6321472
+rbp            0xcacacacacacacaca  0xcacacacacacacaca
+rsp            0x7fffd04e85b0	   0x7fffd04e85b0
+r8             0xffff	           65535
+r9             0x67672f694f4f6c56  7450976237856451670
+r10            0x7fffd04e8090	   140736688193680
+r11            0x7f997ffcb6a0	   140297253992096
+r12            0xcacacacacacacaca  -3834029160418063670
+r13            0xcacacacacacacaca  -3834029160418063670
+r14            0x0	               0
+r15            0x0	               0
+rip            0xdeadbeef	       0xdeadbeef
+eflags         0x10202	           [ IF RF ]
+cs             0x33	               51
+ss             0x2b	               43
+ds             0x0	               0
+es             0x0	               0
+fs             0x0	               0
+gs             0x0	               0
