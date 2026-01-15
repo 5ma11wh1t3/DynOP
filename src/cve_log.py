@@ -5,6 +5,7 @@ import solve_engine
 import find_reg_gadget_chain
 from loguru import logger
 import time
+import argparse
 def get_pivot_write_operation(pivot_gadget, address_map, regs):
     ctx = TritonContext()
     ctx.setArchitecture(ARCH.X86_64)
@@ -78,7 +79,7 @@ def remove_pivot_write_mem_from_offset_list(pivot_gadget, address_map, regs, con
                 if cannot_be_changed_idx in offset_list:
                     offset_list.pop(offset_list.index(cannot_be_changed_idx))
     return offset_list
-def complete_test(case_info):
+def complete_test(case_info, target_type="funcall4"):
     res_json = {}
     binary = case_info['binary']
     cve_case = case_info['cve']
@@ -91,7 +92,7 @@ def complete_test(case_info):
     logger.info(f"Start {cve_case}")
     logger.debug("Load Binary ...")
     start = time.time()
-    gadgets_info = find_stack_pivot.info_init_cve(cve_case,binary)
+    gadgets_info = find_stack_pivot.info_init_cve(cve_case,binary,target_type)
     res_json['Load Time']=time.time() - start
     logger.debug("Load Finish")
 
@@ -195,24 +196,27 @@ def complete_test(case_info):
     
             logger.success(f"All Res Json {res_json}")
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Run CVE tests with specific target.')
+    parser.add_argument('--target', type=str, default='funcall4', choices=['execve', 'funcall4'], help='Target type: execve or funcall4')
+    args = parser.parse_args()
+
     case_infos = {
-                #   "CTF-TEST":{"binary":"pwn","cve":"ccb-2024-final-NFS-Heap","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
+                  "Bento4":{"binary":"libc.so.6","cve":"cve-2022-3974","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 #   "Fortigate-42475":{"binary":"init","cve":"cve-2022-42475","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 #   "ffmpeg-10191":{"binary":"ffmpeg","cve":"cve-2016-10191","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
-                  "Fortigate-25610":{"binary":"init","cve":"cve-2023-25610","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
+                #   "Fortigate-25610":{"binary":"init","cve":"cve-2023-25610","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 #   "Fortigate-21762":{"binary":"init","cve":"cve-2024-21762","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 #   "Synacktiv PR4100":{"binary":"login_mgr.cgi","cve":"Synacktiv_PR4100","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 #   "Serv-U":{"binary":"Serv-U.dll","cve":"cve-2021-35211","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 #   "Fortigate-23113":{"binary":"init","cve":"cve-2024-23113","depth":0,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 #   "ffmpeg-10190":{"binary":"ffmpeg","cve":"cve-2016-10190","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
-                #   "Bento4":{"binary":"libc-2.23.so","cve":"cve-2022-3974","depth":1,"mem_search_depth":1,"reg_search_depth":3,"mem_reg_timeout":2*60,"reg_timeout":10*60},
                 }
 
     for c,info in case_infos.items():
         log_handler = logger.add(
-            sink=f"test/{info['cve']}_4.log",  # 日志文件路径
+            sink=f"../result/base/cve/{args.target}/{info['cve']}.log",  # 日志文件路径
             level="INFO",
             encoding="utf-8"
         )
-        complete_test(info)
+        complete_test(info, args.target)
         logger.remove(log_handler)

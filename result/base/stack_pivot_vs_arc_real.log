@@ -1,0 +1,191 @@
+2026-01-08 22:43:55.000 | INFO     | __main__:main:80 - START Nginx/nginx-rax
+2026-01-08 22:43:58.601 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.28018736839294434
+2026-01-08 22:43:58.601 | SUCCESS  | __main__:main:97 - Nginx/nginx-rax-0
+2026-01-08 22:43:58.601 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 2.1892881393432617
+2026-01-08 22:43:58.601 | INFO     | __main__:main:80 - START Nginx/nginx-rdi
+2026-01-08 22:44:01.312 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.14497780799865723
+2026-01-08 22:44:04.836 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.638979434967041
+2026-01-08 22:44:11.268 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.420424222946167
+2026-01-08 22:44:11.270 | SUCCESS  | __main__:main:97 - Nginx/nginx-rdi-2
+2026-01-08 22:44:11.272 | SUCCESS  | __main__:main:98 - gadget chain length : 3 time : 5.565147638320923
+2026-01-08 22:44:11.273 | INFO     | __main__:main:80 - START Nginx/nginx-rsi
+2026-01-08 22:44:14.016 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1362929344177246
+2026-01-08 22:44:17.249 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.30768823623657227
+2026-01-08 22:44:17.485 | SUCCESS  | __main__:main:97 - Nginx/nginx-rsi-1
+2026-01-08 22:44:17.487 | SUCCESS  | __main__:main:98 - gadget chain length : 2 time : 2.2650582790374756
+2026-01-08 22:44:17.489 | INFO     | __main__:main:80 - START Nginx/nginx-rdx
+2026-01-08 22:44:19.625 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.19736671447753906
+2026-01-08 22:44:22.257 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1520218849182129
+2026-01-08 22:44:28.362 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 2.5682504177093506
+2026-01-08 22:44:38.456 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.5333132743835449
+2026-01-08 22:44:38.457 | SUCCESS  | __main__:main:97 - Nginx/nginx-rdx-3
+2026-01-08 22:44:38.458 | SUCCESS  | __main__:main:98 - gadget chain length : 4 time : 9.356180906295776
+2026-01-08 22:46:09.221 | INFO     | __main__:main:80 - START Apache2/httpd-rax
+2026-01-08 22:46:11.230 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.29810547828674316
+2026-01-08 22:46:11.232 | SUCCESS  | __main__:main:97 - Apache2/httpd-rax-0
+2026-01-08 22:46:11.232 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 1.2603015899658203
+2026-01-08 22:46:11.233 | INFO     | __main__:main:80 - START Apache2/httpd-rdi
+2026-01-08 22:46:12.971 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.16846847534179688
+2026-01-08 22:46:15.207 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.3527841567993164
+2026-01-08 22:46:15.208 | SUCCESS  | __main__:main:97 - Apache2/httpd-rdi-1
+2026-01-08 22:46:15.209 | SUCCESS  | __main__:main:98 - gadget chain length : 2 time : 1.7044568061828613
+2026-01-08 22:46:15.210 | INFO     | __main__:main:80 - START Apache2/httpd-rsi
+2026-01-08 22:46:17.179 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1728990077972412
+2026-01-08 22:46:20.072 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.314774751663208
+2026-01-08 22:46:20.074 | SUCCESS  | __main__:main:97 - Apache2/httpd-rsi-1
+2026-01-08 22:46:20.075 | SUCCESS  | __main__:main:98 - gadget chain length : 2 time : 1.9470365047454834
+2026-01-08 22:46:20.076 | INFO     | __main__:main:80 - START Apache2/httpd-rdx
+2026-01-08 22:46:22.045 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.16799283027648926
+2026-01-08 22:46:23.911 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.21099519729614258
+2026-01-08 22:46:25.902 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.16028809547424316
+2026-01-08 22:46:27.873 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.14266157150268555
+2026-01-08 22:46:27.874 | ERROR    | __main__:main:83 - Apache2/httpd-rdx-0
+2026-01-08 22:46:27.875 | INFO     | __main__:main:80 - START OpenSSL/openssl-rax
+2026-01-08 22:46:28.880 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.15500473976135254
+2026-01-08 22:46:29.935 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1603536605834961
+2026-01-08 22:46:31.126 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.16362977027893066
+2026-01-08 22:46:32.169 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.18046879768371582
+2026-01-08 22:46:32.170 | ERROR    | __main__:main:83 - OpenSSL/openssl-rax-0
+2026-01-08 22:46:32.170 | INFO     | __main__:main:80 - START OpenSSL/openssl-rdi
+2026-01-08 22:46:33.392 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.15344595909118652
+2026-01-08 22:46:34.406 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.14351916313171387
+2026-01-08 22:46:35.435 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.14487600326538086
+2026-01-08 22:46:36.742 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.16863131523132324
+2026-01-08 22:46:36.744 | ERROR    | __main__:main:83 - OpenSSL/openssl-rdi-0
+2026-01-08 22:46:36.745 | INFO     | __main__:main:80 - START OpenSSL/openssl-rsi
+2026-01-08 22:46:37.748 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1684401035308838
+2026-01-08 22:46:43.566 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 4.6283488273620605
+2026-01-08 22:46:43.567 | SUCCESS  | __main__:main:97 - OpenSSL/openssl-rsi-1
+2026-01-08 22:46:43.567 | SUCCESS  | __main__:main:98 - gadget chain length : 2 time : 5.453972816467285
+2026-01-08 22:46:43.568 | INFO     | __main__:main:80 - START OpenSSL/openssl-rdx
+2026-01-08 22:46:44.620 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.14114737510681152
+2026-01-08 22:46:45.640 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1416478157043457
+2026-01-08 22:46:46.590 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.15825867652893066
+2026-01-08 22:46:47.621 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.16197800636291504
+2026-01-08 22:46:47.623 | ERROR    | __main__:main:83 - OpenSSL/openssl-rdx-0
+2026-01-09 02:54:36.112 | INFO     | __main__:main:80 - START Fortigate/init-rax
+2026-01-09 02:57:33.518 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.37736940383911133
+2026-01-09 02:57:33.520 | SUCCESS  | __main__:main:97 - Fortigate/init-rax-0
+2026-01-09 02:57:33.520 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 123.80274987220764
+2026-01-09 02:57:33.521 | INFO     | __main__:main:80 - START Fortigate/init-rdi
+2026-01-09 03:00:33.383 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.4600532054901123
+2026-01-09 03:00:33.384 | SUCCESS  | __main__:main:97 - Fortigate/init-rdi-0
+2026-01-09 03:00:33.386 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 139.9360055923462
+2026-01-09 03:00:33.387 | INFO     | __main__:main:80 - START Fortigate/init-rsi
+2026-01-09 03:02:59.237 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.4990720748901367
+2026-01-09 03:02:59.238 | SUCCESS  | __main__:main:97 - Fortigate/init-rsi-0
+2026-01-09 03:02:59.239 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 108.55452799797058
+2026-01-09 03:02:59.239 | INFO     | __main__:main:80 - START Fortigate/init-rdx
+2026-01-09 03:05:44.486 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.5313270092010498
+2026-01-09 03:05:44.488 | SUCCESS  | __main__:main:97 - Fortigate/init-rdx-0
+2026-01-09 03:05:44.489 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 112.304034948349
+2026-01-09 03:05:44.490 | INFO     | __main__:main:80 - START ffmpeg/ffmpeg-rax
+2026-01-09 03:06:34.564 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.3122084140777588
+2026-01-09 03:06:34.565 | SUCCESS  | __main__:main:97 - ffmpeg/ffmpeg-rax-0
+2026-01-09 03:06:34.566 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 33.47896909713745
+2026-01-09 03:06:34.568 | INFO     | __main__:main:80 - START ffmpeg/ffmpeg-rdi
+2026-01-09 03:07:27.354 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.2949237823486328
+2026-01-09 03:07:27.356 | SUCCESS  | __main__:main:97 - ffmpeg/ffmpeg-rdi-0
+2026-01-09 03:07:27.357 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 37.657952070236206
+2026-01-09 03:07:27.358 | INFO     | __main__:main:80 - START ffmpeg/ffmpeg-rsi
+2026-01-09 03:08:18.787 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.2972862720489502
+2026-01-09 03:09:18.723 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.40657734870910645
+2026-01-09 03:09:18.726 | SUCCESS  | __main__:main:97 - ffmpeg/ffmpeg-rsi-1
+2026-01-09 03:09:18.726 | SUCCESS  | __main__:main:98 - gadget chain length : 2 time : 45.434083461761475
+2026-01-09 03:09:18.727 | INFO     | __main__:main:80 - START ffmpeg/ffmpeg-rdx
+2026-01-09 03:10:11.226 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.30657505989074707
+2026-01-09 03:11:03.151 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.6643729209899902
+2026-01-09 03:14:40.100 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 10.127177953720093
+2026-01-09 03:14:40.108 | SUCCESS  | __main__:main:97 - ffmpeg/ffmpeg-rdx-2
+2026-01-09 03:14:40.109 | SUCCESS  | __main__:main:98 - gadget chain length : 2 time : 198.09468746185303
+2026-01-09 03:14:40.110 | INFO     | __main__:main:80 - START cisco/lina-rax
+2026-01-09 03:17:49.801 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.46852612495422363
+2026-01-09 03:17:49.803 | SUCCESS  | __main__:main:97 - cisco/lina-rax-0
+2026-01-09 03:17:49.804 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 154.73303532600403
+2026-01-09 03:17:49.804 | INFO     | __main__:main:80 - START cisco/lina-rdi
+2026-01-09 03:21:11.432 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.6749248504638672
+2026-01-09 03:21:11.434 | SUCCESS  | __main__:main:97 - cisco/lina-rdi-0
+2026-01-09 03:21:11.435 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 154.95255494117737
+2026-01-09 03:21:11.436 | INFO     | __main__:main:80 - START cisco/lina-rsi
+2026-01-09 03:24:41.381 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.5267388820648193
+2026-01-09 03:24:41.382 | SUCCESS  | __main__:main:97 - cisco/lina-rsi-0
+2026-01-09 03:24:41.383 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 151.14542865753174
+2026-01-09 03:24:41.383 | INFO     | __main__:main:80 - START cisco/lina-rdx
+2026-01-09 03:27:59.378 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.43460607528686523
+2026-01-09 03:27:59.380 | SUCCESS  | __main__:main:97 - cisco/lina-rdx-0
+2026-01-09 03:27:59.381 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 138.74739384651184
+2026-01-09 03:28:08.699 | INFO     | __main__:main:80 - START chrome/chrome-rax
+2026-01-09 04:22:04.121 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.713963508605957
+2026-01-09 04:22:04.122 | SUCCESS  | __main__:main:97 - chrome/chrome-rax-0
+2026-01-09 04:22:04.123 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 617.1757457256317
+2026-01-09 04:22:04.124 | INFO     | __main__:main:80 - START chrome/chrome-rdi
+2026-01-09 04:36:36.466 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 1.0852439403533936
+2026-01-09 04:36:36.468 | SUCCESS  | __main__:main:97 - chrome/chrome-rdi-0
+2026-01-09 04:36:36.469 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 664.8094861507416
+2026-01-09 04:36:36.470 | INFO     | __main__:main:80 - START chrome/chrome-rsi
+2026-01-09 04:51:47.475 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.9511749744415283
+2026-01-09 04:51:47.477 | SUCCESS  | __main__:main:97 - chrome/chrome-rsi-0
+2026-01-09 04:51:47.478 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 629.1741218566895
+2026-01-09 04:51:47.480 | INFO     | __main__:main:80 - START chrome/chrome-rdx
+2026-01-09 05:04:00.630 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 1.1255154609680176
+2026-01-09 05:04:00.632 | SUCCESS  | __main__:main:97 - chrome/chrome-rdx-0
+2026-01-09 05:04:00.633 | SUCCESS  | __main__:main:98 - gadget chain length : 1 time : 574.4492259025574
+2026-01-09 07:49:26.095 | INFO     | __main__:main:81 - START libc/libc.so.6-rax
+2026-01-09 07:49:40.226 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1290605068206787
+2026-01-09 07:49:48.501 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.32926106452941895
+2026-01-09 07:49:48.502 | SUCCESS  | __main__:main:98 - libc/libc.so.6-rax-1
+2026-01-09 07:49:48.503 | SUCCESS  | __main__:main:99 - gadget chain length : 2 time : 6.436190128326416
+2026-01-09 07:49:48.504 | INFO     | __main__:main:81 - START libc/libc.so.6-rdi
+2026-01-09 07:49:59.272 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.19266986846923828
+2026-01-09 07:50:07.223 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.11613178253173828
+2026-01-09 07:50:23.713 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.4761509895324707
+2026-01-09 07:50:23.716 | SUCCESS  | __main__:main:98 - libc/libc.so.6-rdi-2
+2026-01-09 07:50:23.717 | SUCCESS  | __main__:main:99 - gadget chain length : 3 time : 14.883187532424927
+2026-01-09 07:50:23.718 | INFO     | __main__:main:81 - START libc/libc.so.6-rsi
+2026-01-09 07:50:33.035 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.15610146522521973
+2026-01-09 07:50:42.198 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.3231487274169922
+2026-01-09 07:50:42.199 | SUCCESS  | __main__:main:98 - libc/libc.so.6-rsi-1
+2026-01-09 07:50:42.200 | SUCCESS  | __main__:main:99 - gadget chain length : 2 time : 6.817406415939331
+2026-01-09 07:50:42.201 | INFO     | __main__:main:81 - START libc/libc.so.6-rdx
+2026-01-09 07:50:51.570 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.32681822776794434
+2026-01-09 07:50:51.571 | SUCCESS  | __main__:main:98 - libc/libc.so.6-rdx-0
+2026-01-09 07:50:51.572 | SUCCESS  | __main__:main:99 - gadget chain length : 1 time : 5.738039493560791
+2026-01-12 10:43:53.218 | INFO     | __main__:main:81 - START dnsmasq/dnsmasq-rax
+2026-01-12 10:43:54.265 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.18751978874206543
+2026-01-12 10:43:55.804 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1910877227783203
+2026-01-12 10:43:57.226 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.1832869052886963
+2026-01-12 10:43:58.473 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.17566227912902832
+2026-01-12 10:43:58.474 | ERROR    | __main__:main:84 - dnsmasq/dnsmasq-rax-0
+2026-01-12 10:43:58.474 | INFO     | __main__:main:81 - START dnsmasq/dnsmasq-rdi
+2026-01-12 10:43:59.643 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.18992328643798828
+2026-01-12 10:44:01.125 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.20305180549621582
+2026-01-12 10:44:02.346 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.22091150283813477
+2026-01-12 10:44:03.512 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.17254066467285156
+2026-01-12 10:44:03.513 | ERROR    | __main__:main:84 - dnsmasq/dnsmasq-rdi-0
+2026-01-12 10:44:03.514 | INFO     | __main__:main:81 - START dnsmasq/dnsmasq-rsi
+2026-01-12 10:44:04.784 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.19303512573242188
+2026-01-12 10:44:06.347 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.37102174758911133
+2026-01-12 10:44:06.349 | SUCCESS  | __main__:main:98 - dnsmasq/dnsmasq-rsi-1
+2026-01-12 10:44:06.349 | SUCCESS  | __main__:main:99 - gadget chain length : 2 time : 1.2248890399932861
+2026-01-12 10:44:06.350 | INFO     | __main__:main:81 - START dnsmasq/dnsmasq-rdx
+2026-01-12 10:44:07.640 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.20588040351867676
+2026-01-12 10:44:08.873 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.21148085594177246
+2026-01-12 10:44:10.128 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.19556641578674316
+2026-01-12 10:44:11.402 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.23690462112426758
+2026-01-12 10:44:11.403 | ERROR    | __main__:main:84 - dnsmasq/dnsmasq-rdx-0
+2026-01-12 12:51:51.896 | INFO     | __main__:main:81 - START Firefox/libxul.so-rax
+2026-01-12 13:00:01.047 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.6653060913085938
+2026-01-12 13:00:01.049 | SUCCESS  | __main__:main:98 - Firefox/libxul.so-rax-0
+2026-01-12 13:00:01.049 | SUCCESS  | __main__:main:99 - gadget chain length : 1 time : 365.1888771057129
+2026-01-12 13:00:01.050 | INFO     | __main__:main:81 - START Firefox/libxul.so-rdi
+2026-01-12 13:10:38.932 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.6946649551391602
+2026-01-12 13:10:38.934 | SUCCESS  | __main__:main:98 - Firefox/libxul.so-rdi-0
+2026-01-12 13:10:38.935 | SUCCESS  | __main__:main:99 - gadget chain length : 1 time : 468.4565815925598
+2026-01-12 13:10:38.937 | INFO     | __main__:main:81 - START Firefox/libxul.so-rsi
+2026-01-12 13:19:16.061 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.7992761135101318
+2026-01-12 13:19:16.064 | SUCCESS  | __main__:main:98 - Firefox/libxul.so-rsi-0
+2026-01-12 13:19:16.066 | SUCCESS  | __main__:main:99 - gadget chain length : 1 time : 422.30659532546997
+2026-01-12 13:19:16.068 | INFO     | __main__:main:81 - START Firefox/libxul.so-rdx
+2026-01-12 13:28:39.513 | SUCCESS  | find_stack_pivot:main:167 - Find and Solve Pivot Gadget Chain Time : 0.6834688186645508
+2026-01-12 13:28:39.515 | SUCCESS  | __main__:main:98 - Firefox/libxul.so-rdx-0
+2026-01-12 13:28:39.516 | SUCCESS  | __main__:main:99 - gadget chain length : 1 time : 430.6327838897705

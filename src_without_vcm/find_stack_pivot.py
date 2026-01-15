@@ -128,7 +128,7 @@ def sort_pivot_gadget(pivot_res):
 from loguru import logger
 import time
 
-def main(cve_case,gadgets_info, max_depth = 1,res_json={},num_threads=24,mode=0):
+def main(cve_case,gadgets_info, max_depth = 1,res_json={},num_threads=24):
     # logger.add(
     #     sink=f"benchmark_{cve_case}.log",  # 日志文件路径
     #     level="INFO",
@@ -149,28 +149,26 @@ def main(cve_case,gadgets_info, max_depth = 1,res_json={},num_threads=24,mode=0)
         reg_controllable_mem_length_dict[CONTROLLABLE_REGS[i]] = get_mem_length(gadgets_info, reg_value, controllable_mem_data, pivot=True)
     logger.debug(f"{reg_controllable_mem_length_dict}")
     CONTROLLABLE_REG = max(reg_controllable_mem_length_dict, key=reg_controllable_mem_length_dict.get)
-    # logger.info("Start Find Stack Pivot Gadet Chain")
+    logger.info("Start Find Stack Pivot Gadet Chain")
     start = time.time()
     found_chains = stack_pivot_gadget_chain(
         GADGETS_FILE, START_DEPTH, MAX_DEPTH, CONTROLLABLE_REG, num_threads=num_threads
     )
     logger.debug(len(found_chains))
-    # print(found_chains)
     res_json["Find Time"] = time.time()-start
-    logger.debug(f"Finish Find Stack Pivot Gadget Chain")
+    logger.info(f"Finish Find Stack Pivot Gadget Chain")
     regs = gadgets_info.regs_init
     controble_addr_base = gadgets_info.controble_addr_base 
     offset_list = gadgets_info.offset_list
     permission_table = gadgets_info.permission_table
     stack_mem = gadgets_info.stack_mem
-    logger.debug("Start Solve Stack Pivot Gadget Chain")
+    logger.info("Start Solve Stack Pivot Gadget Chain")
     start = time.time()
-    pivot_res = solve_mem_gadget_process_func(regs,found_chains,controble_addr_base,offset_list,permission_table,num_threads,stack_mem=stack_mem,mode=mode)
-    # print(pivot_res)
+    pivot_res = solve_mem_gadget_process_func(regs,found_chains,controble_addr_base,offset_list,permission_table,num_threads,stack_mem=stack_mem)
     res_json["Solve Time"] = time.time()-start
-    logger.debug(f"Finsh Solve Stack Pivot Gadget Chain")
+    logger.info(f"Finsh Solve Stack Pivot Gadget Chain")
     logger.success(f"Find and Solve Pivot Gadget Chain Time : {res_json["Solve Time"]}")
-    no_addr_leak = False
+    no_addr_leak = True
     if cve_case == 'ccb-2024-final-NFS-Heap':
         no_addr_leak = False
     if no_addr_leak:

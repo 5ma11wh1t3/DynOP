@@ -806,18 +806,19 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
     
 def info_init(binary,file_fold,target_type="funcall4"):
     global gadgets_info
-    gadgets_file = f"../dataset/benchmark/benchmark_gadget/{file_fold}/{binary}.bin.txt"
+    path_root = "/home/rop"
+    gadgets_file = f"{path_root}/my-rop/benchmark_experiment/benchmark_gadget_folders/{file_fold}/{binary}.bin.txt"
     gadgets_data = tools.load_gadget(gadgets_file)
     gadgets_dict = tools.create_gadget_dict(gadgets_data)
     
-    controllable_mem_file_dir = f'../dataset/benchmark/benchmark_context_info/{file_fold}/{binary}/cyclic_matches.json'
+    controllable_mem_file_dir = f'{path_root}/my-rop/benchmark_experiment/benchmark_mem_reg_info_fold/{file_fold}/{binary}/cyclic_matches.json'
     with open(controllable_mem_file_dir, "r", encoding="utf-8") as file:
         controllable_mem_data = json.load(file)
     controllable_mem_data = sorted(controllable_mem_data, key=lambda x: int(x['start_addr'], 16))
     controble_addr_base = int(controllable_mem_data[0]['start_addr'],16)
-    (permission_table, regs_init) = tools.get_map_regs(f"../dataset/benchmark/benchmark_context_info/{file_fold}/{binary}")
-    controllable_regs = eval(open(f"../dataset/benchmark/benchmark_context_info/{file_fold}/{binary}/controble_regs.txt",'r').read())
-    binary_file = f'../dataset/benchmark/benchmark_binary/{file_fold}/{binary}.bin'
+    (permission_table, regs_init) = tools.get_map_regs(f"{path_root}/my-rop/benchmark_experiment/benchmark_mem_reg_info_fold/{file_fold}/{binary}")
+    controllable_regs = eval(open(f"{path_root}/my-rop/benchmark_experiment/benchmark_mem_reg_info_fold/{file_fold}/{binary}/controble_regs.txt",'r').read())
+    binary_file = f'{path_root}/my-rop/benchmark_experiment/rop-benchmark/binaries/x86/reallife/vuln/{file_fold}/{binary}.bin'
     elf = ELF(binary_file,checksec=False)  # 加载目标二进制
     bss_address = elf.bss()  # 获取 .bss 段地址
     
@@ -920,7 +921,6 @@ def main(binary, file_fold, gadgets_info = None, mem_search_depth=1, reg_search_
     edges = sort_edges(gadgets_info,edges)
     if edges == None:
         return False
-    
     write_addr_data = gadgets_info.target_mem_value
     f = True
     regs_init_bak = gadgets_info.regs_init.copy()
@@ -1033,7 +1033,7 @@ def log_print(strings,log_filename):
 def test(file_fold):
     global res_json 
     global stop_event
-    binary_file_list = os.listdir(f"../dataset/benchmark/benchmark_binary/{file_fold}")
+    binary_file_list = os.listdir(f"/home/rop/my-rop/benchmark_experiment/rop-benchmark/binaries/x86/reallife/vuln/{file_fold}")
     success = 0
     fail = 0
     logger.add(
@@ -1048,7 +1048,7 @@ def test(file_fold):
         if b.endswith(".bin"):
             logger.info(f"Start Test {b}")
             res_json = {"binary":f"{file_fold}/{b}"}
-            res_json["size(KB)"] = os.path.getsize(f"../dataset/benchmark/benchmark_binary/{file_fold}/{b}")//1024
+            res_json["size(KB)"] = os.path.getsize(f"/home/rop/my-rop/benchmark_experiment/rop-benchmark/binaries/x86/reallife/vuln/{file_fold}/{b}")//1024
             start_time = time.time()
             # try:
             if main(b[:-4], file_fold, mem_search_depth=3, reg_searh_depth=3, valid_mem_reg_num=1):
