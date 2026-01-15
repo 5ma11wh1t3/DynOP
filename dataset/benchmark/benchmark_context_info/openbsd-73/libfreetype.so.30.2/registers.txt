@@ -1,0 +1,26 @@
+rax            0xffffffff          4294967295
+rbx            0x7fffffffe398      140737488348056
+rcx            0x7ffff7ebb6f4      140737352808180
+rdx            0xffffffffffffff88  -120
+rsi            0x7fffffffd29b      140737488343707
+rdi            0x66616161          1717657953
+rbp            0x6861616167616161  0x6861616167616161
+rsp            0x7fffffffd2b8      0x7fffffffd2b8
+r8             0x54                84
+r9             0x0                 0
+r10            0x7ffff7dbd928      140737351768360
+r11            0x202               514
+r12            0x3                 3
+r13            0x0                 0
+r14            0x4ece00            5164544
+r15            0x7ffff7ffd000      140737354125312
+rip            0x401417            0x401417 <vul+172>
+eflags         0x10217             [ CF PF AF IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x7ffff7da2740      140737351657280
+gs_base        0x0                 0
