@@ -1,0 +1,11 @@
+.intel_syntax noprefix
+
+.global _start
+
+_start:
+mov     rdi, 0x41414000
+mov     rsi, 0x1000
+mov     rdx, 0x7
+mov     rcx, 0x32
+mov     rax, 0xfacefeed
+jmp     rax

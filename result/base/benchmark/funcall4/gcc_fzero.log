@@ -1,0 +1,558 @@
+2026-01-02 20:31:18.616 | INFO     | __main__:benchmark_test:15 - Start Test gcc_fzero
+2026-01-02 20:31:18.617 | INFO     | __main__:benchmark_test:21 - Start Test curl.bin
+2026-01-02 20:31:19.456 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 20:31:21.945 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 20:31:21.945 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 20:33:41.528 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 20:33:41.529 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 139.58229756355286
+2026-01-02 20:33:41.531 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000404dd1', 4: '0x0000000000404dd2', 7: '0x41361a', 8: '0x404dd2', 9: '0xa', 11: '0x421e71', 13: '0x0000000000404dd4', 15: '0x404dd1', 18: '0x7', 16: '0x0000000000404dd2', 19: '0x41361a', 20: '0x421e74', 22: '0x00000000004011ad', 23: '0x0000000000404dd2', 24: '0x41361a', 25: '0x404dd0', 26: '0x1000', 30: '0x421e78', 32: '0x00000000004011ad', 33: '0xdeadbe03', 34: '0x41361a', 35: '0x4011ad', 36: '0x440380', 37: '0x421e7b'}, [['0x0000000000404dd1', '0x000000000041361a', '0x0000000000404dd2', '0x0000000000421e71'], ['0x0000000000404dd4', '0x0000000000404dd1', '0x000000000041361a', '0x0000000000421e74'], ['0x00000000004011ad', '0x000000000041361a', '0x0000000000404dd0', '0x0000000000421e78'], ['0x00000000004011ad', '0x000000000041361a', '0x00000000004011ad', '0x0000000000421e7b']]]]
+2026-01-02 20:33:41.534 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/curl.bin Success!
+2026-01-02 20:33:41.534 | SUCCESS  | __main__:benchmark_test:31 - All Time: 142.916832447052
+2026-01-02 20:33:41.535 | SUCCESS  | __main__:benchmark_test:32 - Success: 1 Fail: 0
+2026-01-02 20:33:41.535 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/curl.bin', 'size(KB)': 260, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4457344}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 139.58229756355286, 'Register Gadget Chain': [['0x0000000000404dd1', '0x000000000041361a', '0x0000000000404dd2', '0x0000000000421e71'], ['0x0000000000404dd4', '0x0000000000404dd1', '0x000000000041361a', '0x0000000000421e74'], ['0x00000000004011ad', '0x000000000041361a', '0x0000000000404dd0', '0x0000000000421e78'], ['0x00000000004011ad', '0x000000000041361a', '0x00000000004011ad', '0x0000000000421e7b']], 'Register Gadget Layout': {3: '0x0000000000404dd1', 4: '0x0000000000404dd2', 7: '0x41361a', 8: '0x404dd2', 9: '0xa', 11: '0x421e71', 13: '0x0000000000404dd4', 15: '0x404dd1', 18: '0x7', 16: '0x0000000000404dd2', 19: '0x41361a', 20: '0x421e74', 22: '0x00000000004011ad', 23: '0x0000000000404dd2', 24: '0x41361a', 25: '0x404dd0', 26: '0x1000', 30: '0x421e78', 32: '0x00000000004011ad', 33: '0xdeadbe03', 34: '0x41361a', 35: '0x4011ad', 36: '0x440380', 37: '0x421e7b'}, 'All Time': 142.916832447052}
+2026-01-02 20:33:41.536 | INFO     | __main__:benchmark_test:21 - Start Test cvtsudoers.bin
+2026-01-02 20:33:43.647 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 20:33:50.849 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 20:33:50.850 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 20:34:09.512 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 20:34:09.514 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 18.66142702102661
+2026-01-02 20:34:09.516 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000431385', 4: '0x481380', 5: '0x000000000041c7c6', 6: '0x1000', 7: '0x00000033004421e1', 8: '0x7', 9: '0x000000000041d51b', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000431385'], ['0x000000000041c7c6'], ['0x00000000004421e1'], ['0x000000000041d51b']]]]
+2026-01-02 20:34:09.519 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/cvtsudoers.bin Success!
+2026-01-02 20:34:09.519 | SUCCESS  | __main__:benchmark_test:31 - All Time: 27.9741690158844
+2026-01-02 20:34:09.520 | SUCCESS  | __main__:benchmark_test:32 - Success: 2 Fail: 0
+2026-01-02 20:34:09.520 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/cvtsudoers.bin', 'size(KB)': 520, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4723584}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 18.66142702102661, 'Register Gadget Chain': [['0x0000000000431385'], ['0x000000000041c7c6'], ['0x00000000004421e1'], ['0x000000000041d51b']], 'Register Gadget Layout': {3: '0x0000000000431385', 4: '0x481380', 5: '0x000000000041c7c6', 6: '0x1000', 7: '0x00000033004421e1', 8: '0x7', 9: '0x000000000041d51b', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 27.9741690158844}
+2026-01-02 20:34:09.521 | INFO     | __main__:benchmark_test:21 - Start Test dhclient.bin
+2026-01-02 20:34:19.587 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 20:34:59.000 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 20:34:59.001 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 20:35:15.487 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 20:35:15.488 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 16.48526120185852
+2026-01-02 20:35:15.489 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000416075', 4: '0x8a6380', 5: '0x00000000006cb1cd', 6: '0x1000', 7: '0x000000000075f358', 8: '0x7', 9: '0x0000000000450b25', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000416075'], ['0x00000000006cb1cd'], ['0x000000000075f358'], ['0x0000000000450b25']]]]
+2026-01-02 20:35:15.497 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/dhclient.bin Success!
+2026-01-02 20:35:15.497 | SUCCESS  | __main__:benchmark_test:31 - All Time: 65.96944999694824
+2026-01-02 20:35:15.498 | SUCCESS  | __main__:benchmark_test:32 - Success: 3 Fail: 0
+2026-01-02 20:35:15.498 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/dhclient.bin', 'size(KB)': 4764, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 9069440}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 16.48526120185852, 'Register Gadget Chain': [['0x0000000000416075'], ['0x00000000006cb1cd'], ['0x000000000075f358'], ['0x0000000000450b25']], 'Register Gadget Layout': {3: '0x0000000000416075', 4: '0x8a6380', 5: '0x00000000006cb1cd', 6: '0x1000', 7: '0x000000000075f358', 8: '0x7', 9: '0x0000000000450b25', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 65.96944999694824}
+2026-01-02 20:35:15.499 | INFO     | __main__:benchmark_test:21 - Start Test dhcpd.bin
+2026-01-02 20:35:27.230 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 20:36:19.514 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 20:36:19.515 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 20:36:39.071 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 20:36:39.071 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 19.555428504943848
+2026-01-02 20:36:39.072 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000436366', 4: '0x902380', 5: '0x00000000006315d6', 6: '0x1000', 7: '0x000000330040ef40', 8: '0x7', 9: '0x00000000005ec158', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000436366'], ['0x00000000006315d6'], ['0x000000000040ef40'], ['0x00000000005ec158']]]]
+2026-01-02 20:36:39.075 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/dhcpd.bin Success!
+2026-01-02 20:36:39.075 | SUCCESS  | __main__:benchmark_test:31 - All Time: 83.5679075717926
+2026-01-02 20:36:39.075 | SUCCESS  | __main__:benchmark_test:32 - Success: 4 Fail: 0
+2026-01-02 20:36:39.075 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/dhcpd.bin', 'size(KB)': 5132, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 9446272}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 19.555428504943848, 'Register Gadget Chain': [['0x0000000000436366'], ['0x00000000006315d6'], ['0x000000000040ef40'], ['0x00000000005ec158']], 'Register Gadget Layout': {3: '0x0000000000436366', 4: '0x902380', 5: '0x00000000006315d6', 6: '0x1000', 7: '0x000000330040ef40', 8: '0x7', 9: '0x00000000005ec158', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 83.5679075717926}
+2026-01-02 20:36:39.075 | INFO     | __main__:benchmark_test:21 - Start Test dhcrelay.bin
+2026-01-02 20:36:49.551 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 20:37:29.886 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 20:37:29.886 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 20:37:51.105 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 20:37:51.106 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 21.218834161758423
+2026-01-02 20:37:51.107 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004287ea', 4: '0x882380', 5: '0x00000033007f5db5', 6: '0x1000', 7: '0x00000000005e998a', 8: '0x7', 9: '0x00000000005845bb', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004287ea'], ['0x00000000007f5db5'], ['0x00000000005e998a'], ['0x00000000005845bb']]]]
+2026-01-02 20:37:51.115 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/dhcrelay.bin Success!
+2026-01-02 20:37:51.116 | SUCCESS  | __main__:benchmark_test:31 - All Time: 72.02915358543396
+2026-01-02 20:37:51.116 | SUCCESS  | __main__:benchmark_test:32 - Success: 5 Fail: 0
+2026-01-02 20:37:51.116 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/dhcrelay.bin', 'size(KB)': 4620, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 8921984}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 21.218834161758423, 'Register Gadget Chain': [['0x00000000004287ea'], ['0x00000000007f5db5'], ['0x00000000005e998a'], ['0x00000000005845bb']], 'Register Gadget Layout': {3: '0x00000000004287ea', 4: '0x882380', 5: '0x00000033007f5db5', 6: '0x1000', 7: '0x00000000005e998a', 8: '0x7', 9: '0x00000000005845bb', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 72.02915358543396}
+2026-01-02 20:37:51.117 | INFO     | __main__:benchmark_test:21 - Start Test dnsmasq.bin
+2026-01-02 20:37:52.292 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 20:37:56.018 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 20:37:56.019 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 20:52:56.835 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 20:52:56.836 | ERROR    | __main__:benchmark_test:35 - gcc_fzero/dnsmasq.bin No Result!
+2026-01-02 20:52:56.836 | ERROR    | __main__:benchmark_test:36 - gcc_fzero/dnsmasq.bin Retry 1 Time
+2026-01-02 20:52:57.533 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 20:52:58.343 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 20:52:58.343 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:07:59.046 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 21:07:59.047 | ERROR    | __main__:benchmark_test:48 - Success: 5 Fail: 1
+2026-01-02 21:07:59.047 | INFO     | __main__:benchmark_test:21 - Start Test genrb.bin
+2026-01-02 21:08:00.002 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:08:02.017 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:08:02.018 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:08:36.782 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:08:36.783 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 34.76388096809387
+2026-01-02 21:08:36.784 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000409c53', 4: '0x437380', 5: '0x000000000040aa63', 6: '0x1000', 7: '0x000000000040aa82', 8: '0x9000365ffe15', 9: '0x401314', 10: '0x000000000040aa82', 2199023125928: '0x7f', 11: '0x8144915', 12: '0x401f36', 13: '0xdeadbe03'}, [['0x0000000000409c53'], ['0x000000000040aa63'], ['0x000000000040aa82', '0x0000000000401314'], ['0x000000000040aa82', '0x0000000000401f36']]]]
+2026-01-02 21:08:36.787 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/genrb.bin Success!
+2026-01-02 21:08:36.787 | SUCCESS  | __main__:benchmark_test:31 - All Time: 37.72326636314392
+2026-01-02 21:08:36.787 | SUCCESS  | __main__:benchmark_test:32 - Success: 6 Fail: 1
+2026-01-02 21:08:36.787 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/genrb.bin', 'size(KB)': 224, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4420480}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 34.76388096809387, 'Register Gadget Chain': [['0x0000000000409c53'], ['0x000000000040aa63'], ['0x000000000040aa82', '0x0000000000401314'], ['0x000000000040aa82', '0x0000000000401f36']], 'Register Gadget Layout': {3: '0x0000000000409c53', 4: '0x437380', 5: '0x000000000040aa63', 6: '0x1000', 7: '0x000000000040aa82', 8: '0x9000365ffe15', 9: '0x401314', 10: '0x000000000040aa82', 2199023125928: '0x7f', 11: '0x8144915', 12: '0x401f36', 13: '0xdeadbe03'}, 'All Time': 37.72326636314392}
+2026-01-02 21:08:36.788 | INFO     | __main__:benchmark_test:21 - Start Test httpd.bin
+2026-01-02 21:08:38.652 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:08:47.810 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:08:47.811 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:09:02.799 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:09:02.800 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 14.987744331359863
+2026-01-02 21:09:02.801 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000502080', 4: '0x520380', 5: '0x000000000040ad49', 6: '0x1000', 7: '0x0000000000435e2a', 8: '0x7', 9: '0x000000330040ab1e', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000502080'], ['0x000000000040ad49'], ['0x0000000000435e2a'], ['0x000000000040ab1e']]]]
+2026-01-02 21:09:02.804 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/httpd.bin Success!
+2026-01-02 21:09:02.804 | SUCCESS  | __main__:benchmark_test:31 - All Time: 26.007993698120117
+2026-01-02 21:09:02.805 | SUCCESS  | __main__:benchmark_test:32 - Success: 7 Fail: 1
+2026-01-02 21:09:02.805 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/httpd.bin', 'size(KB)': 1156, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5374848}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 14.987744331359863, 'Register Gadget Chain': [['0x0000000000502080'], ['0x000000000040ad49'], ['0x0000000000435e2a'], ['0x000000000040ab1e']], 'Register Gadget Layout': {3: '0x0000000000502080', 4: '0x520380', 5: '0x000000000040ad49', 6: '0x1000', 7: '0x0000000000435e2a', 8: '0x7', 9: '0x000000330040ab1e', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 26.007993698120117}
+2026-01-02 21:09:02.805 | INFO     | __main__:benchmark_test:21 - Start Test libcrypto.so.3.bin
+2026-01-02 21:09:19.709 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:10:21.642 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:10:21.643 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:10:35.234 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:10:35.235 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 13.589949131011963
+2026-01-02 21:10:35.236 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000631fa7', 4: '0xbf2380', 5: '0x00000033004d6356', 6: '0x1000', 7: '0x0000000000432708', 8: '0x7', 9: '0x000000000048ff30', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000631fa7'], ['0x00000000004d6356'], ['0x0000000000432708'], ['0x000000000048ff30']]]]
+2026-01-02 21:10:35.245 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libcrypto.so.3.bin Success!
+2026-01-02 21:10:35.245 | SUCCESS  | __main__:benchmark_test:31 - All Time: 92.43467092514038
+2026-01-02 21:10:35.245 | SUCCESS  | __main__:benchmark_test:32 - Success: 8 Fail: 1
+2026-01-02 21:10:35.245 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libcrypto.so.3.bin', 'size(KB)': 8140, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 12526464}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 13.589949131011963, 'Register Gadget Chain': [['0x0000000000631fa7'], ['0x00000000004d6356'], ['0x0000000000432708'], ['0x000000000048ff30']], 'Register Gadget Layout': {3: '0x0000000000631fa7', 4: '0xbf2380', 5: '0x00000033004d6356', 6: '0x1000', 7: '0x0000000000432708', 8: '0x7', 9: '0x000000000048ff30', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 92.43467092514038}
+2026-01-02 21:10:35.246 | INFO     | __main__:benchmark_test:21 - Start Test libcurl.so.4.8.0.bin
+2026-01-02 21:10:41.262 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:11:23.133 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:11:23.134 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:11:54.765 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:11:54.766 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 31.629518508911133
+2026-01-02 21:11:54.768 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000049b27b', 4: '0x4e6380', 5: '0x000000330040d30c', 6: '0x1000', 7: '0x000000000043338a', 8: '0x7', 9: '0x000000000040d33c', 10: '0xa', 11: '0xdeadbe03'}, [['0x000000000049b27b'], ['0x000000000040d30c'], ['0x000000000043338a'], ['0x000000000040d33c']]]]
+2026-01-02 21:11:54.775 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libcurl.so.4.8.0.bin Success!
+2026-01-02 21:11:54.775 | SUCCESS  | __main__:benchmark_test:31 - All Time: 79.52345967292786
+2026-01-02 21:11:54.776 | SUCCESS  | __main__:benchmark_test:32 - Success: 9 Fail: 1
+2026-01-02 21:11:54.776 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libcurl.so.4.8.0.bin', 'size(KB)': 924, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5137280}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 31.629518508911133, 'Register Gadget Chain': [['0x000000000049b27b'], ['0x000000000040d30c'], ['0x000000000043338a'], ['0x000000000040d33c']], 'Register Gadget Layout': {3: '0x000000000049b27b', 4: '0x4e6380', 5: '0x000000330040d30c', 6: '0x1000', 7: '0x000000000043338a', 8: '0x7', 9: '0x000000000040d33c', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 79.52345967292786}
+2026-01-02 21:11:54.777 | INFO     | __main__:benchmark_test:21 - Start Test libgmp.so.10.4.1.bin
+2026-01-02 21:11:58.789 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:12:21.231 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:12:21.232 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:12:39.491 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:12:39.491 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 18.25804042816162
+2026-01-02 21:12:39.491 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004938c1', 4: '0x4c3380', 8: '0x0000000000444e32', 9: '0x1000', 10: '0x00000000004a3634', 11: '0xa', 12: '0x000000000041261a', 13: '0x7', 14: '0xdeadbe03'}, [['0x00000000004938c1'], ['0x0000000000444e32'], ['0x00000000004a3634'], ['0x000000000041261a']]]]
+2026-01-02 21:12:39.493 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libgmp.so.10.4.1.bin Success!
+2026-01-02 21:12:39.493 | SUCCESS  | __main__:benchmark_test:31 - All Time: 44.70587396621704
+2026-01-02 21:12:39.493 | SUCCESS  | __main__:benchmark_test:32 - Success: 10 Fail: 1
+2026-01-02 21:12:39.493 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libgmp.so.10.4.1.bin', 'size(KB)': 784, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4993920}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 18.25804042816162, 'Register Gadget Chain': [['0x00000000004938c1'], ['0x0000000000444e32'], ['0x00000000004a3634'], ['0x000000000041261a']], 'Register Gadget Layout': {3: '0x00000000004938c1', 4: '0x4c3380', 8: '0x0000000000444e32', 9: '0x1000', 10: '0x00000000004a3634', 11: '0xa', 12: '0x000000000041261a', 13: '0x7', 14: '0xdeadbe03'}, 'All Time': 44.70587396621704}
+2026-01-02 21:12:39.493 | INFO     | __main__:benchmark_test:21 - Start Test libgmp.so.10.5.0.bin
+2026-01-02 21:12:41.691 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:12:51.585 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:12:51.586 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:13:07.703 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:13:07.704 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 16.11721682548523
+2026-01-02 21:13:07.705 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000443e26', 4: '0x4c7380', 5: '0x0000000000445912', 6: '0x1000', 7: '0x00000000004a7614', 8: '0xa', 9: '0x00000000004a3319', 10: '0x7', 11: '0xdeadbe03'}, [['0x0000000000443e26'], ['0x0000000000445912'], ['0x00000000004a7614'], ['0x00000000004a3319']]]]
+2026-01-02 21:13:07.706 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libgmp.so.10.5.0.bin Success!
+2026-01-02 21:13:07.706 | SUCCESS  | __main__:benchmark_test:31 - All Time: 28.204010725021362
+2026-01-02 21:13:07.706 | SUCCESS  | __main__:benchmark_test:32 - Success: 11 Fail: 1
+2026-01-02 21:13:07.706 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libgmp.so.10.5.0.bin', 'size(KB)': 800, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5010304}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 16.11721682548523, 'Register Gadget Chain': [['0x0000000000443e26'], ['0x0000000000445912'], ['0x00000000004a7614'], ['0x00000000004a3319']], 'Register Gadget Layout': {3: '0x0000000000443e26', 4: '0x4c7380', 5: '0x0000000000445912', 6: '0x1000', 7: '0x00000000004a7614', 8: '0xa', 9: '0x00000000004a3319', 10: '0x7', 11: '0xdeadbe03'}, 'All Time': 28.204010725021362}
+2026-01-02 21:13:07.707 | INFO     | __main__:benchmark_test:21 - Start Test libicudata.so.74.0.1.bin
+2026-01-02 21:14:13.433 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:17:35.806 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:17:35.807 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:17:59.801 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:17:59.803 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 23.99353551864624
+2026-01-02 21:17:59.804 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000ef97d4', 4: '0x2116380', 5: '0x00000000004b1898', 6: '0x1000', 7: '0x00000000004bea5e', 8: '0x7', 9: '0x0000000000ef9798', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000ef97d4'], ['0x00000000004b1898'], ['0x00000000004bea5e'], ['0x0000000000ef9798']]]]
+2026-01-02 21:17:59.815 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libicudata.so.74.0.1.bin Success!
+2026-01-02 21:17:59.815 | SUCCESS  | __main__:benchmark_test:31 - All Time: 292.1006155014038
+2026-01-02 21:17:59.815 | SUCCESS  | __main__:benchmark_test:32 - Success: 12 Fail: 1
+2026-01-02 21:17:59.815 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libicudata.so.74.0.1.bin', 'size(KB)': 29788, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 34694016}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 23.99353551864624, 'Register Gadget Chain': [['0x0000000000ef97d4'], ['0x00000000004b1898'], ['0x00000000004bea5e'], ['0x0000000000ef9798']], 'Register Gadget Layout': {3: '0x0000000000ef97d4', 4: '0x2116380', 5: '0x00000000004b1898', 6: '0x1000', 7: '0x00000000004bea5e', 8: '0x7', 9: '0x0000000000ef9798', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 292.1006155014038}
+2026-01-02 21:17:59.816 | INFO     | __main__:benchmark_test:21 - Start Test libicui18n.so.74.0.1.bin
+2026-01-02 21:18:40.699 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:22:39.941 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:22:39.942 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:22:58.427 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:22:58.427 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 18.483896255493164
+2026-01-02 21:22:58.429 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004244bc', 4: '0x80d380', 5: '0x000000000041dd98', 6: '0x1000', 7: '0x000000330041da0b', 8: '0x7', 9: '0x0000003300444e48', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004244bc'], ['0x000000000041dd98'], ['0x000000000041da0b'], ['0x0000000000444e48']]]]
+2026-01-02 21:22:58.440 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libicui18n.so.74.0.1.bin Success!
+2026-01-02 21:22:58.440 | SUCCESS  | __main__:benchmark_test:31 - All Time: 298.61432433128357
+2026-01-02 21:22:58.440 | SUCCESS  | __main__:benchmark_test:32 - Success: 13 Fail: 1
+2026-01-02 21:22:58.440 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libicui18n.so.74.0.1.bin', 'size(KB)': 4152, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 8442752}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 18.483896255493164, 'Register Gadget Chain': [['0x00000000004244bc'], ['0x000000000041dd98'], ['0x000000000041da0b'], ['0x0000000000444e48']], 'Register Gadget Layout': {3: '0x00000000004244bc', 4: '0x80d380', 5: '0x000000000041dd98', 6: '0x1000', 7: '0x000000330041da0b', 8: '0x7', 9: '0x0000003300444e48', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 298.61432433128357}
+2026-01-02 21:22:58.441 | INFO     | __main__:benchmark_test:21 - Start Test libicutu.so.74.0.1.bin
+2026-01-02 21:23:01.141 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:23:12.115 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:23:12.116 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:23:28.046 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:23:28.046 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 15.928902626037598
+2026-01-02 21:23:28.048 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000410f31', 4: '0x444380', 5: '0x0000000000410f2f', 6: '0x1000', 8: '0x000000000040cca0', 9: '0x7', 10: '0x00000033004020d8', 11: '0xa', 12: '0xdeadbe03'}, [['0x0000000000410f31'], ['0x0000000000410f2f'], ['0x000000000040cca0'], ['0x00000000004020d8']]]]
+2026-01-02 21:23:28.052 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libicutu.so.74.0.1.bin Success!
+2026-01-02 21:23:28.052 | SUCCESS  | __main__:benchmark_test:31 - All Time: 29.603814601898193
+2026-01-02 21:23:28.053 | SUCCESS  | __main__:benchmark_test:32 - Success: 14 Fail: 1
+2026-01-02 21:23:28.053 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libicutu.so.74.0.1.bin', 'size(KB)': 276, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4473728}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 15.928902626037598, 'Register Gadget Chain': [['0x0000000000410f31'], ['0x0000000000410f2f'], ['0x000000000040cca0'], ['0x00000000004020d8']], 'Register Gadget Layout': {3: '0x0000000000410f31', 4: '0x444380', 5: '0x0000000000410f2f', 6: '0x1000', 8: '0x000000000040cca0', 9: '0x7', 10: '0x00000033004020d8', 11: '0xa', 12: '0xdeadbe03'}, 'All Time': 29.603814601898193}
+2026-01-02 21:23:28.054 | INFO     | __main__:benchmark_test:21 - Start Test libicuuc.so.74.0.1.bin
+2026-01-02 21:23:53.855 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:25:32.053 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:25:32.053 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:25:49.029 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:25:49.030 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 16.975080966949463
+2026-01-02 21:25:49.031 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000458ae0', 4: '0x661380', 5: '0x000000000040ceff', 6: '0x1000', 7: '0x000000000040d8a9', 8: '0x7', 9: '0x0000000000474d2c', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000458ae0'], ['0x000000000040ceff'], ['0x000000000040d8a9'], ['0x0000000000474d2c']]]]
+2026-01-02 21:25:49.042 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libicuuc.so.74.0.1.bin Success!
+2026-01-02 21:25:49.042 | SUCCESS  | __main__:benchmark_test:31 - All Time: 140.98203420639038
+2026-01-02 21:25:49.043 | SUCCESS  | __main__:benchmark_test:32 - Success: 15 Fail: 1
+2026-01-02 21:25:49.043 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libicuuc.so.74.0.1.bin', 'size(KB)': 2440, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 6689664}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 16.975080966949463, 'Register Gadget Chain': [['0x0000000000458ae0'], ['0x000000000040ceff'], ['0x000000000040d8a9'], ['0x0000000000474d2c']], 'Register Gadget Layout': {3: '0x0000000000458ae0', 4: '0x661380', 5: '0x000000000040ceff', 6: '0x1000', 7: '0x000000000040d8a9', 8: '0x7', 9: '0x0000000000474d2c', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 140.98203420639038}
+2026-01-02 21:25:49.044 | INFO     | __main__:benchmark_test:21 - Start Test libisl.so.23.1.0.bin
+2026-01-02 21:26:06.093 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:27:23.397 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:27:23.398 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:27:40.062 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:27:40.062 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 16.663074493408203
+2026-01-02 21:27:40.062 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004289a8', 4: '0x65a380', 5: '0x0000003300413b5c', 6: '0x1000', 7: '0x00000033005a163a', 8: '0x7', 9: '0x00000000004a095b', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004289a8'], ['0x0000000000413b5c'], ['0x00000000005a163a'], ['0x00000000004a095b']]]]
+2026-01-02 21:27:40.065 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libisl.so.23.1.0.bin Success!
+2026-01-02 21:27:40.065 | SUCCESS  | __main__:benchmark_test:31 - All Time: 111.01488900184631
+2026-01-02 21:27:40.065 | SUCCESS  | __main__:benchmark_test:32 - Success: 16 Fail: 1
+2026-01-02 21:27:40.065 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libisl.so.23.1.0.bin', 'size(KB)': 2412, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 6660992}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 16.663074493408203, 'Register Gadget Chain': [['0x00000000004289a8'], ['0x0000000000413b5c'], ['0x00000000005a163a'], ['0x00000000004a095b']], 'Register Gadget Layout': {3: '0x00000000004289a8', 4: '0x65a380', 5: '0x0000003300413b5c', 6: '0x1000', 7: '0x00000033005a163a', 8: '0x7', 9: '0x00000000004a095b', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 111.01488900184631}
+2026-01-02 21:27:40.065 | INFO     | __main__:benchmark_test:21 - Start Test libjson-c.so.5.3.0.bin
+2026-01-02 21:27:41.209 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:27:45.617 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:27:45.617 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:28:48.040 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:28:48.040 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 62.42163562774658
+2026-01-02 21:28:48.041 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004011ad', 4: '0x424d55', 5: '0x41b6d8', 6: '0x439380', 7: '0x3300402095', 8: '0x00000000004011ad', 9: '0x40130a', 10: '0x41b6d8', 11: '0xfbd', 12: '0x3300402095', 13: '0x000000000040444c', 14: '0x7', 15: '0x00000000004018a0', 16: '0xa', 17: '0xdeadbe03'}, [['0x00000000004011ad', '0x000000000041b6d8', '0x0000000000402095', '0x0000000000424d55'], ['0x00000000004011ad', '0x000000000041b6d8', '0x0000000000402095', '0x000000000040130a'], ['0x000000000040444c'], ['0x00000000004018a0']]]]
+2026-01-02 21:28:48.044 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libjson-c.so.5.3.0.bin Success!
+2026-01-02 21:28:48.045 | SUCCESS  | __main__:benchmark_test:31 - All Time: 67.96980953216553
+2026-01-02 21:28:48.045 | SUCCESS  | __main__:benchmark_test:32 - Success: 17 Fail: 1
+2026-01-02 21:28:48.046 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libjson-c.so.5.3.0.bin', 'size(KB)': 232, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4428672}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 62.42163562774658, 'Register Gadget Chain': [['0x00000000004011ad', '0x000000000041b6d8', '0x0000000000402095', '0x0000000000424d55'], ['0x00000000004011ad', '0x000000000041b6d8', '0x0000000000402095', '0x000000000040130a'], ['0x000000000040444c'], ['0x00000000004018a0']], 'Register Gadget Layout': {3: '0x00000000004011ad', 4: '0x424d55', 5: '0x41b6d8', 6: '0x439380', 7: '0x3300402095', 8: '0x00000000004011ad', 9: '0x40130a', 10: '0x41b6d8', 11: '0xfbd', 12: '0x3300402095', 13: '0x000000000040444c', 14: '0x7', 15: '0x00000000004018a0', 16: '0xa', 17: '0xdeadbe03'}, 'All Time': 67.96980953216553}
+2026-01-02 21:28:48.046 | INFO     | __main__:benchmark_test:21 - Start Test libmpfr.so.6.1.0.bin
+2026-01-02 21:29:03.710 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:29:58.919 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:29:58.920 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:30:17.298 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:30:17.302 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 18.37820529937744
+2026-01-02 21:30:17.305 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004a840b', 4: '0x80a380', 5: '0x00000000004d470d', 6: '0x1000', 7: '0x0000000000403984', 8: '0x7', 9: '0x00000000004c0a26', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004a840b'], ['0x00000000004d470d'], ['0x0000000000403984'], ['0x00000000004c0a26']]]]
+2026-01-02 21:30:17.315 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libmpfr.so.6.1.0.bin Success!
+2026-01-02 21:30:17.315 | SUCCESS  | __main__:benchmark_test:31 - All Time: 89.26171851158142
+2026-01-02 21:30:17.315 | SUCCESS  | __main__:benchmark_test:32 - Success: 18 Fail: 1
+2026-01-02 21:30:17.316 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libmpfr.so.6.1.0.bin', 'size(KB)': 4140, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 8430464}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 18.37820529937744, 'Register Gadget Chain': [['0x00000000004a840b'], ['0x00000000004d470d'], ['0x0000000000403984'], ['0x00000000004c0a26']], 'Register Gadget Layout': {3: '0x00000000004a840b', 4: '0x80a380', 5: '0x00000000004d470d', 6: '0x1000', 7: '0x0000000000403984', 8: '0x7', 9: '0x00000000004c0a26', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 89.26171851158142}
+2026-01-02 21:30:17.317 | INFO     | __main__:benchmark_test:21 - Start Test libnetsnmp.so.40.2.1.bin
+2026-01-02 21:30:21.369 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:30:36.653 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:30:36.653 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:31:21.359 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 21:31:21.361 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 44.70518755912781
+2026-01-02 21:31:21.362 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000048dcb9', 4: '0x515380', 5: '0x404f0a', 6: '0x000000330048dcb9', 7: '0x1000', 8: '0x4fa6c8', 9: '0x00000000004529a2', 10: '0x7', 11: '0x00000000004b9cfb', 12: '0xa', 13: '0xdeadbe03'}, [['0x000000000048dcb9', '0x0000000000404f0a'], ['0x000000000048dcb9', '0x00000000004fa6c8'], ['0x00000000004529a2'], ['0x00000000004b9cfb']]]]
+2026-01-02 21:31:21.364 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libnetsnmp.so.40.2.1.bin Success!
+2026-01-02 21:31:21.365 | SUCCESS  | __main__:benchmark_test:31 - All Time: 64.03878116607666
+2026-01-02 21:31:21.365 | SUCCESS  | __main__:benchmark_test:32 - Success: 19 Fail: 1
+2026-01-02 21:31:21.366 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libnetsnmp.so.40.2.1.bin', 'size(KB)': 1112, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5329792}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 44.70518755912781, 'Register Gadget Chain': [['0x000000000048dcb9', '0x0000000000404f0a'], ['0x000000000048dcb9', '0x00000000004fa6c8'], ['0x00000000004529a2'], ['0x00000000004b9cfb']], 'Register Gadget Layout': {3: '0x000000000048dcb9', 4: '0x515380', 5: '0x404f0a', 6: '0x000000330048dcb9', 7: '0x1000', 8: '0x4fa6c8', 9: '0x00000000004529a2', 10: '0x7', 11: '0x00000000004b9cfb', 12: '0xa', 13: '0xdeadbe03'}, 'All Time': 64.03878116607666}
+2026-01-02 21:31:21.367 | INFO     | __main__:benchmark_test:21 - Start Test libnetsnmpagent.so.40.2.1.bin
+2026-01-02 21:31:22.997 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:31:32.446 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:31:32.448 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 21:46:33.138 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 21:46:33.139 | ERROR    | __main__:benchmark_test:35 - gcc_fzero/libnetsnmpagent.so.40.2.1.bin No Result!
+2026-01-02 21:46:33.139 | ERROR    | __main__:benchmark_test:36 - gcc_fzero/libnetsnmpagent.so.40.2.1.bin Retry 1 Time
+2026-01-02 21:46:34.940 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 21:46:41.946 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 21:46:41.947 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:01:42.876 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 22:01:42.877 | ERROR    | __main__:benchmark_test:48 - Success: 19 Fail: 2
+2026-01-02 22:01:42.877 | INFO     | __main__:benchmark_test:21 - Start Test libnetsnmpmibs.so.40.2.1.bin
+2026-01-02 22:01:44.024 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:01:47.944 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:01:47.946 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:16:48.539 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 22:16:48.540 | ERROR    | __main__:benchmark_test:35 - gcc_fzero/libnetsnmpmibs.so.40.2.1.bin No Result!
+2026-01-02 22:16:48.540 | ERROR    | __main__:benchmark_test:36 - gcc_fzero/libnetsnmpmibs.so.40.2.1.bin Retry 1 Time
+2026-01-02 22:16:49.814 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:16:51.543 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:16:51.543 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:31:52.439 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 22:31:52.441 | ERROR    | __main__:benchmark_test:48 - Success: 19 Fail: 3
+2026-01-02 22:31:52.442 | INFO     | __main__:benchmark_test:21 - Start Test libperl.so.5.36.0.bin
+2026-01-02 22:32:12.193 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:33:27.068 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:33:27.069 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:33:46.490 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 22:33:46.491 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 19.42062020301819
+2026-01-02 22:33:46.492 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004563c9', 4: '0x7a9380', 5: '0x000000000045626f', 6: '0x1000', 7: '0x0000000000516536', 8: '0x7', 9: '0x00000000004b82db', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004563c9'], ['0x000000000045626f'], ['0x0000000000516536'], ['0x00000000004b82db']]]]
+2026-01-02 22:33:46.494 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libperl.so.5.36.0.bin Success!
+2026-01-02 22:33:46.494 | SUCCESS  | __main__:benchmark_test:31 - All Time: 113.82106328010559
+2026-01-02 22:33:46.495 | SUCCESS  | __main__:benchmark_test:32 - Success: 20 Fail: 3
+2026-01-02 22:33:46.495 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libperl.so.5.36.0.bin', 'size(KB)': 3752, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 8033152}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 19.42062020301819, 'Register Gadget Chain': [['0x00000000004563c9'], ['0x000000000045626f'], ['0x0000000000516536'], ['0x00000000004b82db']], 'Register Gadget Layout': {3: '0x00000000004563c9', 4: '0x7a9380', 5: '0x000000000045626f', 6: '0x1000', 7: '0x0000000000516536', 8: '0x7', 9: '0x00000000004b82db', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 113.82106328010559}
+2026-01-02 22:33:46.495 | INFO     | __main__:benchmark_test:21 - Start Test libssl.so.3.bin
+2026-01-02 22:33:50.473 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:34:09.062 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:34:09.062 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:34:40.756 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 22:34:40.756 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 31.69320321083069
+2026-01-02 22:34:40.757 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004b8eb5', 4: '0x900036070007', 5: '0x4e9464', 6: '0x0000003300465996', 2199023125930: '0x99f1121e', 7: '0x1000', 8: '0x00000033004366ca', 9: '0x7', 10: '0x0000000000516478', 11: '0xa', 12: '0xdeadbe03'}, [['0x00000000004b8eb5', '0x00000000004e9464'], ['0x0000000000465996'], ['0x00000000004366ca'], ['0x0000000000516478']]]]
+2026-01-02 22:34:40.758 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libssl.so.3.bin Success!
+2026-01-02 22:34:40.758 | SUCCESS  | __main__:benchmark_test:31 - All Time: 54.25393223762512
+2026-01-02 22:34:40.759 | SUCCESS  | __main__:benchmark_test:32 - Success: 21 Fail: 3
+2026-01-02 22:34:40.759 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libssl.so.3.bin', 'size(KB)': 1184, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5403520}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 31.69320321083069, 'Register Gadget Chain': [['0x00000000004b8eb5', '0x00000000004e9464'], ['0x0000000000465996'], ['0x00000000004366ca'], ['0x0000000000516478']], 'Register Gadget Layout': {3: '0x00000000004b8eb5', 4: '0x900036070007', 5: '0x4e9464', 6: '0x0000003300465996', 2199023125930: '0x99f1121e', 7: '0x1000', 8: '0x00000033004366ca', 9: '0x7', 10: '0x0000000000516478', 11: '0xa', 12: '0xdeadbe03'}, 'All Time': 54.25393223762512}
+2026-01-02 22:34:40.759 | INFO     | __main__:benchmark_test:21 - Start Test libwget.so.2.0.0.bin
+2026-01-02 22:34:44.705 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:35:14.417 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:35:14.417 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:35:34.780 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 22:35:34.782 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 20.363099336624146
+2026-01-02 22:35:34.783 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000040345d', 4: '0x4c2380', 5: '0x0000000000489adc', 6: '0x1000', 7: '0x0000003300446d69', 8: '0x7f', 9: '0x3300489637', 10: '0x0000003300424ccb', 11: '0xa', 12: '0xdeadbe03'}, [['0x000000000040345d'], ['0x0000000000489adc'], ['0x0000000000446d69', '0x0000000000489637'], ['0x0000000000424ccb']]]]
+2026-01-02 22:35:34.787 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libwget.so.2.0.0.bin Success!
+2026-01-02 22:35:34.787 | SUCCESS  | __main__:benchmark_test:31 - All Time: 54.02034258842468
+2026-01-02 22:35:34.788 | SUCCESS  | __main__:benchmark_test:32 - Success: 22 Fail: 3
+2026-01-02 22:35:34.788 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libwget.so.2.0.0.bin', 'size(KB)': 780, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4989824}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 20.363099336624146, 'Register Gadget Chain': [['0x000000000040345d'], ['0x0000000000489adc'], ['0x0000000000446d69', '0x0000000000489637'], ['0x0000000000424ccb']], 'Register Gadget Layout': {3: '0x000000000040345d', 4: '0x4c2380', 5: '0x0000000000489adc', 6: '0x1000', 7: '0x0000003300446d69', 8: '0x7f', 9: '0x3300489637', 10: '0x0000003300424ccb', 11: '0xa', 12: '0xdeadbe03'}, 'All Time': 54.02034258842468}
+2026-01-02 22:35:34.789 | INFO     | __main__:benchmark_test:21 - Start Test libxml2.so.2.9.12.bin
+2026-01-02 22:35:53.089 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:37:40.844 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:37:40.845 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:37:59.462 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 22:37:59.463 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 18.616129636764526
+2026-01-02 22:37:59.464 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004064e0', 4: '0x663380', 5: '0x0000000000627558', 6: '0x1000', 7: '0x0000000000406cf9', 8: '0x7', 9: '0x00000000005d4183', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004064e0'], ['0x0000000000627558'], ['0x0000000000406cf9'], ['0x00000000005d4183']]]]
+2026-01-02 22:37:59.468 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/libxml2.so.2.9.12.bin Success!
+2026-01-02 22:37:59.468 | SUCCESS  | __main__:benchmark_test:31 - All Time: 144.6712884902954
+2026-01-02 22:37:59.469 | SUCCESS  | __main__:benchmark_test:32 - Success: 23 Fail: 3
+2026-01-02 22:37:59.469 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/libxml2.so.2.9.12.bin', 'size(KB)': 2448, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 6697856}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 18.616129636764526, 'Register Gadget Chain': [['0x00000000004064e0'], ['0x0000000000627558'], ['0x0000000000406cf9'], ['0x00000000005d4183']], 'Register Gadget Layout': {3: '0x00000000004064e0', 4: '0x663380', 5: '0x0000000000627558', 6: '0x1000', 7: '0x0000000000406cf9', 8: '0x7', 9: '0x00000000005d4183', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 144.6712884902954}
+2026-01-02 22:37:59.469 | INFO     | __main__:benchmark_test:21 - Start Test nginx.bin
+2026-01-02 22:38:03.686 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:38:18.300 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:38:18.300 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:38:48.313 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 22:38:48.315 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 30.012726545333862
+2026-01-02 22:38:48.316 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000492821', 4: '0x556380', 5: '0x0000003300418322', 6: '0x0000000000401016', 7: '0x4011ad', 8: '0x3d44', 9: '0x517fd9', 10: '0x000000000046246c', 11: '0x7', 12: '0x0000000000538b30', 13: '0xa', 14: '0xdeadbe03'}, [['0x0000000000492821'], ['0x0000000000418322', '0x00000000004011ad', '0x0000000000517fd9'], ['0x000000000046246c'], ['0x0000000000538b30']]]]
+2026-01-02 22:38:48.320 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/nginx.bin Success!
+2026-01-02 22:38:48.320 | SUCCESS  | __main__:benchmark_test:31 - All Time: 48.84146547317505
+2026-01-02 22:38:48.321 | SUCCESS  | __main__:benchmark_test:32 - Success: 24 Fail: 3
+2026-01-02 22:38:48.321 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/nginx.bin', 'size(KB)': 1372, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5596032}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 30.012726545333862, 'Register Gadget Chain': [['0x0000000000492821'], ['0x0000000000418322', '0x00000000004011ad', '0x0000000000517fd9'], ['0x000000000046246c'], ['0x0000000000538b30']], 'Register Gadget Layout': {3: '0x0000000000492821', 4: '0x556380', 5: '0x0000003300418322', 6: '0x0000000000401016', 7: '0x4011ad', 8: '0x3d44', 9: '0x517fd9', 10: '0x000000000046246c', 11: '0x7', 12: '0x0000000000538b30', 13: '0xa', 14: '0xdeadbe03'}, 'All Time': 48.84146547317505}
+2026-01-02 22:38:48.321 | INFO     | __main__:benchmark_test:21 - Start Test ntpd.bin
+2026-01-02 22:38:51.574 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:39:01.321 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:39:01.324 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:39:17.303 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 22:39:17.305 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 15.97911810874939
+2026-01-02 22:39:17.307 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000044c47d', 4: '0x4fc380', 5: '0x000000330043977e', 6: '0x1000', 7: '0x00000000004e72d0', 8: '0x7', 9: '0x0000000000460c04', 10: '0xa', 11: '0xdeadbe03'}, [['0x000000000044c47d'], ['0x000000000043977e'], ['0x00000000004e72d0'], ['0x0000000000460c04']]]]
+2026-01-02 22:39:17.311 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/ntpd.bin Success!
+2026-01-02 22:39:17.311 | SUCCESS  | __main__:benchmark_test:31 - All Time: 28.981794595718384
+2026-01-02 22:39:17.312 | SUCCESS  | __main__:benchmark_test:32 - Success: 25 Fail: 3
+2026-01-02 22:39:17.312 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/ntpd.bin', 'size(KB)': 1012, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5227392}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 15.97911810874939, 'Register Gadget Chain': [['0x000000000044c47d'], ['0x000000000043977e'], ['0x00000000004e72d0'], ['0x0000000000460c04']], 'Register Gadget Layout': {3: '0x000000000044c47d', 4: '0x4fc380', 5: '0x000000330043977e', 6: '0x1000', 7: '0x00000000004e72d0', 8: '0x7', 9: '0x0000000000460c04', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 28.981794595718384}
+2026-01-02 22:39:17.313 | INFO     | __main__:benchmark_test:21 - Start Test ntpq.bin
+2026-01-02 22:39:18.870 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:39:27.724 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:39:27.725 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 22:54:28.397 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 22:54:28.398 | ERROR    | __main__:benchmark_test:35 - gcc_fzero/ntpq.bin No Result!
+2026-01-02 22:54:28.398 | ERROR    | __main__:benchmark_test:36 - gcc_fzero/ntpq.bin Retry 1 Time
+2026-01-02 22:54:30.115 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 22:54:36.230 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 22:54:36.230 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:09:36.935 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 23:09:36.937 | ERROR    | __main__:benchmark_test:48 - Success: 25 Fail: 4
+2026-01-02 23:09:36.937 | INFO     | __main__:benchmark_test:21 - Start Test openssl.bin
+2026-01-02 23:09:38.748 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:09:46.947 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:09:46.947 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:10:05.333 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:10:05.335 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 18.38516664505005
+2026-01-02 23:10:05.338 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000435a75', 4: '0x53e380', 5: '0x000000330051445b', 6: '0x1000', 7: '0x0000000000512e0a', 8: '0x7', 9: '0x0000000000441701', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000435a75'], ['0x000000000051445b'], ['0x0000000000512e0a'], ['0x0000000000441701']]]]
+2026-01-02 23:10:05.342 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/openssl.bin Success!
+2026-01-02 23:10:05.342 | SUCCESS  | __main__:benchmark_test:31 - All Time: 28.38646912574768
+2026-01-02 23:10:05.342 | SUCCESS  | __main__:benchmark_test:32 - Success: 26 Fail: 4
+2026-01-02 23:10:05.343 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/openssl.bin', 'size(KB)': 1276, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5497728}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 18.38516664505005, 'Register Gadget Chain': [['0x0000000000435a75'], ['0x000000000051445b'], ['0x0000000000512e0a'], ['0x0000000000441701']], 'Register Gadget Layout': {3: '0x0000000000435a75', 4: '0x53e380', 5: '0x000000330051445b', 6: '0x1000', 7: '0x0000000000512e0a', 8: '0x7', 9: '0x0000000000441701', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 28.38646912574768}
+2026-01-02 23:10:05.343 | INFO     | __main__:benchmark_test:21 - Start Test perl.bin
+2026-01-02 23:10:15.962 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:11:02.746 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:11:02.747 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:11:21.237 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:11:21.239 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 18.489190340042114
+2026-01-02 23:11:21.241 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000435475', 4: '0x7e9380', 5: '0x00000000005997d8', 6: '0x1000', 7: '0x00000000004a827a', 8: '0x7', 9: '0x0000000000463392', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000435475'], ['0x00000000005997d8'], ['0x00000000004a827a'], ['0x0000000000463392']]]]
+2026-01-02 23:11:21.246 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/perl.bin Success!
+2026-01-02 23:11:21.247 | SUCCESS  | __main__:benchmark_test:31 - All Time: 75.89609479904175
+2026-01-02 23:11:21.247 | SUCCESS  | __main__:benchmark_test:32 - Success: 27 Fail: 4
+2026-01-02 23:11:21.248 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/perl.bin', 'size(KB)': 4008, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 8295296}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 18.489190340042114, 'Register Gadget Chain': [['0x0000000000435475'], ['0x00000000005997d8'], ['0x00000000004a827a'], ['0x0000000000463392']], 'Register Gadget Layout': {3: '0x0000000000435475', 4: '0x7e9380', 5: '0x00000000005997d8', 6: '0x1000', 7: '0x00000000004a827a', 8: '0x7', 9: '0x0000000000463392', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 75.89609479904175}
+2026-01-02 23:11:21.249 | INFO     | __main__:benchmark_test:21 - Start Test php.bin
+2026-01-02 23:11:55.881 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:14:30.464 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:14:30.465 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:14:49.605 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:14:49.605 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 19.139216899871826
+2026-01-02 23:14:49.606 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000040c5a1', 4: '0x1acf380', 5: '0x000000000085e07a', 6: '0x1000', 7: '0x0000000000b6701b', 8: '0x7', 9: '0x000000000064b2df', 10: '0xa', 11: '0xdeadbe03'}, [['0x000000000040c5a1'], ['0x000000000085e07a'], ['0x0000000000b6701b'], ['0x000000000064b2df']]]]
+2026-01-02 23:14:49.611 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/php.bin Success!
+2026-01-02 23:14:49.611 | SUCCESS  | __main__:benchmark_test:31 - All Time: 208.3578679561615
+2026-01-02 23:14:49.611 | SUCCESS  | __main__:benchmark_test:32 - Success: 28 Fail: 4
+2026-01-02 23:14:49.611 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/php.bin', 'size(KB)': 23360, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 28111744}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 19.139216899871826, 'Register Gadget Chain': [['0x000000000040c5a1'], ['0x000000000085e07a'], ['0x0000000000b6701b'], ['0x000000000064b2df']], 'Register Gadget Layout': {3: '0x000000000040c5a1', 4: '0x1acf380', 5: '0x000000000085e07a', 6: '0x1000', 7: '0x0000000000b6701b', 8: '0x7', 9: '0x000000000064b2df', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 208.3578679561615}
+2026-01-02 23:14:49.612 | INFO     | __main__:benchmark_test:21 - Start Test proftpd.bin
+2026-01-02 23:14:56.391 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:15:21.241 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:15:21.242 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:15:42.360 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:15:42.361 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 21.11808490753174
+2026-01-02 23:15:42.362 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000005cc298', 4: '0x676380', 5: '0x00000033004ffb0d', 6: '0x1000', 7: '0x000000000042fed4', 8: '0x7', 9: '0x00000000004d9a6b', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000005cc298'], ['0x00000000004ffb0d'], ['0x000000000042fed4'], ['0x00000000004d9a6b']]]]
+2026-01-02 23:15:42.366 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/proftpd.bin Success!
+2026-01-02 23:15:42.366 | SUCCESS  | __main__:benchmark_test:31 - All Time: 52.74662756919861
+2026-01-02 23:15:42.367 | SUCCESS  | __main__:benchmark_test:32 - Success: 29 Fail: 4
+2026-01-02 23:15:42.367 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/proftpd.bin', 'size(KB)': 2524, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 6775680}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 21.11808490753174, 'Register Gadget Chain': [['0x00000000005cc298'], ['0x00000000004ffb0d'], ['0x000000000042fed4'], ['0x00000000004d9a6b']], 'Register Gadget Layout': {3: '0x00000000005cc298', 4: '0x676380', 5: '0x00000033004ffb0d', 6: '0x1000', 7: '0x000000000042fed4', 8: '0x7', 9: '0x00000000004d9a6b', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 52.74662756919861}
+2026-01-02 23:15:42.367 | INFO     | __main__:benchmark_test:21 - Start Test python-3.11.5.bin
+2026-01-02 23:17:23.118 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:24:13.641 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:24:13.642 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:24:34.392 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:24:34.392 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 20.748485565185547
+2026-01-02 23:24:34.393 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000051a645', 4: '0x1b18380', 5: '0x0000000000c2d978', 6: '0x1000', 7: '0x0000000000404849', 8: '0x7', 9: '0x00000000004f6106', 10: '0xa', 11: '0xdeadbe03'}, [['0x000000000051a645'], ['0x0000000000c2d978'], ['0x0000000000404849'], ['0x00000000004f6106']]]]
+2026-01-02 23:24:34.400 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/python-3.11.5.bin Success!
+2026-01-02 23:24:34.400 | SUCCESS  | __main__:benchmark_test:31 - All Time: 532.0286962985992
+2026-01-02 23:24:34.400 | SUCCESS  | __main__:benchmark_test:32 - Success: 30 Fail: 4
+2026-01-02 23:24:34.400 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/python-3.11.5.bin', 'size(KB)': 23652, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 28410752}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 20.748485565185547, 'Register Gadget Chain': [['0x000000000051a645'], ['0x0000000000c2d978'], ['0x0000000000404849'], ['0x00000000004f6106']], 'Register Gadget Layout': {3: '0x000000000051a645', 4: '0x1b18380', 5: '0x0000000000c2d978', 6: '0x1000', 7: '0x0000000000404849', 8: '0x7', 9: '0x00000000004f6106', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 532.0286962985992}
+2026-01-02 23:24:34.401 | INFO     | __main__:benchmark_test:21 - Start Test smtpctl.bin
+2026-01-02 23:24:35.202 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:24:37.805 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:24:37.805 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:39:48.437 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 23:39:48.438 | ERROR    | __main__:benchmark_test:35 - gcc_fzero/smtpctl.bin No Result!
+2026-01-02 23:39:48.439 | ERROR    | __main__:benchmark_test:36 - gcc_fzero/smtpctl.bin Retry 1 Time
+2026-01-02 23:39:48.777 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:39:49.557 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:39:49.557 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:54:50.419 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-02 23:54:50.420 | ERROR    | __main__:benchmark_test:48 - Success: 30 Fail: 5
+2026-01-02 23:54:50.420 | INFO     | __main__:benchmark_test:21 - Start Test smtpd.bin
+2026-01-02 23:54:52.933 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:55:04.763 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:55:04.763 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:56:08.431 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:56:08.434 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 63.666967153549194
+2026-01-02 23:56:08.438 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000456f37', 4: '0x4f9380', 5: '0x00000000004011ad', 6: '0x8ffffff0000b', 7: '0x4b3039', 8: '0x00000000004d0708', 2199023125928: '0xffffc2ba', 9: '0x7', 10: '0x0000000000401620', 11: '0xa', 12: '0xdeadbe03'}, [['0x0000000000456f37'], ['0x00000000004011ad', '0x00000000004b3039'], ['0x00000000004d0708'], ['0x0000000000401620']]]]
+2026-01-02 23:56:08.448 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/smtpd.bin Success!
+2026-01-02 23:56:08.449 | SUCCESS  | __main__:benchmark_test:31 - All Time: 78.02199506759644
+2026-01-02 23:56:08.450 | SUCCESS  | __main__:benchmark_test:32 - Success: 31 Fail: 5
+2026-01-02 23:56:08.450 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/smtpd.bin', 'size(KB)': 1000, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5215104}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 63.666967153549194, 'Register Gadget Chain': [['0x0000000000456f37'], ['0x00000000004011ad', '0x00000000004b3039'], ['0x00000000004d0708'], ['0x0000000000401620']], 'Register Gadget Layout': {3: '0x0000000000456f37', 4: '0x4f9380', 5: '0x00000000004011ad', 6: '0x8ffffff0000b', 7: '0x4b3039', 8: '0x00000000004d0708', 2199023125928: '0xffffc2ba', 9: '0x7', 10: '0x0000000000401620', 11: '0xa', 12: '0xdeadbe03'}, 'All Time': 78.02199506759644}
+2026-01-02 23:56:08.451 | INFO     | __main__:benchmark_test:21 - Start Test ssh-add.bin
+2026-01-02 23:56:11.353 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:56:20.386 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:56:20.386 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:57:33.962 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:57:33.962 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 73.57511591911316
+2026-01-02 23:57:33.963 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004011ad', 4: '0', 5: '0x42c43f', 6: '0x470ec0', 7: '4850560', 8: '0x0000000000405290', 9: '4096', 10: '0x330043adde', 11: '0x000000000046c208', 12: '7', 13: '0x0000003300405290', 14: '0x8ffffff00000', 15: '0x330040cc1f', 16: '0xdeadbe03', 2199023125928: '4159420138'}, [['0x00000000004011ad', '0x000000000042c43f', '0x0000000000470ec0'], ['0x0000000000405290', '0x000000000043adde'], ['0x000000000046c208'], ['0x0000000000405290', '0x000000000040cc1f']]]]
+2026-01-02 23:57:33.965 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/ssh-add.bin Success!
+2026-01-02 23:57:33.965 | SUCCESS  | __main__:benchmark_test:31 - All Time: 85.50473356246948
+2026-01-02 23:57:33.965 | SUCCESS  | __main__:benchmark_test:32 - Success: 32 Fail: 5
+2026-01-02 23:57:33.965 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/ssh-add.bin', 'size(KB)': 644, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4850560}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 73.57511591911316, 'Register Gadget Chain': [['0x00000000004011ad', '0x000000000042c43f', '0x0000000000470ec0'], ['0x0000000000405290', '0x000000000043adde'], ['0x000000000046c208'], ['0x0000000000405290', '0x000000000040cc1f']], 'Register Gadget Layout': {3: '0x00000000004011ad', 4: '0', 5: '0x42c43f', 6: '0x470ec0', 7: '4850560', 8: '0x0000000000405290', 9: '4096', 10: '0x330043adde', 11: '0x000000000046c208', 12: '7', 13: '0x0000003300405290', 14: '0x8ffffff00000', 15: '0x330040cc1f', 16: '0xdeadbe03', 2199023125928: '4159420138'}, 'All Time': 85.50473356246948}
+2026-01-02 23:57:33.965 | INFO     | __main__:benchmark_test:21 - Start Test ssh-agent.bin
+2026-01-02 23:57:36.670 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:57:47.140 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:57:47.140 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:58:17.971 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:58:17.972 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 30.829750061035156
+2026-01-02 23:58:17.973 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000047c405', 4: '0x494380', 5: '0x000000000046b59c', 6: '0x1000', 7: '0x0000000000462be8', 8: '0x7', 9: '0x00000033004011ad', 10: '0x8144916', 11: '0x42d9fb', 12: '0xdeadbe03'}, [['0x000000000047c405'], ['0x000000000046b59c'], ['0x0000000000462be8'], ['0x00000000004011ad', '0x000000000042d9fb']]]]
+2026-01-02 23:58:17.977 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/ssh-agent.bin Success!
+2026-01-02 23:58:17.977 | SUCCESS  | __main__:benchmark_test:31 - All Time: 44.002984285354614
+2026-01-02 23:58:17.978 | SUCCESS  | __main__:benchmark_test:32 - Success: 33 Fail: 5
+2026-01-02 23:58:17.978 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/ssh-agent.bin', 'size(KB)': 596, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4801408}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 30.829750061035156, 'Register Gadget Chain': [['0x000000000047c405'], ['0x000000000046b59c'], ['0x0000000000462be8'], ['0x00000000004011ad', '0x000000000042d9fb']], 'Register Gadget Layout': {3: '0x000000000047c405', 4: '0x494380', 5: '0x000000000046b59c', 6: '0x1000', 7: '0x0000000000462be8', 8: '0x7', 9: '0x00000033004011ad', 10: '0x8144916', 11: '0x42d9fb', 12: '0xdeadbe03'}, 'All Time': 44.002984285354614}
+2026-01-02 23:58:17.979 | INFO     | __main__:benchmark_test:21 - Start Test ssh-keyscan.bin
+2026-01-02 23:58:19.829 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:58:24.255 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:58:24.255 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:58:40.274 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:58:40.275 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 16.018138885498047
+2026-01-02 23:58:40.276 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004a471d', 4: '0x4c4380', 5: '0x00000000004a46ed', 6: '0x1000', 7: '0x0000003300488848', 8: '0x7', 9: '0x000000330044781b', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004a471d'], ['0x00000000004a46ed'], ['0x0000000000488848'], ['0x000000000044781b']]]]
+2026-01-02 23:58:40.278 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/ssh-keyscan.bin Success!
+2026-01-02 23:58:40.278 | SUCCESS  | __main__:benchmark_test:31 - All Time: 22.29337430000305
+2026-01-02 23:58:40.278 | SUCCESS  | __main__:benchmark_test:32 - Success: 34 Fail: 5
+2026-01-02 23:58:40.279 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/ssh-keyscan.bin', 'size(KB)': 788, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4998016}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 16.018138885498047, 'Register Gadget Chain': [['0x00000000004a471d'], ['0x00000000004a46ed'], ['0x0000000000488848'], ['0x000000000044781b']], 'Register Gadget Layout': {3: '0x00000000004a471d', 4: '0x4c4380', 5: '0x00000000004a46ed', 6: '0x1000', 7: '0x0000003300488848', 8: '0x7', 9: '0x000000330044781b', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 22.29337430000305}
+2026-01-02 23:58:40.279 | INFO     | __main__:benchmark_test:21 - Start Test ssh-keysign.bin
+2026-01-02 23:58:42.227 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:58:50.195 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:58:50.195 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:59:10.556 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:59:10.556 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 20.359647750854492
+2026-01-02 23:59:10.557 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000424b6c', 4: '0x4ca380', 5: '0x00000033004b0295', 6: '0x1000', 7: '0x0000000000419a9a', 8: '0x7', 9: '0x000000000041425c', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000424b6c'], ['0x00000000004b0295'], ['0x0000000000419a9a'], ['0x000000000041425c']]]]
+2026-01-02 23:59:10.559 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/ssh-keysign.bin Success!
+2026-01-02 23:59:10.559 | SUCCESS  | __main__:benchmark_test:31 - All Time: 30.27267622947693
+2026-01-02 23:59:10.559 | SUCCESS  | __main__:benchmark_test:32 - Success: 35 Fail: 5
+2026-01-02 23:59:10.559 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/ssh-keysign.bin', 'size(KB)': 812, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5022592}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 20.359647750854492, 'Register Gadget Chain': [['0x0000000000424b6c'], ['0x00000000004b0295'], ['0x0000000000419a9a'], ['0x000000000041425c']], 'Register Gadget Layout': {3: '0x0000000000424b6c', 4: '0x4ca380', 5: '0x00000033004b0295', 6: '0x1000', 7: '0x0000000000419a9a', 8: '0x7', 9: '0x000000000041425c', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 30.27267622947693}
+2026-01-02 23:59:10.560 | INFO     | __main__:benchmark_test:21 - Start Test ssh.bin
+2026-01-02 23:59:12.916 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:59:21.243 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:59:21.244 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-02 23:59:37.147 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-02 23:59:37.149 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 15.902316093444824
+2026-01-02 23:59:37.150 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000046dc1a', 4: '0x556380', 5: '0x0000003300460b1e', 6: '0x1000', 7: '0x00000000004a740b', 8: '0x7', 9: '0x000000000041f125', 10: '0xa', 11: '0xdeadbe03'}, [['0x000000000046dc1a'], ['0x0000000000460b1e'], ['0x00000000004a740b'], ['0x000000000041f125']]]]
+2026-01-02 23:59:37.153 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/ssh.bin Success!
+2026-01-02 23:59:37.154 | SUCCESS  | __main__:benchmark_test:31 - All Time: 26.58614444732666
+2026-01-02 23:59:37.154 | SUCCESS  | __main__:benchmark_test:32 - Success: 36 Fail: 5
+2026-01-02 23:59:37.154 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/ssh.bin', 'size(KB)': 1372, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5596032}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 15.902316093444824, 'Register Gadget Chain': [['0x000000000046dc1a'], ['0x0000000000460b1e'], ['0x00000000004a740b'], ['0x000000000041f125']], 'Register Gadget Layout': {3: '0x000000000046dc1a', 4: '0x556380', 5: '0x0000003300460b1e', 6: '0x1000', 7: '0x00000000004a740b', 8: '0x7', 9: '0x000000000041f125', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 26.58614444732666}
+2026-01-02 23:59:37.155 | INFO     | __main__:benchmark_test:21 - Start Test sshd.bin
+2026-01-02 23:59:39.480 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-02 23:59:52.980 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-02 23:59:52.980 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:00:12.593 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-03 00:00:12.594 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 19.61257767677307
+2026-01-03 00:00:12.594 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000485d37', 4: '0x56a380', 5: '0x00000033004d4032', 6: '0x1000', 7: '0x0000003300536918', 8: '0x7', 9: '0x00000000004011ad', 10: '0x8144916', 11: '0x4985b7', 12: '0xdeadbe03'}, [['0x0000000000485d37'], ['0x00000000004d4032'], ['0x0000000000536918'], ['0x00000000004011ad', '0x00000000004985b7']]]]
+2026-01-03 00:00:12.596 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/sshd.bin Success!
+2026-01-03 00:00:12.596 | SUCCESS  | __main__:benchmark_test:31 - All Time: 35.43552327156067
+2026-01-03 00:00:12.596 | SUCCESS  | __main__:benchmark_test:32 - Success: 37 Fail: 5
+2026-01-03 00:00:12.596 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/sshd.bin', 'size(KB)': 1452, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5677952}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 19.61257767677307, 'Register Gadget Chain': [['0x0000000000485d37'], ['0x00000000004d4032'], ['0x0000000000536918'], ['0x00000000004011ad', '0x00000000004985b7']], 'Register Gadget Layout': {3: '0x0000000000485d37', 4: '0x56a380', 5: '0x00000033004d4032', 6: '0x1000', 7: '0x0000003300536918', 8: '0x7', 9: '0x00000000004011ad', 10: '0x8144916', 11: '0x4985b7', 12: '0xdeadbe03'}, 'All Time': 35.43552327156067}
+2026-01-03 00:00:12.597 | INFO     | __main__:benchmark_test:21 - Start Test sudo_logsrvd.bin
+2026-01-03 00:00:14.048 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:00:16.660 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:00:16.660 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:01:39.072 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-03 00:01:39.073 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 82.41105842590332
+2026-01-03 00:01:39.074 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x000000000046c5f8', 4: '0x900076a70001', 5: '0x40ea5d', 6: '0x000000000046c5f8', 2199023125930: '0x1000', 7: '0x478380', 8: '0x000000000044881c', 9: '0x7', 10: '0x330041d282', 11: '0x0000000000428c8b', 12: '0xa', 13: '0xdeadbe03'}, [['0x000000000046c5f8', '0x000000000040ea5d'], ['0x000000000046c5f8'], ['0x000000000044881c', '0x000000000041d282'], ['0x0000000000428c8b']]]]
+2026-01-03 00:01:39.077 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/sudo_logsrvd.bin Success!
+2026-01-03 00:01:39.077 | SUCCESS  | __main__:benchmark_test:31 - All Time: 86.47287058830261
+2026-01-03 00:01:39.078 | SUCCESS  | __main__:benchmark_test:32 - Success: 38 Fail: 5
+2026-01-03 00:01:39.078 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/sudo_logsrvd.bin', 'size(KB)': 484, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4686720}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 82.41105842590332, 'Register Gadget Chain': [['0x000000000046c5f8', '0x000000000040ea5d'], ['0x000000000046c5f8'], ['0x000000000044881c', '0x000000000041d282'], ['0x0000000000428c8b']], 'Register Gadget Layout': {3: '0x000000000046c5f8', 4: '0x900076a70001', 5: '0x40ea5d', 6: '0x000000000046c5f8', 2199023125930: '0x1000', 7: '0x478380', 8: '0x000000000044881c', 9: '0x7', 10: '0x330041d282', 11: '0x0000000000428c8b', 12: '0xa', 13: '0xdeadbe03'}, 'All Time': 86.47287058830261}
+2026-01-03 00:01:39.079 | INFO     | __main__:benchmark_test:21 - Start Test sudo_sendlog.bin
+2026-01-03 00:01:39.619 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:01:42.307 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:01:42.308 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:16:42.690 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-03 00:16:42.691 | ERROR    | __main__:benchmark_test:35 - gcc_fzero/sudo_sendlog.bin No Result!
+2026-01-03 00:16:42.692 | ERROR    | __main__:benchmark_test:36 - gcc_fzero/sudo_sendlog.bin Retry 1 Time
+2026-01-03 00:16:43.331 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:16:45.771 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:16:45.771 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:31:46.216 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-03 00:31:46.217 | ERROR    | __main__:benchmark_test:48 - Success: 38 Fail: 6
+2026-01-03 00:31:46.218 | INFO     | __main__:benchmark_test:21 - Start Test tar.bin
+2026-01-03 00:31:49.012 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:32:06.143 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:32:06.144 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:33:01.344 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-03 00:33:01.345 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 55.19832253456116
+2026-01-03 00:33:01.347 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004a31b8', 4: '0x4bb380', 5: '0x41a291', 6: '0x44dd43', 7: '0x00000000004942a5', 8: '0x1000', 9: '0x000000330049b5b5', 10: '0x7', 11: '0x00000000004011ad', 12: '0x8144916', 13: '0x457e91', 14: '0xdeadbe03'}, [['0x00000000004a31b8', '0x000000000041a291', '0x000000000044dd43'], ['0x00000000004942a5'], ['0x000000000049b5b5'], ['0x00000000004011ad', '0x0000000000457e91']]]]
+2026-01-03 00:33:01.350 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/tar.bin Success!
+2026-01-03 00:33:01.351 | SUCCESS  | __main__:benchmark_test:31 - All Time: 75.11554145812988
+2026-01-03 00:33:01.351 | SUCCESS  | __main__:benchmark_test:32 - Success: 39 Fail: 6
+2026-01-03 00:33:01.351 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/tar.bin', 'size(KB)': 752, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4961152}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 55.19832253456116, 'Register Gadget Chain': [['0x00000000004a31b8', '0x000000000041a291', '0x000000000044dd43'], ['0x00000000004942a5'], ['0x000000000049b5b5'], ['0x00000000004011ad', '0x0000000000457e91']], 'Register Gadget Layout': {3: '0x00000000004a31b8', 4: '0x4bb380', 5: '0x41a291', 6: '0x44dd43', 7: '0x00000000004942a5', 8: '0x1000', 9: '0x000000330049b5b5', 10: '0x7', 11: '0x00000000004011ad', 12: '0x8144916', 13: '0x457e91', 14: '0xdeadbe03'}, 'All Time': 75.11554145812988}
+2026-01-03 00:33:01.351 | INFO     | __main__:benchmark_test:21 - Start Test unicodedata.cpython-311-x86_64-linux-gnu.so.bin
+2026-01-03 00:33:03.825 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:33:24.708 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:33:24.711 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:33:40.677 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-03 00:33:40.677 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 15.965361595153809
+2026-01-03 00:33:40.678 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x0000000000463ab8', 4: '0x538380', 5: '0x00000000004730c0', 6: '0x1000', 7: '0x00000033004563bc', 8: '0x7', 9: '0x0000003300492d0f', 10: '0xa', 11: '0xdeadbe03'}, [['0x0000000000463ab8'], ['0x00000000004730c0'], ['0x00000000004563bc'], ['0x0000000000492d0f']]]]
+2026-01-03 00:33:40.681 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/unicodedata.cpython-311-x86_64-linux-gnu.so.bin Success!
+2026-01-03 00:33:40.681 | SUCCESS  | __main__:benchmark_test:31 - All Time: 39.32181978225708
+2026-01-03 00:33:40.681 | SUCCESS  | __main__:benchmark_test:32 - Success: 40 Fail: 6
+2026-01-03 00:33:40.681 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/unicodedata.cpython-311-x86_64-linux-gnu.so.bin', 'size(KB)': 1252, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 5473152}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 15.965361595153809, 'Register Gadget Chain': [['0x0000000000463ab8'], ['0x00000000004730c0'], ['0x00000000004563bc'], ['0x0000000000492d0f']], 'Register Gadget Layout': {3: '0x0000000000463ab8', 4: '0x538380', 5: '0x00000000004730c0', 6: '0x1000', 7: '0x00000033004563bc', 8: '0x7', 9: '0x0000003300492d0f', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 39.32181978225708}
+2026-01-03 00:33:40.682 | INFO     | __main__:benchmark_test:21 - Start Test vim.bin
+2026-01-03 00:33:53.433 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:34:16.248 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:34:16.249 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:34:35.695 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-03 00:34:35.696 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 19.445770025253296
+2026-01-03 00:34:35.697 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000005d0cba', 4: '0x8a4380', 5: '0x0000000000476646', 6: '0x1000', 7: '0x0000000000828b9d', 8: '0x7', 9: '0x00000000007d21a6', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000005d0cba'], ['0x0000000000476646'], ['0x0000000000828b9d'], ['0x00000000007d21a6']]]]
+2026-01-03 00:34:35.702 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/vim.bin Success!
+2026-01-03 00:34:35.703 | SUCCESS  | __main__:benchmark_test:31 - All Time: 55.01658368110657
+2026-01-03 00:34:35.703 | SUCCESS  | __main__:benchmark_test:32 - Success: 41 Fail: 6
+2026-01-03 00:34:35.703 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/vim.bin', 'size(KB)': 4756, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 9061248}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 19.445770025253296, 'Register Gadget Chain': [['0x00000000005d0cba'], ['0x0000000000476646'], ['0x0000000000828b9d'], ['0x00000000007d21a6']], 'Register Gadget Layout': {3: '0x00000000005d0cba', 4: '0x8a4380', 5: '0x0000000000476646', 6: '0x1000', 7: '0x0000000000828b9d', 8: '0x7', 9: '0x00000000007d21a6', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 55.01658368110657}
+2026-01-03 00:34:35.704 | INFO     | __main__:benchmark_test:21 - Start Test wget.bin
+2026-01-03 00:34:37.177 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:34:39.030 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:34:39.031 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:37:22.238 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-03 00:37:22.239 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 163.20748925209045
+2026-01-03 00:37:22.240 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004936f0', 4: '0x8fffffefffa9', 5: '0x330048b27d', 6: '0x4ab380', 2199023125929: '0x000000000043fbf1', 9: '0x000000000043fbf0', 10: '0x7f', 15: '0x479bb7', 16: '0x0000003300499d50', 17: '0xa', 19: '0x0000003300415111', 20: '0x900026012637', 21: '0x46099e', 22: '0x1000', 2199023125928: '0xdeadbe03'}, [['0x00000000004936f0', '0x000000000048b27d'], ['0x000000000043fbf0', '0x0000000000479bb7'], ['0x0000000000499d50'], ['0x0000000000415111', '0x000000000046099e']]]]
+2026-01-03 00:37:22.244 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/wget.bin Success!
+2026-01-03 00:37:22.245 | SUCCESS  | __main__:benchmark_test:31 - All Time: 166.53512167930603
+2026-01-03 00:37:22.245 | SUCCESS  | __main__:benchmark_test:32 - Success: 42 Fail: 6
+2026-01-03 00:37:22.245 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/wget.bin', 'size(KB)': 688, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 4895616}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 163.20748925209045, 'Register Gadget Chain': [['0x00000000004936f0', '0x000000000048b27d'], ['0x000000000043fbf0', '0x0000000000479bb7'], ['0x0000000000499d50'], ['0x0000000000415111', '0x000000000046099e']], 'Register Gadget Layout': {3: '0x00000000004936f0', 4: '0x8fffffefffa9', 5: '0x330048b27d', 6: '0x4ab380', 2199023125929: '0x000000000043fbf1', 9: '0x000000000043fbf0', 10: '0x7f', 15: '0x479bb7', 16: '0x0000003300499d50', 17: '0xa', 19: '0x0000003300415111', 20: '0x900026012637', 21: '0x46099e', 22: '0x1000', 2199023125928: '0xdeadbe03'}, 'All Time': 166.53512167930603}
+2026-01-03 00:37:22.245 | INFO     | __main__:benchmark_test:21 - Start Test _codecs_iso2022.cpython-311-x86_64-linux-gnu.so.bin
+2026-01-03 00:37:22.504 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:37:23.038 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:37:23.038 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 00:52:23.438 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-03 00:52:23.440 | ERROR    | __main__:benchmark_test:35 - gcc_fzero/_codecs_iso2022.cpython-311-x86_64-linux-gnu.so.bin No Result!
+2026-01-03 00:52:23.440 | ERROR    | __main__:benchmark_test:36 - gcc_fzero/_codecs_iso2022.cpython-311-x86_64-linux-gnu.so.bin Retry 1 Time
+2026-01-03 00:52:23.831 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 00:52:25.028 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 00:52:25.029 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 01:07:25.470 | ERROR    | find_reg_gadget_chain:main:975 - Fail to set register!
+2026-01-03 01:07:25.470 | ERROR    | __main__:benchmark_test:48 - Success: 42 Fail: 7
+2026-01-03 01:07:25.471 | INFO     | __main__:benchmark_test:21 - Start Test _decimal.cpython-311-x86_64-linux-gnu.so.bin
+2026-01-03 01:07:31.739 | INFO     | find_reg_gadget_chain:main:916 - Get Set Reg Edges
+2026-01-03 01:07:54.179 | INFO     | find_reg_gadget_chain:main:965 - Find Reg Setting Gadget Chain
+2026-01-03 01:07:54.180 | INFO     | find_reg_gadget_chain:main:966 - Target Register ['rdi', 'rsi', 'rdx', 'rcx']
+2026-01-03 01:08:14.557 | SUCCESS  | find_reg_gadget_chain:main:978 - Find Set Registers Gadget Chain!
+2026-01-03 01:08:14.558 | SUCCESS  | find_reg_gadget_chain:main:980 - Register Time: 20.37670874595642
+2026-01-03 01:08:14.558 | SUCCESS  | find_reg_gadget_chain:main:983 - [[{3: '0x00000000004e58b5', 4: '0x5bf380', 5: '0x00000000004bd7e5', 6: '0x1000', 7: '0x00000000004ac345', 8: '0x7', 9: '0x00000000004cf2b7', 10: '0xa', 11: '0xdeadbe03'}, [['0x00000000004e58b5'], ['0x00000000004bd7e5'], ['0x00000000004ac345'], ['0x00000000004cf2b7']]]]
+2026-01-03 01:08:14.560 | SUCCESS  | __main__:benchmark_test:29 - gcc_fzero/_decimal.cpython-311-x86_64-linux-gnu.so.bin Success!
+2026-01-03 01:08:14.560 | SUCCESS  | __main__:benchmark_test:31 - All Time: 49.08081889152527
+2026-01-03 01:08:14.560 | SUCCESS  | __main__:benchmark_test:32 - Success: 43 Fail: 7
+2026-01-03 01:08:14.561 | SUCCESS  | __main__:benchmark_test:33 - Res Json {'binary': 'gcc_fzero/_decimal.cpython-311-x86_64-linux-gnu.so.bin', 'size(KB)': 1792, 'Target Register': [{'reg_name': 'rdi', 'reg_value': 6026112}, {'reg_name': 'rsi', 'reg_value': 4096}, {'reg_name': 'rdx', 'reg_value': 7}, {'reg_name': 'rcx', 'reg_value': 10}], 'Target Memory': [], 'Register Time': 20.37670874595642, 'Register Gadget Chain': [['0x00000000004e58b5'], ['0x00000000004bd7e5'], ['0x00000000004ac345'], ['0x00000000004cf2b7']], 'Register Gadget Layout': {3: '0x00000000004e58b5', 4: '0x5bf380', 5: '0x00000000004bd7e5', 6: '0x1000', 7: '0x00000000004ac345', 8: '0x7', 9: '0x00000000004cf2b7', 10: '0xa', 11: '0xdeadbe03'}, 'All Time': 49.08081889152527}

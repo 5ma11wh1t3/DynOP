@@ -1,0 +1,14 @@
+{
+  "CVE-2019-1010298": {
+    "status": "SUCCESS",
+    "time": "10.29s"
+  },
+  "CVE-2022-46152": {
+    "status": "SUCCESS",
+    "time": "10.00s"
+  },
+  "CVE-2023-30799_arm": {
+    "status": "SUCCESS",
+    "time": "15.74s"
+  }
+}
