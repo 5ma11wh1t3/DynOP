@@ -17,8 +17,8 @@ def my_log(data,n):
     for i in range(n):
         print(data[i])
 
-# 过滤出结尾是jmp, call, ret的gadget
-# syscall结尾的也过滤掉
+# Filter gadgets ending with jmp, call, or ret
+# Also filter out gadgets ending with syscall
 def filler(data):
     # jmp_inst = ['loopne','je','jne','ja','jna','jae','jnae','jb','jnb','jbe','jnbe','jg','jng','jge','jnge','jl','jnl','jle','jnle','jz','jnz','js','jns','jc','jnc','jo','jno','jp','jnp','jpe','jpo','jcxz','jecxz','enter','fnsave']
     # for j in jmp_inst:
@@ -49,14 +49,14 @@ def parse_asm_line(line):
     # line = line.replace('retf','ret')
     # if 'ret ' in line:
     #     line = 'ret'
-    # 定义指令集和操作模式
+    # Define instruction set and operation mode
     operations = {
         'mov': ('dst', 'src'),
         'movzx': ('dst', 'src'),
         'movsx': ('dst', 'src'),
-        'push': (None, 'src'),  # 特殊处理
-        'pop': ('dst', None),    # 特殊处理
-        
+        'push': (None, 'src'),  # special handling
+        'pop': ('dst', None),    # special handling
+
         'add': ('dst', 'src'),
         'sub': ('dst', 'src'),
         'mul': ('dst', 'src'),
@@ -66,7 +66,7 @@ def parse_asm_line(line):
         'inc': (None, 'src'),
         'dec': (None, 'src'),
         'neg': (None, 'src'),
-        
+
         'and': ('dst', 'src'),
         'or': ('dst', 'src'),
         'xor': ('dst', 'src'),
@@ -75,7 +75,7 @@ def parse_asm_line(line):
         'shr': ('dst', 'src'),
         'sal': ('dst', 'src'),
         'sar': ('dst', 'src'),
-        
+
         'cmp': ('dst', 'src'),
         'test': ('dst', 'src'),
         'jmp': (None, 'src'),
@@ -88,25 +88,25 @@ def parse_asm_line(line):
         'call': (None, 'src'),
         'ret': (None, None),
         'rep stosq': ('dst','src'),
-        
+
         # 'leave': (None, None),
         'nop': (None, None),
         'lea': ('dst', 'src')
     }
 
 
-    # 使用正则表达式提取指令和操作数
+    # Use a regular expression to extract instructions and operands
     if line == 'ret':
         return {
-            "input": ["[rsp]"], 
-            "operation": line, 
-            "output": None, 
+            "input": ["[rsp]"],
+            "operation": line,
+            "output": None,
             "modified": ["rip"]
         }
     match = re.match(r"(\w+)\s+(.+)", line)
     if not match:
         return None
-    
+
     operation = match.group(1).strip()
     operands = match.group(2).split(",")
     operands = [op.strip() for op in operands]
@@ -114,74 +114,74 @@ def parse_asm_line(line):
     if operation not in operations:
         return None
 
-    # 获取指令的输入、输出操作数类型
+    # Get input and output operand types for the instruction
     output_op, input_op = operations[operation]
-    
-    # 特殊处理 push 和 pop 指令
+
+    # Handle push and pop instructions specially
     if operation == 'push':
         return {
             "input": [operands[0]],
-            "operation": operation, 
-            "output": ["[rsp]"], 
+            "operation": operation,
+            "output": ["[rsp]"],
             "modified": ["[rsp]"]
         }
     elif operation == 'pop':
         return {
-            "input": ["[rsp]"], 
-            "operation": operation, 
-            "output": [operands[0]], 
+            "input": ["[rsp]"],
+            "operation": operation,
+            "output": [operands[0]],
             "modified": [operands[0]]
         }
     elif operation == 'cmp':
         return {
-            "input": operands, 
-            "operation": operation, 
-            "output": None, 
+            "input": operands,
+            "operation": operation,
+            "output": None,
             "modified": ["zf","sf","of"]
         }
     elif operation == 'test':
         return {
-            "input": operands, 
-            "operation": operation, 
-            "output": None, 
+            "input": operands,
+            "operation": operation,
+            "output": None,
             "modified": ["zf","sf"]
         }
     elif operation in ['jmp','je','jne','jg','jl','jge','jle','call','ret']:
         return {
-            "input": operands, 
-            "operation": operation, 
-            "output": None, 
+            "input": operands,
+            "operation": operation,
+            "output": None,
             "modified": ["rip"]
         }
     elif operation in ['inc','dec','neg','div','nop','idiv','mul','imul','not','bswap','clc','stc','cmc','hlt']:
         return {
-            "input": operands[0], 
-            "operation": operation, 
-            "output": operands[0], 
+            "input": operands[0],
+            "operation": operation,
+            "output": operands[0],
             "modified": operands[0]
         }
 
-    # 生成输入、输出、修改三元组
+    # Generate input, output, and modification triples
     # print(line)
     # print(operands)
     input_operands = [operands[1]]
     # print([operands[1]])
     output_operands = operands[0] if output_op == "dst" else None
 
-    # 如果存在输出操作数，则将其视为被修改的寄存器或内存位置
+    # If an output operand exists, treat it as a modified register or memory location
     modified = output_operands
 
-    # 确保所有三元组中的字段都有效
+    # Ensure fields in all triples are valid
     return {"input": input_operands, "operation": operation, "output": output_operands, "modified": modified}
 def sem(assembly_code):
-    # 输出转换结果
+    # Output conversion results
     triplets = []
     for line in assembly_code:
         triplet = parse_asm_line(line)
         if triplet:
             triplets.append(triplet)
 
-    # # 展示所有的三元组
+    # # Show all triples
     # for t in triplets=
     #     print(t=
     return triplets
@@ -238,30 +238,30 @@ def find_thread(gadgets_dict,lians,controllable_reg,n,depth,lians_part,first_fla
     # Removed global all_res usage in favor of returning list of chains
     if n > depth:
         return []
-    
+
     if first_flag:
         lians_use = lians_part
         first_flag = False
     else:
         lians_use = lians
-        
+
     regs = ['rax','rbx','rcx','rdx','rdi','rsi','r8','r9','r10','r11','r12','r13','r14','r15','rsp']
-    
+
     sinks = []
     transitions = {r: [] for r in regs}
-    
+
     for addr, lian in lians_use.items():
         if len(lian) > 0:
             if n == 0 and controllable_reg not in lian[0][0]:
                 continue
-            
+
             gadget_str = f"{addr} -> {gadgets_dict[addr]}"
-            
+
             # Check for sink
             is_sink = False
             if (r2r(lian, controllable_reg, 'rsp') or v2r(lian, controllable_reg, 'rsp')) and (v2r(lian, 'rsp', 'rip') or v2r(lian, controllable_reg, 'rip')):
                 is_sink = True
-            
+
             if is_sink:
                 sinks.append(gadget_str)
             else:
@@ -275,23 +275,23 @@ def find_thread(gadgets_dict,lians,controllable_reg,n,depth,lians_part,first_fla
                             transitions[reg].append(gadget_str)
                         elif (reg == 'rsp' and (r2v(lian,controllable_reg,reg) and (v2r(lian,controllable_reg,'rip') or r2r(lian,controllable_reg,'rip') or r2r(lian,reg,'rip')))):
                             transitions[reg].append(gadget_str)
-    
+
     results = []
     if sinks:
         results.append([sinks])
-        
+
     for reg, gadgets in transitions.items():
         if not gadgets:
             continue
         sub_chains = find_thread(gadgets_dict, lians, reg, n+1, depth, lians_part, False)
         for sub in sub_chains:
             results.append([gadgets] + sub)
-            
+
     return results
 
 def create_lians(sematics_list):
     logger.debug("Create Lians")
-    # 单向
+    # one-way
     lians = {}
     for addr, sema in sematics_list.items():
         edge = []
@@ -302,7 +302,7 @@ def create_lians(sematics_list):
                 modified = [modified]
             for j in range(len(input)):
                 for k in range(len(modified)):
-                    edge.append([input[j],modified[k]])    
+                    edge.append([input[j],modified[k]])
         lians[addr] = edge
     return lians
 
@@ -332,9 +332,9 @@ def stack_pivot_gadget_chain(gadgets_file,n = 0,depth = 1,controllable_reg = 'rd
     lians = create_lians(sematics_list)
 
     flow_edges_list = list(lians.items())
-    random.shuffle(flow_edges_list)  # 随机打乱
+    random.shuffle(flow_edges_list)  # shuffle randomly
 
-    # 计算每份的大小
+    # Compute the size of each shard
     chunk_size = max(1, len(flow_edges_list) // num_threads)
     chunks = [
         dict(flow_edges_list[i*chunk_size:i*chunk_size+chunk_size])
@@ -350,7 +350,7 @@ def stack_pivot_gadget_chain(gadgets_file,n = 0,depth = 1,controllable_reg = 'rd
     find_func = partial(find_thread_func, gadgets_dict=gadgets_dict,lians=lians,controllable_reg=controllable_reg,n=n,depth=depth)
     dynaminc_params = [(_,) for _ in chunks]
     with multiprocessing.Pool(processes=num_threads) as pool:
-        all_res_process = pool.starmap(find_func, dynaminc_params) 
+        all_res_process = pool.starmap(find_func, dynaminc_params)
     # print(all_res_process)
     res = []
     # Flatten the results
@@ -382,9 +382,9 @@ def extract_reg(target_string):
     if 'ret' == target_string:
         matches = ['rip','rsp']
     return matches
-    
+
 if __name__ == "__main__":
-    
+
     # gadgets_file = './gadget.txt'
     # gadgets_file = './llm/demo.txt'
     # gadgets_file = './gadget705.txt'

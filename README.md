@@ -11,7 +11,7 @@
 
 *An automated gadget chain synthesis framework for constrained memory-control scenarios*
 
-English | [中文](README.md)
+English
 
 </div>
 

@@ -8,10 +8,10 @@ def combine_multiple_arrays(*arrays):
 def Analysis_reg(string):
     """
     {
-        type: "value"/"mem_value"/"num", # 寄存器的值/寄存器指向的内存数据
-        reg_name: str/[], # 字符串中的所有寄存器名
-        bit:64/32/16/8, # 若type为寄存器的值，则填入寄存器的字节数;若type为mem_value，则填入写入内存的字节数
-        expr:"", # 如果是表达式就将表达式提取出来
+        type: "value"/"mem_value"/"num", # register value / memory data pointed to by the register
+        reg_name: str/[], # all register names in the string
+        bit:64/32/16/8, # if type is a register value, use the register byte width; if type is mem_value, use the number of bytes written to memory
+        expr:"", # extract the expression if it is an expression
         }
     """
     general_purpose = ["rax", "eax", "ax", "al",
@@ -48,7 +48,7 @@ def Analysis_reg(string):
         for i in range(len(data_type)):
             if data_type[i] in string:
                 bit = 8*(2**i)
-        
+
         expr = string.split("[")[1].split("]")[0]
         if len(expr.split(" ")) != 1:
             reg_name = []
@@ -295,10 +295,10 @@ def Analysis_condition_jmp(gadget_str):
     gadgets = gadget_str.split(" ; ")
     for i in range(len(gadgets)):
         op = gadgets[i]
-        # 不循环 rcx=0 ['rep','repe','repz','repne','repnz','repc','repnc','loop','loope','loopz','loopne','loopnz','jcxz','jecxz']
+        # do not loop rcx=0 ['rep','repe','repz','repne','repnz','repc','repnc','loop','loope','loopz','loopne','loopnz','jcxz','jecxz']
         if op.split(" ")[0] in ['rep','repe','repz','repne','repnz','repc','repnc','loop','loope','loopz','loopne','loopnz','jcxz','jecxz']:
             condition_reg.append({'reg_name':"rcx",'bit':64})
-        # 不跳转 test+跳转 cmp+跳转 ['je', 'js', 'jle', 'ja', 'jg', 'jbe', 'jne']
+        # do not jump test+jump cmp+jump ['je', 'js', 'jle', 'ja', 'jg', 'jbe', 'jne']
         # if op.split(" ")[0] in ['je', 'js', 'jle', 'ja', 'jg', 'jbe', 'jne']:
         #     condition_reg.append({'reg_name':"rcx",'bit':64})
         if i != len(gadgets)-1:
@@ -313,7 +313,7 @@ def Analysis_condition_jmp(gadget_str):
                         condition_reg.append({"reg_name":dst_reg['reg_name'],'bit':dst_reg['bit']})
                     if src_reg['type'] == "value":
                         condition_reg.append({"reg_name":src_reg['reg_name'],'bit':src_reg['bit']})
-    return condition_reg  
+    return condition_reg
 def Analysis_gadget(gadget_str):
     regs_change_log = {
     "rax":[],
@@ -349,7 +349,7 @@ def Analysis_gadget(gadget_str):
             else:
                 op_res = op_res + res
     # print(op_res)
-    
+
     for i in range(len(op_res)):
         first_op_an = op_res[0]
         op_an = op_res[i]
@@ -372,9 +372,9 @@ def Analysis_gadget(gadget_str):
         if len(l) != 0:
             for i in range(len(l)):
                 can_change_regs.append({'reg_name':l[i]['reg_name'],'bit':l[i]['bit'],'src_reg':l[i]['src_reg'],'src_reg_type':l[i]['src_type'],'type':l[i]['type']})
-    
+
     # print(can_change_regs)
-    
+
     last_inst = gadgets[-1]
     if "ret" in last_inst:
         # reg_name = 'rsp'
@@ -405,7 +405,7 @@ def Analysis_gadget(gadget_str):
             reg_name = reg_name_src['src_reg']
             # rip_type = reg_name_src['src_reg_type']
         hijack_reg.append({"reg_name":reg_name,'bit':64,'type':rip_type,'expr':reg_info['expr']})
-    
+
     return {'can_change_regs':can_change_regs,'hijack_reg':hijack_reg,'valid_mem_reg':valid_mem_reg,'condition_reg':condition_reg}
 def filler(gadgets):
     dele_op1 = ['xlatb', 'outsd', 'in', 'enter', 'out', 'loope', 'fld', 'hlt', 'endbr64', 'fisttp', 'loop', 'ud0', 'div', 'fdivr', 'fsubr', 'loopne', 'ficomp', 'fcomp', 'int1', 'insb', 'fimul', 'fucompi', 'lar', 'ficom', 'idiv', 'sldt', 'jrcxz', 'sgdt', 'fild', 'fidivr', 'fnsave', 'fldenv', 'fbld', 'fincstp', 'outsb', 'bnd', 'fxch', 'fdiv', 'fadd', 'faddp', 'fbstp', 'fcos', 'fdivrp', 'fiadd', 'fidiv', 'fistp', 'fisub', 'fmul', 'fnstcw', 'fnstenv', 'fsqrt', 'fst', 'fstp', 'fstpnce', 'fsub', 'fsubp', 'insd', 'psubsb', 'vandpd', 'vpsubsb', 'wrmsr', 'fcom', 'fnstsw', 'frstor', 'vshufpd', 'addps', 'addsd', 'cvtsi2sd', 'fucomi', 'bndldx', 'cvtpi2ps', 'fsubrp', 'fcmove', 'fcmovnb', 'fcmovu', 'fdivp', 'fist', 'fisubr', 'vminps', 'str', 'fsin', 'cvttps2pi', 'subps', 'cvttsd2si', 'subsd', 'vpsadbw', 'cmpps', 'fcmovb', 'fsincos', 'vpshufb', 'lgdt', 'fldz', 'fcmovne', 'fldcw', 'jecxz', 'fyl2xp1', 'pinsrw', 'ffreep', 'fcomi', 'fcompi', 'vpsubsw', 'fscale', 'fldpi', 'fcmovnbe', 'fcompp', 'fdecstp', 'fdisi8087_nop', 'ffree', 'mulps', 'fldl2e', 'fpatan', 'fprem1', 'frndint', 'fucom', 'fucomp', 'fucompp', 'psubusw', 'fxtract', 'lsl', 'maskmovq', 'vpaddsb', 'vmread', 'pmulhuw', 'psadbw', 'vpmaxub', 'sidt', 'vcmpps', 'vcvtsi2sd', 'vcvtsi2ss', 'vfixupimmpd', 'vmovapd', 'vpaddsw', 'xabort', 'xbegin', 'xsavec', 'cvtps2pd', 'vpmulhuw', 'paddsw', 'vucomisd', 'divss', 'cvtsi2ss', 'addss', 'crc32', 'cvtdq2ps', 'divps', 'fldl2t', 'fmulp', 'fyl2x', 'outsw', 'pushf', 'sqrtps', 'vcmppd', 'fcmovbe', 'ucomiss', 'vmulpd', 'btc', 'paddusw', 'punpcklbw', 'vmovhps', 'fld1', 'fcmovnu', 'rdpmc', 'vminsd', 'ud2', 'fnop', 'vhaddpd', 'vpsrld', 'comiss', 'rdmsr', 'vhsubpd', 'vpavgb', 'ucomisd', 'mulsd', 'maxsd', 'sqrtsd', 'divsd', 'cmpnltsd', 'minps', 'maxps', 'insw', 'cmpnltps', 'minsd', 'fptan', 'psubsw', 'vpaddusw', 'vaddps', 'ftst', 'cvtps2pi', 'femms', 'fabs', 'fchs', 'vrsqrtss', 'shufps', 'emms', 'bndstx', 'xend', 'xacquire', 'psubusb', 'rsqrtps', 'vandps', 'vmovlps', 'vaddsubpd', 'vpmaxud', 'cvttss2si', 'lcall', 'ltr', 'fsetpm', 'vmulss', 'mulss', 'paddsb', 'maxss', 'vmulps', 'subss', 'fxam', 'vaddss', 'fldln2', 'cldemote', 'vpackuswb', 'f2xm1', 'fnclex', 'fprem', 'lmsw', 'vpsrlq', 'vunpckhpd', 'vshufps', 'rcpps', 'rsm', 'ud1', 'vcvtss2sd', 'vhsubps', 'vmwrite', 'vorpd', 'vpminsd', 'vpsubusb', 'vsubpd', 'xrelease', 'vorps', 'sha1msg2', 'vsubps', 'cmpeqps', 'vsubsd', 'vpermilps', 'punpckldq', 'vfnmaddss', 'lldt', 'sysexit', 'vmaxpd', 'fninit', 'vxorpd', 'feni8087_nop', 'fldlg2', 'getsec', 'lgs', 'paddusb', 'punpcklwd', 'vaddsd', 'vmulsd', 'vpavgw', 'vpcmpestrm', 'vpsllq', 'vunpcklps', 'pcmpistri', 'pcmpestri', 'vpcmpistri', 'ljmp', 'pi2fd', 'rdrand', 'cvtpd2ps', 'sqrtss', 'cvtsd2si', 'vandnps', 'vpunpckhbw', 'vminpd', 'prefetchwt1', 'vandnpd', 'xtest', 'vmaskmovdqu', 'vpmuludq', 'vpinsrw', 'vcvtps2pd', 'vpshufhw', 'vaddpd', 'cmpltsd', 'cmpltps', 'vpblendw', 'vfnmadd213ps', 'vdivsd', 'vpaddusb', 'vpmaxsw', 'vpslld', 'lss', 'vmovshdup', 'swapgs', 'cmpeqpd', 'cmpeqsd', 'cmpeqss', 'vphsubw', 'pswapd', 'vfmaddsd', 'mulpd', 'vcmpltsd', 'vmaxsd', 'cvtsd2ss', 'vfmaddss', 'roundsd', 'roundss', 'vldmxcsr', 'vcmpgtsd', 'vfmsubsd', 'minss', 'vfmadd213sd', 'vfmadd213ss', 'vpsubusw', 'addpd', 'vcvttsd2si', 'vhaddps', 'cvtss2si', 'vzeroupper', 'vfnmaddsd', 'vminss', 'vcvtss2si', 'vcvtusi2ss', 'vdivps', 'vstmxcsr', 'xsaves', 'smsw', 'vunpckhps', 'vcmptruesd', 'vmovlpd', 'lfs', 'psignb', 'rdseed', 'vcmpeq_ospd', 'vcmpneqpd', 'comisd', 'vdivpd', 'vaddsubps', 'xrstor', 'vcvtsd2ss', 'vmaxps', 'vfmadd231ps', 'rdtscp', 'vcvtsd2si', 'cvtss2sd', 'vpaddq', 'vunpcklpd', 'vmovhpd', 'vpminsw', 'vsqrtsd', 'vcmpsd', 'vpmovsxbd', 'vfmaddsubps', 'vsubss', 'pi2fw', 'vpalignr', 'vmovddup', 'xgetbv', 'vmlaunch', 'vfnmsub231ss', 'vmcall', 'phaddw', 'vblendpd', 'vmovss', 'vmovdqu64', 'vpbroadcastd', 'vpbroadcastq', 'vpminud', 'vmovdqa64', 'rdpkru', 'wrpkru', 'vzeroall', 'aesdeclast', 'aesenclast', 'vinserti128', 'aesdec', 'aesenc', 'vaesenc', 'aesimc', 'vmovdqa32', 'vpclmulqdq', 'adox', 'vmovdqu32', 'vpermd', 'pclmulqdq', 'vpminsq', 'vbroadcasti128', 'vpxord', 'vporq', 'vpandq', 'vdivss', 'vcmptruepd', 'xsaveopt', 'vfmsubadd213pd', 'vcmpngtss', 'xcryptecb', 'xcryptcfb', 'xcryptofb', 'xstore', 'xsha1', 'xsha256', 'vfnmsub213pd', 'vcmpeqss', 'vcmple_oqss', 'vmresume', 'vcmpneqss', 'vcmpss', 'vfmsubadd231pd', 'vcmpeqpd', 'vcmpeqps', 'vcmpltss', 'enclv', 'kandnb', 'lidt', 'vcmpleps', 'vmptrld', 'vcmpnle_uqss', 'vcmpge_oqss', 'vcmpeq_uqss', 'vcmpfalsess', 'vcmpnge_uqss', 'vcmpeqsd', 'vcmptruess', 'vfnmsub213sd', 'vpermi2pd', 'vpcomnequb', 'clac', 'vfnmadd213pd', 'vcvtpd2ps', 'vextractps', 'vfnmadd132sd', 'vfmadd231sd', 'vfnmadd213sd', 'vfnmadd231sd', 'vfmadd132pd', 'vcomisd', 'vcomiss', 'vfmadd132sd', 'vcmplesd', 'vfmsub132sd', 'vucomiss', 'kandnw', 'kxorw', 'vpermilpd', 'vpmacsww', 'vmaskmovps', 'vpminsb', 'vcmptrue_ussd', 'vphaddd', 'vrcpss', 'vdppd', 'monitor', 'vgf2p8affineqb', 'vmovsldup', 'pmaddubsw', 'phsubw', 'subpd', 'shufpd', 'vpmulhrsw', 'kmovw', 'vcmpnleps', 'pfrcpit2', 'umonitor', 'vmaxss', 'vfmadd231ss', 'vmovhlps', 'vmovlhps', 'vaesdec', 'vcmpunord_ssd', 'vpmaskmovq', 'vlddqu', 'xrstors', 'vpxorq', 'kmovq', 'vaesenclast', 'vpternlogq', 'vpmacssww', 'wrssd', 'wrssq', 'mwaitx', 'kaddw', 'pconfig', 'vpermil2ps', 'vphaddw', 'vpmaxuw', 'vpsignb', 'vmptrst', 'vpmadcswd', 'vsqrtpd', 'pmulhrw', 'cvttps2dq', 'cvttpd2dq', 'cvtdq2pd', 'vcvtpd2dq', 'vmovupd', 'vpmaxsb', 'vpermpd', 'vdpps', 'vptestnmw', 'pabsw', 'vfnmadd213ss', 'vpblendd', 'vpinsrb', 'vpmaddubsw', 'vfmsubps', 'vfmaddsubpd', 'vcmpeq_uqps', 'vcmpltpd', 'vfmsubaddps', 'vcmpunordsd', 'vfmadd132ss', 'vsqrtss', 'pfcmpge', 'pfcmpgt', 'vphsubsw', 'encls', 'invlpga', 'vmfunc', 'xsave', 'stgi', 'mwait', 'invvpid', 'vmclear', 'vmxoff', 'xsetbv', 'phsubsw', 'vpsllvd', 'vfmaddps', 'invept', 'pavgusb', 'vfnmsubsd', 'vmxon', 'skinit', 'stac', 'blcfill', 'sha1nexte', 'cmpneqss', 'pfcmpeq', 'pfmin', 'vfnmaddps', 'pf2iw', 'phaddd', 'vblendps', 'vroundps', 'vpmacswd', 'vroundss', 'vpabsb', 'cvttpd2pi', 'cmpltss', 'vfnmadd132ss', 'vphsubd', 'vpackusdw', 'vfmadd213pd', 'phaddsw', 'psignw', 'sha256rnds2', 'vfnmsub231ps', 'invpcid', 'pfnacc', 'fxrstor64', 'vpmuldq', 'vaesdeclast', 'kaddb', 'monitorx', 'vrsqrtps', 'vpermps', 'vcmpngtpd', 'vcvttss2si', 'vphaddsw', 'vsqrtps', 'vpermi2ps', 'vmload', 'vpminuw', 'vfmsubss', 'vfmadd132ps', 'vfmsub231ps', 'vfnmsub132ss', 'cvtpd2pi', 'vcvttpd2dq', 'vpmulld', 'vcmple_oqps', 'cmpnltss', 'divpd', 'clzero', 'sqrtpd', 'pfmul', 'pfadd', 'cmpltpd', 'pfacc', 'vblendmps', 'pfmax', 'vpblendmb', 'vcmpneq_usss', 'vmovntpd', 'vfmaddsub132pd', 'clflushopt', 'vfmsub213ps', 'vpshuflw', 'kmovb', 'vmovntps', 'vfmaddsub213pd', 'vmrun', 'vpmovsxwq', 'vpmacsswd', 'vcvtps2ph', 'vcvtph2ps', 'cvtps2dq', 'movntdqa', 'vfmsubadd132pd', 'cvtpd2dq', 'vfmsub231sd', 'minpd', 'pfpnacc', 'vfnmadd231ps', 'vmovmskps', 'vfnmaddpd', 'vfnmsub231pd', 'vrcp14pd', 'vinsertf128', 'vcvtdq2pd', 'enclu', 'vcmpnltsd', 'cmpnltpd', 'maxpd', 'vfnmsubps', 'phsubd', 'rdsspq', 'rstorssp', 'saveprevssp', 'incsspq', 'vcmpeq_osss', 'vrcpps', 'vpabsw', 'vextractf128', 'vpperm', 'pmulhrsw', 'vphaddwq', 'pf2id', 'vpbroadcastw', 'vphadddq', 'vphadduwq', 'vpmacsdql', 'pmuldq', 'packusdw', 'pblendw', 'psignd', 'vpsignd', 'mpsadbw', 'vcvtps2dq', 'vperm2f128', 'addsubps', 'haddps', 'pfrcp', 'vcmpgt_oqpd', 'endbr32', 'vpdpbusd', 'vscalefpd', 'vpord', 'vpmacssdql', 'sha1rnds4', 'vmmcall', 'vpinsrq', 'vrangepd', 'vpandnq', 'vpmullq', 'vpmaskmovd', 'vcmptrue_uspd', 'maskmovdqu', 'clgi', 'cvtpi2pd', 'kxnorw', 'vcmpneq_oqpd', 'pext', 'vcvttps2dq']
@@ -442,7 +442,7 @@ def create_gadget_dict(gadgets):
         gadgets_dict[gadgets[i][0]] = gadgets[i][1]
     return gadgets_dict
 def my_asm(gadget):
-    """将汇编指令转换为字节码"""
+    """Convert assembly instructions to bytecode"""
     ks = Ks(KS_ARCH_X86, KS_MODE_64)
     try:
         asm_res = bytes(ks.asm(gadget)[0])
@@ -450,15 +450,15 @@ def my_asm(gadget):
         print(f"DEBUG {gadget}")
         op = gadget.split(" ")[0]
         x86_64_conditional_jump_instructions = [
-    # 相等/不相等判断
+    # equality/inequality checks
     "je", "jz", "jne", "jnz",
-    # 无符号数比较
+    # unsigned comparisons
     "ja", "jnbe", "jae", "jnb", "jb", "jnae", "jbe", "jna",
-    # 有符号数比较
+    # signed comparisons
     "jg", "jnle", "jge", "jnl", "jl", "jnge", "jle", "jng",
-    # 标志位直接判断
+    # direct flag checks
     "jp", "jpe", "jnp", "jpo", "jc", "jnc", "jo", "jno", "js", "jns", "jh", "jnh",
-    # 计数器寄存器判断
+    # counter register checks
     "jcxz", "jecxz", "jrcxz"
 ]
         if op in x86_64_conditional_jump_instructions:
@@ -467,13 +467,13 @@ def my_asm(gadget):
     return asm_res
 
 def my_log(data, n):
-    """打印日志信息"""
+    """Print log messages"""
     print("------------------------------------------------")
     for i in range(n):
         print(data[i])
 
 def controllable_mem_distributor(gadgets_info, address_map, now_gadget, mem_type):
-    """内存分配器，对可控内存进行统一管理"""
+    """Memory allocator for unified controllable-memory management"""
     if mem_type == "rip_mem":
         (my_virtual_mem_start, my_virtual_mem_length) = gadgets_info.my_virtual_mem_info
         for mem_addr in range(my_virtual_mem_start, my_virtual_mem_start + my_virtual_mem_length, 8):
@@ -481,7 +481,7 @@ def controllable_mem_distributor(gadgets_info, address_map, now_gadget, mem_type
                 return mem_addr
 
 def addr_in_range(addr, mem_dict_list):
-    """检查地址是否在指定内存范围内"""
+    """Check whether an address is in the specified memory range"""
     addr_n = eval(addr)
     for i in range(len(mem_dict_list)):
         start_addr = eval(mem_dict_list[i]['start_addr'])
@@ -491,7 +491,7 @@ def addr_in_range(addr, mem_dict_list):
     return False
 
 def table_check(addr, permission_table, mode):
-    """检查地址是否具有指定权限"""
+    """Check whether an address has the specified permissions"""
     for i in range(len(permission_table)):
         if addr >= permission_table[i]['start'] and addr < permission_table[i]['end']:
             if mode in permission_table[i]['permission']:
@@ -499,7 +499,7 @@ def table_check(addr, permission_table, mode):
     return False
 
 def read_write_check(instruction, permission_table):
-    """检查指令的内存读写权限"""
+    """Check memory read/write permissions for an instruction"""
     if instruction.isMemoryRead():
         a = instruction.getLoadAccess()
         readMemory = a[0][0].getAddress()
@@ -513,7 +513,7 @@ def read_write_check(instruction, permission_table):
     return True
 
 def my_max(gadgets_info, address_map):
-    """获取地址映射中的最大索引（排除虚拟内存区域）"""
+    """Get the maximum index in the address map, excluding virtual memory regions"""
     my_virtual_mem_start = gadgets_info.my_virtual_mem_info[0]
     tmp = []
     for a, v in address_map.items():
@@ -544,12 +544,12 @@ def filer1():
     for f0 in ff:
         file_path0 = os.path.join(file_path,f0)
         files = os.listdir(file_path0)
-        
+
         for f in files:
             gadgets_file = os.path.join(file_path0,f)
             data = open(gadgets_file,'r').read()
             data = data.split('\n')
-            
+
             for i in range(2,len(data)-3):
                 gg = data[i].split(' : ')[1]
                 asms = gg.split(" ; ")

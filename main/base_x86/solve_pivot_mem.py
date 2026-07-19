@@ -43,7 +43,7 @@ def read_write_check(instruction, permission_table):
             return False
     return True
 def symbol_solve_controble_reg_mem(regs, inst_idx, insts2, controble_addr_base, offset_list, permission_table,address_map,stack_mem={},write_map={}):
-    
+
     output_reg = extract_reg(insts2[inst_idx])[0]
     # input_reg = extract_reg(insts2[inst_idx])[1]
     ctx = TritonContext()
@@ -79,7 +79,7 @@ def symbol_solve_controble_reg_mem(regs, inst_idx, insts2, controble_addr_base, 
     res = []
     for s in solution:
         res.append(address_list[s])
-    return res    
+    return res
 
 def extract_reg(target_string):
     registers = ["rax", "eax", "ax", "ah", "al","rbx", "ebx", "bx", "bh", "bl","rcx", "ecx", "cx", "ch", "cl","rdx", "edx", "dx", "dh", "dl","rsi", "esi", "si", "sil","rdi", "edi", "di", "dil","rbp", "ebp", "bp", "bpl","rsp", "esp", "sp", "spl","r8", "r8d", "r8w", "r8b","r9", "r9d", "r9w", "r9b","r10", "r10d", "r10w", "r10b","r11", "r11d", "r11w", "r11b","r12", "r12d", "r12w", "r12b","r13", "r13d", "r13w", "r13b","r14", "r14d", "r14w", "r14b","r15", "r15d", "r15w", "r15b"]
@@ -119,14 +119,14 @@ def taint_check(inst_idx, insts2, controble_addr_base, offset_list, regs, addres
         ctx.processing(instruction)
 
         if ctx.isRegisterTainted(get_reg(ctx, output_reg)):
-            # print(f"{output_reg} 被污染")
+            # print(f"{output_reg} is polluted")
             return True
         else:
-            # print(f"{output_reg} 未被污染")
+            # print(f"{output_reg} is not polluted")
             return False
     except:
         return False
-    
+
 def init_mem(ctx, address_map):
     for memory_address, value in address_map.items():
         ctx.setConcreteMemoryValue(MemoryAccess(memory_address,value['length']), value['value'])
@@ -179,7 +179,7 @@ def solve_mem_gadget(regs_init,classify_res,controble_addr_base,offset_list_init
             for j in range(len(a)):
                 if regs_new == None:
                     break
-                demo2 = a[j]            
+                demo2 = a[j]
                 inst_addr2 = demo2.split(' -> ')[0]
                 insts2 = demo2.split(' -> ')[1].split(' ; ')
                 if last_address != 0:
@@ -191,7 +191,7 @@ def solve_mem_gadget(regs_init,classify_res,controble_addr_base,offset_list_init
                         res = symbol_solve_controble_reg_mem(regs, inst_idx, insts2, controble_addr_base, offset_list, permission_table,address_map)
                         if len(res) == 0:
                             continue
-                        
+
                         address = res[0]
                         # print(hex(address))
                         offset_list.pop(offset_list.index((address-controble_addr_base)//8))
@@ -201,7 +201,7 @@ def solve_mem_gadget(regs_init,classify_res,controble_addr_base,offset_list_init
                             address_map[address] = {'value':0xdeadbeef,'length':8}
                             last_address = address
                         else:
-                            address_map[address] = {'value':controble_addr_base+offset_list[0]*8,'length':8}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                            address_map[address] = {'value':controble_addr_base+offset_list[0]*8,'length':8}
                     else:
                         continue
                 regs_new2 = update_regs(insts2, address_map, regs, permission_table, write_map)
@@ -245,7 +245,7 @@ def solve_mem_gadget_process(classify_res,regs_init,controble_addr_base,offset_l
             for j in range(len(a)):
                 if regs_new == None:
                     break
-                demo2 = a[j]            
+                demo2 = a[j]
                 inst_addr2 = demo2.split(' -> ')[0]
                 insts2 = demo2.split(' -> ')[1].split(' ; ')
                 if last_address != 0:
@@ -265,10 +265,10 @@ def solve_mem_gadget_process(classify_res,regs_init,controble_addr_base,offset_l
                             address_map[address] = {'value':0xdeadbeef,'length':8}
                             last_address = address
                         else:
-                            address_map[address] = {'value':controble_addr_base+offset_list[0]*8,'length':8}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                            address_map[address] = {'value':controble_addr_base+offset_list[0]*8,'length':8}
                     else:
                         continue
-                
+
                 regs_new2 = update_regs(insts2, address_map, regs, permission_table, stack_mem, write_map)
                 if regs_new2 == None:
                     break
@@ -288,21 +288,21 @@ def solve_mem_gadget_process(classify_res,regs_init,controble_addr_base,offset_l
 from loguru import logger
 
 def solve_mem_gadget_process_func(regs_init,classify_res,controble_addr_base,offset_list_init, permission_table, num_threads, stack_mem, mode=0):
-    
+
     chunk_size = max(1, len(classify_res) // num_threads)
     chunks = [
-        classify_res[i*chunk_size:i*chunk_size+chunk_size] 
+        classify_res[i*chunk_size:i*chunk_size+chunk_size]
         for i in range(num_threads)
     ]
-    
+
     chunks[-1] = chunks[-1] + classify_res[chunk_size*num_threads:]
 
     # logger.debug("Start Solve")
 
     # s = solve_mem_gadget_process(classify_res,regs_init,controble_addr_base,offset_list_init, permission_table,stack_mem)
 
-    
-    
+
+
     if mode == 0:
         solve_func = partial(solve_mem_gadget_process, regs_init=regs_init,controble_addr_base=controble_addr_base,offset_list_init=offset_list_init, permission_table=permission_table, stack_mem=stack_mem, mode=mode)
         dynaminc_params = [(_,) for _ in chunks]

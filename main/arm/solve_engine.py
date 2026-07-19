@@ -164,7 +164,7 @@ def get_reg(ctx, reg_name):
             return reg
     return None
 def controllable_mem_distributor(gadgets_info,address_map,now_gadget,mem_type):
-    # 内存分配器，对可控内存进行统一管理
+    # Memory allocator for unified controllable-memory management
     if mem_type == "rip_mem":
         (my_virtual_mem_start, my_virtual_mem_length) = gadgets_info.my_virtual_mem_info
         for mem_addr in range(my_virtual_mem_start,my_virtual_mem_start+my_virtual_mem_length,_ptr_size()):
@@ -177,7 +177,7 @@ def jmp_stack_need_check(solve, gadgets_info, start_idx, now_idx):
     jmp_stack_need = False
     offset_list = gadgets_info.offset_list
     for idx, data in solve.items():
-        if idx >= (gadgets_info.my_virtual_mem_info[0]-gadgets_info.controble_addr_base)//_ptr_size(): # 虚拟内存中的
+        if idx >= (gadgets_info.my_virtual_mem_info[0]-gadgets_info.controble_addr_base)//_ptr_size(): # in virtual memory
             continue
         else:
             if start_idx+idx-now_idx not in offset_list:
@@ -228,7 +228,7 @@ def jmp_stack_after_pivot(address_map, gadgets_info, offset_list, pivot_gadget):
             break
     offset_list.append(rip_idx)
     last_pivot_addr = pivot_gadget[-1].split(" -> ")[0]
-    # 先用ret来补充前面的
+    # Use ret first to pad the preceding part
     while(True):
         if rip_idx in offset_list and rip_idx+1 in offset_list:
             if "retf" == gadgets_info.gadgets_dict[last_pivot_addr].split(" ; ")[-1]:
@@ -241,7 +241,7 @@ def jmp_stack_after_pivot(address_map, gadgets_info, offset_list, pivot_gadget):
             pivot_gadget.append(f"{gadgets_info.ret_gadget['addr']} -> {gadgets_info.ret_gadget['gadget']}")
         else:
             break
-    
+
     change_sp_gadget = gadgets_info.change_sp_gadget
     for sp_gg_idx in range(len(change_sp_gadget)):
         if 'rsp' not in change_sp_gadget[sp_gg_idx]['side_affect']:
@@ -274,7 +274,7 @@ def solve(gadget_chain,gadgets_info):
     #         g_i = tools.Analysis_gadget_dispatch(gadget_chain[k0][k1])['can_change_regs']
     #         for k3 in range(len(g_i)):
     #             if g_i[k3]['src_reg'] == 'rsp' and g_i[k3]['src_reg_type'] == 'value':
-    # 按照jmp/call将gadget分段
+    # Segment gadgets by jmp/call
     tmp = []
     for i in range(len(gadget_chain)):
         for j in range(len(gadget_chain[i])):
@@ -335,7 +335,7 @@ def solve(gadget_chain,gadgets_info):
                     gadgets_info_copy.target_regs = target_regs_bak
                     return False
                 (address_map,solve_constraint) = res
-        
+
                 regs_state = get_regs_state(gadgets_info, address_map, 1)
                 if type(regs_state) != dict and not regs_state[0]:
                     return False
@@ -410,7 +410,7 @@ def solve(gadget_chain,gadgets_info):
                     gadgets_info_copy.target_regs = target_regs_bak
                     return False
                 (address_map,solve_constraint) = res
-        
+
                 regs_state = get_regs_state(gadgets_info, address_map, 1)
                 if type(regs_state) != dict and not regs_state[0]:
                     return False
@@ -445,11 +445,11 @@ def solve(gadget_chain,gadgets_info):
     for a,v in merge_gadgets_res.items():
         if v == "0xdeadbee3":
             merge_gadgets_res[a] = "0xdeadbeef"
-    
+
     gadgets_info.used_virtual_mem = used_virtual_mem_bak
     gadgets_info.solve_reg_constraints = solve_constraint if isinstance(solve_constraint, dict) else {}
     return merge_gadgets_res
-    
+
     # solve_res = solve_res_copy
     # gadgets_info_copy.target_regs = []
     # if len(gadget_chain_part) > 1:
@@ -509,7 +509,7 @@ def need_add_jmp(gadgets_info, solve_res):
     else:
         return True
 def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 1:mem
-    # 由于拼接会导致写入的可控地址发生变化，需要进行调整
+    # Splicing changes the controllable address being written, so adjustment is required
     # logger.info("Start Merge Gadget")
     note_mem_idx_before = {}
     offset_list = gadgets_info.offset_list.copy()
@@ -557,7 +557,7 @@ def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 
                     for idx, data in merge_address_map.items():
                         if (mode==0 and data == hex(_deadbe_addr(i0-1))) or (mode==1 and eval(data)&0xffffff00 == 0xdeadbe00):
                             merge_address_map[idx] = pop_gadget_addr
-                    
+
                     start_idx = my_max(gadgets_info,merge_address_map) + len(only_pop_gadget[i1]['pop_regs'])
                     now_idx = min(solve)
 
@@ -565,7 +565,7 @@ def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 
                         (start_idx, merge_address_map, gadgets_info) = jmp_stack(start_idx, merge_address_map, gadgets_info)
 
                     for idx, data in solve.items():
-                        if idx >= (gadgets_info.my_virtual_mem_info[0]-gadgets_info.controble_addr_base)//_ptr_size(): # 虚拟内存中的
+                        if idx >= (gadgets_info.my_virtual_mem_info[0]-gadgets_info.controble_addr_base)//_ptr_size(): # in virtual memory
                             merge_address_map[idx] = data
                             continue
                         if idx == now_idx:
@@ -577,7 +577,7 @@ def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 
                         else:
                             merge_address_map[start_idx+idx-now_idx] = data
                     break
-            # 找一个不影响的pop reg ; ret的gadget，来处理call的影响
+            # Find a non-interfering pop reg ; ret gadget to handle the call side effect
             pass
         elif "jmp" in gadgets_info.gadgets_dict[gadget_chain_part[i0-1][-1]] and need_add_jmp(gadgets_info, solve_res[i0-1]):
             if gadgets_info.ret_gadget is None:
@@ -586,13 +586,13 @@ def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 
             for idx, data in merge_address_map.items():
                 if (mode==0 and data == hex(_deadbe_addr(i0-1))) or (mode==1 and eval(data)&0xffffff00 == 0xdeadbe00):
                     merge_address_map[idx] = ret_gadget
-            
+
             start_idx = my_max(gadgets_info,merge_address_map)+1
             now_idx = min(solve)
-            
+
             while jmp_stack_need_check(solve, gadgets_info, start_idx, now_idx):
                 (start_idx, merge_address_map, gadgets_info) = jmp_stack(start_idx, merge_address_map, gadgets_info)
-                
+
             for idx, data in solve.items():
                 if idx >= (gadgets_info.my_virtual_mem_info[0]-gadgets_info.controble_addr_base)//_ptr_size():
                     merge_address_map[idx] = data
@@ -607,7 +607,7 @@ def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 
                     merge_address_map[start_idx+idx-now_idx] = data
 
         elif 'retf' in gadgets_info.gadgets_dict[gadget_chain_part[i0-1][-1]]:
-            # 下一条地址前面要加cs寄存器的值
+            # Add the cs register value before the next address
             start_idx = 0
             for idx, data in merge_address_map.items():
                 if (mode==0 and data == hex(_deadbe_addr(i0-1))) or (mode==1 and eval(data)&0xffffff00 == 0xdeadbe00):
@@ -645,7 +645,7 @@ def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 
                     merge_address_map[start_idx+idx-now_idx] = data
             pass
         else:
-            
+
             start_idx = 0
             for idx, data in merge_address_map.items():
                 if (mode==0 and data == hex(_deadbe_addr(i0-1))) or (mode==1 and eval(data)&0xffffff00 == 0xdeadbe00):
@@ -688,7 +688,7 @@ def merge_gadgets(gadgets_info,gadget_chain_part,solve_res,mode=0):# mode 0:reg 
     return merge_address_map
 
 def solve_part(gadget_chain,gadgets_info,append_constraint):
-    
+
     address_map = gadgets_info.address_map.copy()
     offset_list = gadgets_info.offset_list.copy()
     target_reg_name = "init"
@@ -742,14 +742,14 @@ def solve_part(gadget_chain,gadgets_info,append_constraint):
                 ctx.setConcreteMemoryAreaValue(gadgets_info.controble_addr_base+addr_idx*_ptr_size(),_p(eval(gadget_chain[0])&_addr_mask()))
             else:
                 ctx.setConcreteMemoryAreaValue(gadgets_info.controble_addr_base+addr_idx*_ptr_size(),_p(eval(values)&_addr_mask()))
-        
+
         for i in range(len(offset_list)):
             memory_access = MemoryAccess(gadgets_info.controble_addr_base + _ptr_size() * offset_list[i], _cpusize())
             address_list.append(gadgets_info.controble_addr_base + _ptr_size() * offset_list[i])
             ctx.symbolizeMemory(memory_access, f"mem_{offset_list[i]}")
 
         (my_virtual_mem_start, my_virtual_mem_length) = gadgets_info.my_virtual_mem_info
-    
+
         for mem_addr in range(my_virtual_mem_start,my_virtual_mem_start+my_virtual_mem_length,_ptr_size()):
             memory_access = MemoryAccess(mem_addr, _cpusize())
             ctx.symbolizeMemory(memory_access, f"mem_{(mem_addr-gadgets_info.controble_addr_base)//_ptr_size()}")
@@ -774,16 +774,16 @@ def solve_part(gadget_chain,gadgets_info,append_constraint):
 
         now_gadget_addr = gadget_chain[i0]
         now_gadget = gadgets_info.gadgets_dict[now_gadget_addr]
-        
+
         rip_reg_info = tools.Analysis_gadget_dispatch(now_gadget)['hijack_reg'][0]
-        
+
         now_gadget = now_gadget.split(" ; ")
         next_gadget_addr = gadget_chain[i0-1]
         solve_constraint[_get_ac().pc_reg] = eval(next_gadget_addr)
         replace_flag = 0
         for i1 in range(len(now_gadget)):
             now_op_info = tools.Analysis_op_dispatch(now_gadget[i1])
-            
+
             if type(now_op_info) == list:
                 for i in range(len(now_op_info)):
                     if type(now_op_info[i]['dst']['reg_name']) != list and now_op_info[i]['dst']['reg_name'] in solve_constraint:
@@ -933,18 +933,18 @@ def solve_part(gadget_chain,gadgets_info,append_constraint):
                 solution = ctx.getModel(cons[0])
         rsp_idx = (ctx.getConcreteRegisterValue(get_reg(ctx,_get_ac().sp_reg))-gadgets_info.controble_addr_base)//_ptr_size()
         solve_constraint = constraint
-        
+
         if len(solution) == 0:
             return False
-        
+
         for name, value in mem_constraint.items():
             solve_constraint[name] = value
-        
+
         mem_solution = {}
         for k,v in solution.items():
             variables = str(v.getVariable()).split(':')[0]
             value = v.getValue()
-            
+
             if "mem" in variables:
                 if replace_flag == 1 and "0x"+hex(value)[2:].zfill(_get_ac().addr_format_width) in gadgets_info.gadgets_dict:
                     cs = ctx.getConcreteRegisterValue(get_reg(ctx,'cs'))
@@ -959,7 +959,7 @@ def solve_part(gadget_chain,gadgets_info,append_constraint):
         i0 += 1
         for ii in range(len(append_address)):
             address_tmp[append_address[ii]].append(mem_solution)
-        
+
         if len(mem_solution) != 0:
             if rsp_idx > max(mem_solution):
                 for i2 in range(max(mem_solution)+1,rsp_idx):
@@ -972,7 +972,7 @@ def solve_part(gadget_chain,gadgets_info,append_constraint):
         solution_mem_res.append(mem_solution)
         pass
     solution_mem_res = solution_mem_res[::-1]
-    
+
     start_idx = max(address_map, key=lambda k: address_map[k]) + 1
     data_mem = {}
     offset_dict = {}
@@ -1181,7 +1181,7 @@ def search_solve(gadget,target_reg,target_value,gadgets_info):
             if _get_ac().bp_reg not in solve_res:
                 solve_res[_get_ac().bp_reg] = current_rsp - _ptr_size()
                 ctx.setConcreteRegisterValue(get_reg(ctx,_get_ac().bp_reg),current_rsp-_ptr_size())
-            
+
         if i1 == len(gadget_list)-1:
             mem_flag = 0
             if "retf" in gadget_list[i1]:
@@ -1299,7 +1299,7 @@ def resolve(gadgets_info, solve_res, cmp_solve = None):
     if ctx is None:
         return False
     ctx = init_reg(ctx, gadgets_info.regs_init)
-    
+
     controble_addr_base = gadgets_info.controble_addr_base
     stack_pivot_chain = gadgets_info.stack_pivot_chain
     target_reg_value = gadgets_info.target_regs
@@ -1337,7 +1337,7 @@ def resolve(gadgets_info, solve_res, cmp_solve = None):
     for c in stack_pivot_chain:
         codes = c.split(' -> ')[1].split(" ; ")
         for code in codes:
-            
+
             _process_instruction_arm_safe(ctx, address, code)
             address += len(tools.my_asm(code))
     _reset_thumb(ctx)
@@ -1346,7 +1346,7 @@ def resolve(gadgets_info, solve_res, cmp_solve = None):
     c = 0
     history_gadget = {}
     f = False
-    while(1): 
+    while(1):
         rip = ctx.getConcreteRegisterValue(get_reg(ctx,_get_ac().pc_reg))
         if _get_ac().bits == 64 and get_reg(ctx,'cs') is not None:
             if rip>>32 == ctx.getConcreteRegisterValue(get_reg(ctx,'cs')):
@@ -1425,7 +1425,7 @@ def resolve_mem_write(gadgets_info, solve_res, mem_dst_idx, mem_dst_value):
     if ctx is None:
         return False
     ctx = init_reg(ctx, gadgets_info.regs_init)
-    
+
     controble_addr_base = gadgets_info.controble_addr_base
     stack_pivot_chain = gadgets_info.stack_pivot_chain
     target_reg_value = gadgets_info.target_regs
@@ -1454,7 +1454,7 @@ def resolve_mem_write(gadgets_info, solve_res, mem_dst_idx, mem_dst_value):
     for c in stack_pivot_chain:
         codes = c.split(' -> ')[1].split(" ; ")
         for code in codes:
-            
+
             _process_instruction_arm_safe(ctx, address, code)
             address += len(tools.my_asm(code))
     _reset_thumb(ctx)
@@ -1463,7 +1463,7 @@ def resolve_mem_write(gadgets_info, solve_res, mem_dst_idx, mem_dst_value):
     c = 0
     history_gadget = {}
     f = False
-    while(1): 
+    while(1):
         rip = ctx.getConcreteRegisterValue(get_reg(ctx,_get_ac().pc_reg))
         if _get_ac().bits == 64 and get_reg(ctx,'cs') is not None:
             if rip>>32 == ctx.getConcreteRegisterValue(get_reg(ctx,'cs')):
@@ -1513,7 +1513,7 @@ def resolve_mem_write(gadgets_info, solve_res, mem_dst_idx, mem_dst_value):
             if instruction is not None and instruction.isMemoryWrite():
                 StoreAddress = instruction.getStoreAccess()[0][0].getAddress()
                 logger.debug(f"Store Address {StoreAddress}")
-                if StoreAddress != addr: # 当地址因寄存器的初始值或其他情况与预期不同时进行修正
+                if StoreAddress != addr: # Correct the address when register initial values or other conditions make it differ from the expected address
                     change_mem_dst_value = (mem_dst_value - (StoreAddress - addr))&_addr_mask()
                     solve_res[mem_dst_idx] = hex(change_mem_dst_value)
                     NewMemoryAccess = MemoryAccess(StoreAddress, len(v))
@@ -1525,7 +1525,7 @@ def resolve_mem_write(gadgets_info, solve_res, mem_dst_idx, mem_dst_value):
     ast = ctx.getAstContext()
     cons = []
     for r in range(len(target_reg_value)):
-        for addr, v in target_reg_value[r].items(): 
+        for addr, v in target_reg_value[r].items():
             cons.append(ctx.getMemoryAst(address_list[r]) == int.from_bytes(v,'little'))
     if len(cons) > 1:
         con = ast.land(cons)
@@ -1566,7 +1566,7 @@ def check(gadgets_info,solve_res,stack_mem={}):
     c = 0
     history_gadget = {}
     f = False
-    while(1): 
+    while(1):
         rip = ctx.getConcreteRegisterValue(get_reg(ctx,_get_ac().pc_reg))
         if _get_ac().bits == 64 and get_reg(ctx,'cs') is not None:
             if rip>>32 == ctx.getConcreteRegisterValue(get_reg(ctx,'cs')):
@@ -1578,8 +1578,8 @@ def check(gadgets_info,solve_res,stack_mem={}):
         for g, n in history_gadget.items():
             if n >= 80:
                 f = True
-                break  
-        if f: break     
+                break
+        if f: break
         if rip == front_address:
             c += 1
             if c >= 80:
@@ -1676,7 +1676,7 @@ def parse_long_jmp(gadgets_info, solve_res):
     return padding_map
 def check_mem(gadgets_info,solve_res, stack_mem={}):
     logger.debug("Start Check Memory")
-    # gadgets_info中的target只需要是{addr:value}
+    # target in gadgets_info only needs to be {addr:value}
     ctx = _create_triton_ctx()
     if ctx is None:
         return False
@@ -1700,7 +1700,7 @@ def check_mem(gadgets_info,solve_res, stack_mem={}):
     c = 0
     history_gadget = {}
     f = False
-    while(1): 
+    while(1):
         rip = ctx.getConcreteRegisterValue(get_reg(ctx,_get_ac().pc_reg))
         if _get_ac().bits == 64 and get_reg(ctx,'cs') is not None:
             if rip>>32 == ctx.getConcreteRegisterValue(get_reg(ctx,'cs')):
@@ -1713,7 +1713,7 @@ def check_mem(gadgets_info,solve_res, stack_mem={}):
             if n >= 80:
                 f = True
                 break
-        if f: break      
+        if f: break
         if rip == front_address:
             c += 1
             if c >= 80:
@@ -1793,7 +1793,7 @@ def get_regs_state(gadgets_info,solve_res, mode = 0):
     front_address = 0
     old_front_address = 0
     c = 0
-    while(1): 
+    while(1):
         rip = ctx.getConcreteRegisterValue(get_reg(ctx,_get_ac().pc_reg))
         if _get_ac().bits == 64 and get_reg(ctx,'cs') is not None:
             if rip>>32 == ctx.getConcreteRegisterValue(get_reg(ctx,'cs')):
@@ -2035,13 +2035,13 @@ class GadgetsInfo:
         self.permission_table.append({"start":self.my_virtual_mem_info[0],"end":self.my_virtual_mem_info[0]+self.my_virtual_mem_info[1],"permission":"rw"})
 
 
-            
+
 
 def main():
     gadgets_file = "/home/rop/my-rop/experiment/ccb-2024-final-NFS-Heap/gadget.txt"
     gadgets_data = tools.load_gadget(gadgets_file)
     gadgets_dict = tools.create_gadget_dict(gadgets_data)
-    
+
     controllable_mem_file_dir = '/home/rop/my-rop/benchmark_experiment/benchmark_mem_reg_info_fold/gcc_fzero/libjson-c.so.5.3.0/cyclic_matches.json'
     with open(controllable_mem_file_dir, "r", encoding="utf-8") as file:
         controllable_mem_data = json.load(file)
@@ -2051,9 +2051,9 @@ def main():
     (permission_table, regs_init) = tools.get_map_regs("/home/rop/my-rop/benchmark_experiment/benchmark_mem_reg_info_fold/gcc_fzero/libjson-c.so.5.3.0")
     controllable_regs = eval(open("/home/rop/my-rop/benchmark_experiment/benchmark_mem_reg_info_fold/gcc_fzero/libjson-c.so.5.3.0/controble_regs.txt",'r').read())
     binary_file = '/home/rop/my-rop/benchmark_experiment/rop-benchmark/binaries/x86/reallife/vuln/gcc_fzero/libjson-c.so.5.3.0.bin'
-    elf = ELF(binary_file,checksec=False)  # 加载目标二进制
-    bss_address = elf.bss()  # 获取 .bss 段地址
-    
+    elf = ELF(binary_file,checksec=False)  # Load target binary
+    bss_address = elf.bss()  # Get .bss section address
+
     stack_pivot_chain = ['0x10000 -> ret']
     offset_list = [_ for _ in range(1000)]
     rsp_idx = (regs_init[_get_ac().sp_reg] - controble_addr_base)//_ptr_size()
@@ -2096,7 +2096,7 @@ def main():
         exit()
             # for n in range(len(gadget_chain)):
             #     print(f"{gadgets_dict[gadget_chain[n]]}")
-            
+
     # -------------------------------------------------------
     # pop rbx ; retf
     # pop rbp ; ret
@@ -2117,6 +2117,6 @@ def main():
     # pop rbx ; retf
     # pop rbp ; ret
     # xchg ebx, eax ; push rbp ; ret
-    
+
 if __name__ == "__main__":
     main()

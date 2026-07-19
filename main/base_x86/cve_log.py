@@ -39,7 +39,7 @@ def pivot_update_regs(pivot_gadget, address_map, regs, permission_table, stack_m
     ctx = init_mem(ctx, stack_mem)
     address = 0x400000
     jmp_inst = ['loopne','je','jne','ja','jna','jae','jnae','jb','jnb','jbe','jnbe','jg','jng','jge','jnge','jl','jnl','jle','jnle','jz','jnz','js','jns','jc','jnc','jo','jno','jp','jnp','jpe','jpo','jcxz','jecxz']
-    
+
     for i in range(len(pivot_gadget)):
         pivot_gg = pivot_gadget[i].split(' -> ')[1]
         if pivot_gg.split(' ')[0] in jmp_inst:
@@ -53,7 +53,7 @@ def pivot_update_regs(pivot_gadget, address_map, regs, permission_table, stack_m
             address += len(my_asm(pivot_gg_list[j]))
             if not read_write_check(instruction, permission_table):
                  return None
-    
+
     for reg,value in regs.items():
         if reg not in ['fs_base','gs_base']:
             regs[reg] = ctx.getConcreteRegisterValue(get_reg(ctx, reg))
@@ -61,7 +61,7 @@ def pivot_update_regs(pivot_gadget, address_map, regs, permission_table, stack_m
 
 def pivot_update_controllable_reg(new_regs, controllable_mem_data):
     new_controllable_regs = []
-    for name, value in new_regs.items(): 
+    for name, value in new_regs.items():
         for i in range(len(controllable_mem_data)):
             start_addr = int(controllable_mem_data[i]['start_addr'],16)
             length = controllable_mem_data[i]['length']
@@ -72,7 +72,7 @@ def pivot_update_controllable_reg(new_regs, controllable_mem_data):
 def remove_pivot_write_mem_from_offset_list(pivot_gadget, address_map, regs, controllable_mem_data, offset_list_old):
     offset_list = offset_list_old.copy()
     writeMemorylist = get_pivot_write_operation(pivot_gadget, address_map, regs)
-    for w0 in range(len(writeMemorylist)): 
+    for w0 in range(len(writeMemorylist)):
         for w1 in range(len(controllable_mem_data)):
             start_addr = int(controllable_mem_data[w1]['start_addr'],16)
             length = controllable_mem_data[w1]['length']
@@ -108,11 +108,11 @@ def complete_test(case_info, target_type="funcall4", cve_dataset_dir=None):
 
     for i in range(len(pivot_res)):
         logger.info(f"Gadget {i} : {pivot_res[i]['gadget_chain']}")
-    
+
     choice = 0
     logger.info(f"Choose Gadget {choice}")
     logger.info(pivot_res[choice]['gadget_chain'])
-    
+
     pivot_gadget = pivot_res[choice]['gadget_chain']
     mem_layout = [pivot_res[choice]['address_map'],pivot_res[choice]['offset_list']]
 
@@ -138,14 +138,14 @@ def complete_test(case_info, target_type="funcall4", cve_dataset_dir=None):
     offset_list = remove_pivot_write_mem_from_offset_list(pivot_gadget, address_map, regs, controllable_mem_data, offset_list)
     stack_mem = gadgets_info.stack_mem
     after_pivot_regs = pivot_update_regs(pivot_gadget, address_map, regs, permission_table, stack_mem)
-    
+
     gadgets_info.regs_init = after_pivot_regs
-    
+
     rsp_idx = (after_pivot_regs['rsp'] - controble_addr_base)//8
     address_map_new = mem_layout[0].copy()
     while(1):
         f = False
-        for i_a in range(15): # 至少得能写0x28个字节
+        for i_a in range(15): # must be able to write at least 0x28 bytes
             if rsp_idx+i_a not in offset_list:
                 print(address_map_new)
                 (address_map_new, offset_list, pivot_gadget) = solve_engine.jmp_stack_after_pivot(address_map_new, gadgets_info, offset_list, pivot_gadget)
@@ -160,7 +160,7 @@ def complete_test(case_info, target_type="funcall4", cve_dataset_dir=None):
                 break
         if not f:
             break
-    
+
     logger.info("Adapt Memory Finished")
     logger.info(f"Adapt Memory Pivot Gadget Chain : {pivot_gadget}")
     res_json["Adapt Memory Pivot Gadget Chain"] = pivot_gadget
@@ -195,7 +195,7 @@ def complete_test(case_info, target_type="funcall4", cve_dataset_dir=None):
         logger.success(f"{cve_case} Reg check Success")
         if len(gadgets_info.target_mem_value)>0 and solve_engine.check_mem(gadgets_info, reg_gadget_map, stack_mem)[0]:
             logger.success(f"{cve_case} Mem check Success")
-    
+
             logger.success(f"All Res Json {res_json}")
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run CVE tests with specific target.')

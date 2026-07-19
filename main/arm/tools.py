@@ -377,10 +377,10 @@ def Analysis_rip_dispatch(gadget):
 def Analysis_reg(string):
     """
     {
-        type: "value"/"mem_value"/"num", # 寄存器的值/寄存器指向的内存数据
-        reg_name: str/[], # 字符串中的所有寄存器名
-        bit:64/32/16/8, # 若type为寄存器的值，则填入寄存器的字节数;若type为mem_value，则填入写入内存的字节数
-        expr:"", # 如果是表达式就将表达式提取出来
+        type: "value"/"mem_value"/"num", # register value / memory data pointed to by the register
+        reg_name: str/[], # all register names in the string
+        bit:64/32/16/8, # if type is a register value, use the register byte width; if type is mem_value, use the number of bytes written to memory
+        expr:"", # extract the expression if it is an expression
         }
     """
     general_purpose = ["rax", "eax", "ax", "al",
@@ -417,7 +417,7 @@ def Analysis_reg(string):
         for i in range(len(data_type)):
             if data_type[i] in string:
                 bit = 8*(2**i)
-        
+
         expr = string.split("[")[1].split("]")[0]
         if len(expr.split(" ")) != 1:
             reg_name = []
@@ -664,10 +664,10 @@ def Analysis_condition_jmp(gadget_str):
     gadgets = gadget_str.split(" ; ")
     for i in range(len(gadgets)):
         op = gadgets[i]
-        # 不循环 rcx=0 ['rep','repe','repz','repne','repnz','repc','repnc','loop','loope','loopz','loopne','loopnz','jcxz','jecxz']
+        # do not loop rcx=0 ['rep','repe','repz','repne','repnz','repc','repnc','loop','loope','loopz','loopne','loopnz','jcxz','jecxz']
         if op.split(" ")[0] in ['rep','repe','repz','repne','repnz','repc','repnc','loop','loope','loopz','loopne','loopnz','jcxz','jecxz']:
             condition_reg.append({'reg_name':"rcx",'bit':64})
-        # 不跳转 test+跳转 cmp+跳转 ['je', 'js', 'jle', 'ja', 'jg', 'jbe', 'jne']
+        # do not jump test+jump cmp+jump ['je', 'js', 'jle', 'ja', 'jg', 'jbe', 'jne']
         # if op.split(" ")[0] in ['je', 'js', 'jle', 'ja', 'jg', 'jbe', 'jne']:
         #     condition_reg.append({'reg_name':"rcx",'bit':64})
         if i != len(gadgets)-1:
@@ -682,7 +682,7 @@ def Analysis_condition_jmp(gadget_str):
                         condition_reg.append({"reg_name":dst_reg['reg_name'],'bit':dst_reg['bit']})
                     if src_reg['type'] == "value":
                         condition_reg.append({"reg_name":src_reg['reg_name'],'bit':src_reg['bit']})
-    return condition_reg  
+    return condition_reg
 def Analysis_gadget(gadget_str):
     regs_change_log = {
     "rax":[],
@@ -718,7 +718,7 @@ def Analysis_gadget(gadget_str):
             else:
                 op_res = op_res + res
     # print(op_res)
-    
+
     for i in range(len(op_res)):
         first_op_an = op_res[0]
         op_an = op_res[i]
@@ -741,9 +741,9 @@ def Analysis_gadget(gadget_str):
         if len(l) != 0:
             for i in range(len(l)):
                 can_change_regs.append({'reg_name':l[i]['reg_name'],'bit':l[i]['bit'],'src_reg':l[i]['src_reg'],'src_reg_type':l[i]['src_type'],'type':l[i]['type']})
-    
+
     # print(can_change_regs)
-    
+
     last_inst = gadgets[-1]
     if "ret" in last_inst:
         # reg_name = 'rsp'
@@ -774,7 +774,7 @@ def Analysis_gadget(gadget_str):
             reg_name = reg_name_src['src_reg']
             rip_type = reg_name_src['src_reg_type']
         hijack_reg.append({"reg_name":reg_name,'bit':64,'type':rip_type,'expr':reg_info['expr']})
-    
+
     return {'can_change_regs':can_change_regs,'hijack_reg':hijack_reg,'valid_mem_reg':valid_mem_reg,'condition_reg':condition_reg}
 
 # ============================================================
@@ -922,7 +922,7 @@ def _arm_asm_fallback(ks, gadget):
     return None
 
 def my_asm(gadget):
-    """将汇编指令转换为字节码，支持多架构"""
+    """Convert assembly instructions to bytecode, with multi-architecture support"""
     ac = arch_config.get_arch()
     ks = KsClass(ac.ks_arch, ac.ks_mode)
     try:
@@ -973,13 +973,13 @@ def my_asm(gadget):
     return asm_res
 
 def my_log(data, n):
-    """打印日志信息"""
+    """Print log messages"""
     print("------------------------------------------------")
     for i in range(n):
         print(data[i])
 
 def controllable_mem_distributor(gadgets_info, address_map, now_gadget, mem_type):
-    """内存分配器，对可控内存进行统一管理，支持多架构"""
+    """Memory allocator for unified controllable-memory management, with multi-architecture support"""
     ac = arch_config.get_arch()
     ptr_size = ac.ptr_size
     if mem_type == "rip_mem":
@@ -992,7 +992,7 @@ def controllable_mem_distributor(gadgets_info, address_map, now_gadget, mem_type
         return valid_bss_addr
 
 def addr_in_range(addr, mem_dict_list):
-    """检查地址是否在指定内存范围内"""
+    """Check whether an address is in the specified memory range"""
     addr_n = eval(addr)
     for i in range(len(mem_dict_list)):
         start_addr = eval(mem_dict_list[i]['start_addr'])
@@ -1002,7 +1002,7 @@ def addr_in_range(addr, mem_dict_list):
     return False
 
 def table_check(addr, permission_table, mode):
-    """检查地址是否具有指定权限"""
+    """Check whether an address has the specified permissions"""
     for i in range(len(permission_table)):
         if addr >= permission_table[i]['start'] and addr < permission_table[i]['end']:
             if mode in permission_table[i]['permission']:
@@ -1010,7 +1010,7 @@ def table_check(addr, permission_table, mode):
     return False
 
 def read_write_check(instruction, permission_table):
-    """检查指令的内存读写权限"""
+    """Check memory read/write permissions for an instruction"""
     if instruction.isMemoryRead():
         a = instruction.getLoadAccess()
         readMemory = a[0][0].getAddress()
@@ -1024,7 +1024,7 @@ def read_write_check(instruction, permission_table):
     return True
 
 def my_max(gadgets_info, address_map):
-    """获取地址映射中的最大索引（排除虚拟内存区域），支持多架构"""
+    """Get the maximum index in the address map, excluding virtual memory regions, with multi-architecture support"""
     ac = arch_config.get_arch()
     ptr_size = ac.ptr_size
     my_virtual_mem_start = gadgets_info.my_virtual_mem_info[0]
@@ -1058,7 +1058,7 @@ def check_asm(code):
         return False
 
 def get_reg_by_name(ctx, reg_name):
-    """通过名称获取Triton寄存器对象"""
+    """Get a Triton register object by name"""
     _triton_reg_aliases = {
         'lr': 'r14',
         'fp': 'r11',
@@ -1079,12 +1079,12 @@ def filer1():
     for f0 in ff:
         file_path0 = os.path.join(file_path,f0)
         files = os.listdir(file_path0)
-        
+
         for f in files:
             gadgets_file = os.path.join(file_path0,f)
             data = open(gadgets_file,'r').read()
             data = data.split('\n')
-            
+
             for i in range(2,len(data)-3):
                 gg = data[i].split(' : ')[1]
                 asms = gg.split(" ; ")

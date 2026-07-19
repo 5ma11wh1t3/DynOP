@@ -28,8 +28,8 @@ def info_init_cve(cve_case,binary,target_type="funcall4", cve_dataset_dir=None):
         controllable_regs.remove("stack_pivot_prep")
     binary_file = os.path.join(case_dir, binary)
     try:
-        elf = ELF(binary_file,checksec=False)  # 加载目标二进制
-        bss_address = elf.bss()  # 获取 .bss 段地址
+        elf = ELF(binary_file,checksec=False)  # Load target binary
+        bss_address = elf.bss()  # Get .bss section address
         if permission_table[0]['start']>>32 > 0:
             bss_address = elf.bss()+permission_table[0]['start']
     except:
@@ -45,14 +45,14 @@ def info_init_cve(cve_case,binary,target_type="funcall4", cve_dataset_dir=None):
         target_mem_value = []
 
     stack_pivot_chain = []
-    
+
     offset_list = []
     s = 0
     for i in range(len(controllable_mem_data)):
         offset_list += [ _ + s for _ in range(int(controllable_mem_data[i]['length'])//8)]
         if i != len(controllable_mem_data) - 1:
             s = s + (int(controllable_mem_data[i+1]['start_addr'],16) - int(controllable_mem_data[i]['start_addr'],16))//8
-    
+
     address_map = {}
     # target_mem_value = [{bss_address+0x300:b"/bin/sh\x00"}]
     # target_mem_value = []
@@ -97,7 +97,7 @@ def get_mem_length(gadgets_info, start_addr, mem_data, pivot=False):
                     break
     return mem_length
 
-    # 给找到的pivot gadget进行排序
+    # Sort the found pivot gadgets
 def sort_pivot_gadget(pivot_res):
     score_dict = {}
     for i in range(len(pivot_res)):
@@ -134,7 +134,7 @@ import time
 
 def main(cve_case,gadgets_info, max_depth = 1,res_json={},num_threads=24,mode=0):
     # logger.add(
-    #     sink=f"benchmark_{cve_case}.log",  # 日志文件路径
+    #     sink=f"benchmark_{cve_case}.log",  # log file path
     #     level="INFO",
     #     encoding="utf-8"
     # )
@@ -143,7 +143,7 @@ def main(cve_case,gadgets_info, max_depth = 1,res_json={},num_threads=24,mode=0)
     MAX_DEPTH = max_depth
     CONTROLLABLE_REGS = gadgets_info.controllable_regs
     if len(CONTROLLABLE_REGS) == 0:
-        # 若没有寄存器指向可控内存，需要从栈内存中找可控内存，给到寄存器，直接给rsp或者给其他寄存器，但需要保持控制流可控
+        # If no register points to controllable memory, find controllable memory in stack memory and assign it to a register, either directly to rsp or another register, while keeping control flow controllable
         pass
     controllable_mem_data = gadgets_info.controllable_mem_data
 
@@ -163,7 +163,7 @@ def main(cve_case,gadgets_info, max_depth = 1,res_json={},num_threads=24,mode=0)
     res_json["Find Time"] = time.time()-start
     logger.debug(f"Finish Find Stack Pivot Gadget Chain")
     regs = gadgets_info.regs_init
-    controble_addr_base = gadgets_info.controble_addr_base 
+    controble_addr_base = gadgets_info.controble_addr_base
     offset_list = gadgets_info.offset_list
     permission_table = gadgets_info.permission_table
     stack_mem = gadgets_info.stack_mem
@@ -184,7 +184,7 @@ def main(cve_case,gadgets_info, max_depth = 1,res_json={},num_threads=24,mode=0)
     else:
         pivot_res = sort_pivot_gadget(pivot_res)
         return pivot_res
-     
+
 if __name__ == "__main__":
     # binary = 'pwn'
     binary = 'init'

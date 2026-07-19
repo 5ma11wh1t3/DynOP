@@ -26,26 +26,26 @@ def get_edges(gadgets_dict,controllable_reg,target_regs,depth=3):
         gadget_info = tools.Analysis_gadget(gadget_str)
         rip_info = tools.Analysis_rip(gadget_str)
         if gadget_info and rip_info:
-            # 判断可修改的寄存器列表是否为空，劫持控制流的寄存器是否为空，内存访问相关寄存器是否为空，条件跳转寄存器是否为空
+            # Check whether the mutable-register list, control-flow hijack register, memory-access registers, or conditional-jump registers are empty
             if len(gadget_info['can_change_regs'])!=0 and len(gadget_info['hijack_reg'])!=0 and mem_is_controllable(gadget_info,controllable_reg) and len(gadget_info['condition_reg'])==0:
-                # 判断劫持控制流的寄存器是否为可控寄存器，以保证在构建链的时候控制流始终被劫持
+                # Check whether the control-flow hijack register is controllable so control flow remains hijacked while building the chain
                 if gadget_info['hijack_reg'][0]['reg_name'] in controllable_reg:
-                    # 遍历可修改的寄存器列表，寻找能够修改其他寄存器的gadget
+                    # Traverse the mutable-register list to find gadgets that can modify other registers
                     for i in range(len(gadget_info['can_change_regs'])):
-                        # 满足条件：可修改寄存器的源寄存器是可控的，源寄存器不能是劫持控制流的寄存器，可修改寄存器不能是rsp寄存器
+                        # Condition: the mutable register source is controllable, the source is not the control-flow hijack register, and the mutable register is not rsp
                         if (gadget_info['can_change_regs'][i]['src_reg'] in controllable_reg) and (gadget_info['can_change_regs'][i]['src_reg'] != gadget_info['hijack_reg'][0]['reg_name'] or (gadget_info['hijack_reg'][0]['reg_name']=='rsp' and gadget_info['hijack_reg'][0]['type']=="mem_value")):
-                            # 结束条件1：劫持控制流的寄存器是rsp寄存器 或者 可修改寄存器的源寄存器是rsp寄存器 或者 可修改寄存器是rsp寄存器               rsp是栈指针，轻易不修改，可控的是rsp指向的内存，而不是rsp寄存器
+                            # Termination condition 1: the control-flow hijack register is rsp, the mutable register source is rsp, or the mutable register is rsp. rsp is the stack pointer and should not be modified lightly; controllable data is the memory pointed to by rsp, not the rsp register itself
                             if (gadget_info['hijack_reg'][0]['reg_name']=='rsp' and gadget_info['hijack_reg'][0]['type']!="mem_value") or (gadget_info['can_change_regs'][i]['src_reg'] == 'rsp' and gadget_info['can_change_regs'][i]['src_reg_type'] != 'mem_value') or gadget_info['can_change_regs'][i]['reg_name'] == 'rsp':
                                 # if recover_rsp_flag:gadget_info['can_change_regs'][i]['src_reg'] = ["rsp"]
                                 break
-                            # 遍历可修改的寄存器，来添加边的信息
+                            # Traverse mutable registers to add edge information
                             for j in range(len(gadget_info['can_change_regs'])):
-                                # 添加边满足条件：可修改寄存器字节大于32，可修改寄存器的源寄存器是可控的，可修改寄存器的源寄存器不能和自己相同，可修改寄存器不是前一轮可控寄存器                          
+                                # Condition for adding an edge: mutable register width is greater than 32 bits, its source is controllable, its source is not itself, and it was not controllable in the previous round
                                 if gadget_info['can_change_regs'][j]['bit'] >= 32 and gadget_info['can_change_regs'][j]['src_reg'] in controllable_reg and gadget_info['can_change_regs'][j]['src_reg'] != gadget_info['can_change_regs'][j]['reg_name'] and gadget_info['can_change_regs'][j]['reg_name'] not in controllable_reg:
                                     if (gadget_info['hijack_reg'][0]['reg_name']=='rsp' and gadget_info['hijack_reg'][0]['type']!="mem_value") or (gadget_info['can_change_regs'][j]['src_reg'] == 'rsp' and gadget_info['can_change_regs'][j]['src_reg_type'] != 'mem_value') or gadget_info['can_change_regs'][j]['reg_name'] == 'rsp':
                                             continue
                                     edges.append({'dst':gadget_info['can_change_regs'][j]['reg_name'],'src':gadget_info['can_change_regs'][j]['src_reg'],'addr':addr,'rip':rip_info['reg_name']})
-                                    # 添加可控寄存器条件：可修改寄存器字节大于32，可修改寄存器不在新一轮的可控寄存器中，可修改寄存器的源寄存器不是rsp寄存器
+                                    # Condition for adding a controllable register: mutable register width is greater than 32 bits, it is not already controllable in the new round, and its source is not rsp
                                     if gadget_info['can_change_regs'][j]['bit'] >= 32 and gadget_info['can_change_regs'][j]['reg_name'] not in controllable_reg2:
                                         if gadget_info['can_change_regs'][j]['src_reg'] == "rsp" and gadget_info['can_change_regs'][j]['src_reg_type'] != "value":
                                             controllable_reg2.append(gadget_info['can_change_regs'][j]['reg_name'])
@@ -54,7 +54,7 @@ def get_edges(gadgets_dict,controllable_reg,target_regs,depth=3):
     while 1:
         controllable_reg3 = controllable_reg2.copy()
         for addr, gadget_str in gadgets_dict.items():
-            gadget_info = tools.Analysis_gadget(gadget_str) # 修改tools.Analysis_gadget的逻辑，对gadget内部的数据流进行梳理
+            gadget_info = tools.Analysis_gadget(gadget_str) # Adjust tools.Analysis_gadget logic to organize data flow inside the gadget
             rip_info = tools.Analysis_rip(gadget_str)
             if gadget_info and rip_info:
                 if len(gadget_info['can_change_regs'])!=0 and len(gadget_info['hijack_reg'])!=0 and mem_is_controllable(gadget_info, controllable_reg) and len(gadget_info['condition_reg'])==0:
@@ -80,13 +80,13 @@ def get_edges(gadgets_dict,controllable_reg,target_regs,depth=3):
             break
         controllable_reg2 = controllable_reg3
     for addr, gadget_str in gadgets_dict.items():
-        gadget_info = tools.Analysis_gadget(gadget_str) # 修改tools.Analysis_gadget的逻辑，对gadget内部的数据流进行梳理
+        gadget_info = tools.Analysis_gadget(gadget_str) # Adjust tools.Analysis_gadget logic to organize data flow inside the gadget
         rip_info = tools.Analysis_rip(gadget_str)
         if gadget_info and rip_info:
             if len(gadget_info['can_change_regs'])!=0 and len(gadget_info['hijack_reg'])!=0 and len(gadget_info['condition_reg'])==0:
                 if gadget_info['hijack_reg'][0]['reg_name'] in controllable_reg3 or gadget_info['hijack_reg'][0]['reg_name'] in [_["reg_name"] for _ in gadget_info['can_change_regs']]:
                     for i in range(len(gadget_info['can_change_regs'])):
-                        # 去掉的条件 gadget_info['can_change_regs'][i]['src_reg'] in controllable_reg2 and 
+                        # Removed condition gadget_info['can_change_regs'][i]['src_reg'] in controllable_reg2 and
                         if gadget_info['can_change_regs'][i]['bit'] >= 32 and gadget_info['can_change_regs'][i]['src_reg_type'] in ["mem_value","num", "value"] and (gadget_info['can_change_regs'][i]['src_reg'] in controllable_reg3 or gadget_info['can_change_regs'][i]['src_reg'] == "immediate_num") and gadget_info['can_change_regs'][i]['reg_name'] in target_regs and (gadget_info['can_change_regs'][i]['src_reg'] != gadget_info['hijack_reg'][0]['reg_name'] or (gadget_info['hijack_reg'][0]['reg_name']=='rsp' and gadget_info['hijack_reg'][0]['type']=="mem_value")):
                             can_change_regs_name = [_["reg_name"] for _ in gadget_info['can_change_regs']]
                             if gadget_info['hijack_reg'][0]['reg_name'] in can_change_regs_name:
@@ -104,14 +104,14 @@ def get_edges(gadgets_dict,controllable_reg,target_regs,depth=3):
     for i in range(len(edges)):
         tmp_last_gadget_info = tools.Analysis_gadget(gadgets_dict[edges[i]['addr']].split(" ; ")[-1])
         rip_reg_name = tmp_last_gadget_info['hijack_reg'][0]
-        
+
         gadgets_list = gadgets_dict[edges[i]['addr']].split(" ; ")
         f = False
         for i1 in range(len(gadgets_list)-1):
             if f:
                 break
             if gadgets_list[i1] == "leave":
-                continue 
+                continue
             g_info = tools.Analysis_gadget(gadgets_list[i1])
             if not g_info:
                 f = True
@@ -156,7 +156,7 @@ def get_edges(gadgets_dict,controllable_reg,target_regs,depth=3):
         if type(dele_edges[i]['src']) == list and len(dele_edges[i]['src']) != 0:
             dele_edges[i]['src'] = dele_edges[i]['src'][0]
     edges = dele_edges
-    
+
     return edges
 
 def mem_is_controllable(gadget_info,controllable_reg):
@@ -254,7 +254,7 @@ def sigle_gadget_chain_valid_solve(gadgets_info,seq,target_reg):
                     return True
                 gadgets_info_copy.target_regs = target_regs_bak
             return False
-        
+
 def timeout_handler(signum, frame):
     raise TimeoutError("Function took too long to execute")
 
@@ -287,7 +287,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                         continue
                     if type(rip_reg_name) == list or type(mem_reg_name) == list or type(src_reg_name) == list:
                         continue
-                    if len(set([mem_reg_name,rip_reg_name,src_reg_name])) == len([mem_reg_name,rip_reg_name,src_reg_name]) and src_reg_name != 'immediate_num' and mem_reg_name != 'immediate_num' and rip_reg_name != 'immediate_num': 
+                    if len(set([mem_reg_name,rip_reg_name,src_reg_name])) == len([mem_reg_name,rip_reg_name,src_reg_name]) and src_reg_name != 'immediate_num' and mem_reg_name != 'immediate_num' and rip_reg_name != 'immediate_num':
                         a = [mem_reg_name,rip_reg_name,src_reg_name]
                         a.sort()
                         if a in no_result_reg_group:
@@ -319,7 +319,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                         if len(tmp)>2:
                             continue
                         gadgets_info_copy.target_regs = tmp
-                        # 设置超时时间为5秒
+                        # Set timeout to 5 seconds
                         # signal.signal(signal.SIGALRM, timeout_handler)
                         # signal.alarm(90)
                         # try:
@@ -327,7 +327,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                         edges_no_condition = sort_edges(gadgets_info,edges)
                             # solve_res_seq = get_valid_reg_chain_threads(gadgets_info_copy,tmp2,edges_no_condition,controllable_reg,gadgets_dict)
                         solve_res_seq = get_valid_reg_chain_threads(gadgets_info_copy,tmp2,edges_no_condition,controllable_reg,gadgets_dict,search_depth,timeout=reg_timeout,mode=0)
-                            # signal.alarm(0)  # 取消闹钟
+                            # signal.alarm(0)  # Cancel alarm
                         # except TimeoutError as e:
                         #     stop_event.set()
                         #     for r, path in all_path.items():
@@ -353,7 +353,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                                 break
                             tmp_copy[tmp_i]['reg_value'] = tmp_copy[tmp_i]['reg_value']//2
                             for i,v in solve_res_tmp.items():
-                                # 这里是为了确定寄存器的值分别是哪个位置的值影响的，可读写的地址可不考虑，同时前后不同的偏移也是不用考虑的
+                                # This determines which position affects each register value; readable/writable addresses can be ignored, and different offsets before and after can also be ignored
                                 if i in solve_res and not solve_engine.check_address_rw(gadgets_info,eval(solve_res_tmp[i])) and eval(solve_res_tmp[i])&0xffffff00!=0xdeadbe00 and abs(eval(solve_res_tmp[i])-eval(solve_res[i]))>=0x2000:
                                     mem_value_map[funcreg[tmp2.index(tmp_copy[tmp_i]['reg_name'])]] = i
                                     break
@@ -384,7 +384,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                                     gadgets_info_copy.offset_list = gadgets_info.offset_list
                                     continue
                             write_addr_current = (write_addr - offset + c_n)&0xffffffffffffffff
-                            
+
                             # r_0[mem_value_map['mem_dst']] = hex(write_addr_current)
                             tmp[funcreg.index('mem_dst')]['reg_value'] = write_addr_current
                             if gadget.split(" ; ")[0].split(" ")[-1] in ["ah","bh","ch","dh"]:
@@ -423,7 +423,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                             gadgets_info_copy.target_regs = [{write_addr+c_n:write_bytes}]
                             gadgets_info_copy.target_mem_value = [{write_addr+c_n:write_bytes}]
                             c = 0
-                             
+
                             while True:
                                 r_0_new_re = True
                                 check_res = solve_engine.check_mem(gadgets_info_copy,r_0_new)
@@ -449,7 +449,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                             r_0_new_re = r_0_new
                             gadgets_info_copy.target_mem_value = gadgets_info.target_mem_value
                             solve_se.append(r_0_new_re)
-                            
+
                             regs_state = solve_engine.get_regs_state(gadgets_info_copy,r_0_new_re)
                             # gadgets_info = solve_engine.update_offset_list(gadgets_info_copy,r_0_new_re)
                             gadgets_info_copy.regs_init = regs_state
@@ -469,7 +469,7 @@ def get_mem_write_gadget_chain(gadgets_info,write_addr,write_data,search_depth=1
                             gadgets_info_copy.regs_init = gadgets_info.regs_init
                             gadgets_info_copy.offset_list = gadgets_info.offset_list
                             return (finall_res,finall_chain)
-                            
+
                         gadgets_info_copy.target_regs = global_target_regs
                         gadgets_info_copy.regs_init = gadgets_info.regs_init
                         gadgets_info_copy.offset_list = gadgets_info.offset_list
@@ -486,7 +486,7 @@ def parse_edge(edge_res, res=None, g_res=None):
         res.append(edge_res[i][-1]['addr'])
         if len(edge_res[i]) == 1:
             if res not in g_res:
-                g_res.append(res.copy())  # 注意这里需要复制
+                g_res.append(res.copy())  # Copy is required here
         for j in range(len(edge_res[i]) - 1):
             parse_edge(edge_res[i][j], res, g_res)
         res = res_bak.copy()
@@ -509,7 +509,7 @@ def parse_edge_new(edge_res):
             combine_res[k].append(edge_res[i][-1]['addr'])
         g_res += combine_res
     return g_res
-            
+
 
 def remove_subpaths(paths):
     cleaned = []
@@ -527,10 +527,10 @@ def remove_subpaths(paths):
 stop_event = None
 all_path = None
 
-import multiprocessing as mp # 替换 threading
-from multiprocessing import Manager  # 进程间共享对象
+import multiprocessing as mp # Replace threading
+from multiprocessing import Manager  # Inter-process shared object
 
-def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,gadgets_dict, search_depth=1,timeout=3600,mode=0): 
+def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,gadgets_dict, search_depth=1,timeout=3600,mode=0):
     global stop_event
     global all_path
 
@@ -543,7 +543,7 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
     # global stop_event
     # global all_path
     # lock = threading.Lock()
-    # 存放各寄存器的结果
+    # Store results for each register
     has_been_solved = manager.list()
     has_been_edges = manager.list()
     has_been_explore_edge = manager.dict({reg: manager.list() for reg in target_regs})
@@ -569,14 +569,14 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
                 continue
             tmp = []
             if edges[i]['dst'] == target_reg:
-                solve_res = solve_engine.search_solve(gadgets_dict[edges[i]['addr']],target_reg,target_value,gadgets_info) # 扩展内存访问、立即数需要修改
+                solve_res = solve_engine.search_solve(gadgets_dict[edges[i]['addr']],target_reg,target_value,gadgets_info) # Extend memory access; immediates need adjustment
                 if len(solve_res) > 0:
                     c = 0
                     for k,v in solve_res.items():
                         variables = k
                         value = v
                         if "mem" not in variables:
-                            if variables in front_reg: # 防止成环
+                            if variables in front_reg: # Prevent cycles
                                 break
                             elif variables in controllable_reg:
                                 c += 1
@@ -594,7 +594,7 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
                         else:
                             c += 1
                     if c == len(solve_res):
-                        # 找到了路径
+                        # Found a path
                         tmp.append(edges[i])
                         valid_edges.append(tmp)
                         # print(f"{front_reg}   {[tmp]}")
@@ -682,7 +682,7 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
         for k in range(len(sorted_items)):
             path_reg[sorted_items[k][0]]=sorted_items[k][1][0]
         return path_reg
-    
+
     def solve(gadgets_info, timeout):
         gadgets_info_copy = copy.deepcopy(gadgets_info)
         start = time.time()
@@ -694,7 +694,7 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
             if all(len(v)!=0 for v in all_path.values()):
                 reg_chain_list = []
                 for r in range(len(target_regs)):
-                    unique_tuples = set(tuple(lst) for lst in all_path[target_regs[r]])  # 生成器表达式转set
+                    unique_tuples = set(tuple(lst) for lst in all_path[target_regs[r]])  # Convert generator expression to set
                     all_path[target_regs[r]] = manager.list([list(t) for t in unique_tuples])
                     if len(all_path[target_regs[r]]) > 15:
                         all_path[target_regs[r]] = sort_by_length(gadgets_info_copy.gadgets_dict, all_path[target_regs[r]])
@@ -704,7 +704,7 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
 
                 if reg_chain_list not in has_been_solved:
                     has_been_solved.append(reg_chain_list)
-                                           
+
                     valid_gadget_seqs = get_valid_gadget_seq(reg_chain_list,gadgets_dict,controllable_reg,target_regs)
                     if len(valid_gadget_seqs) == 0:
                         continue
@@ -772,12 +772,12 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
             t = mp.Process(target=worker, args=(gadgets_info,reg,n,all_queue), daemon=True)
             t.start()
             worker_threads.append(t)
-    
+
     for reg in target_regs:
         t = mp.Process(target=monitor, args=(gadgets_info,reg,all_queue, timeout), daemon=True)
         t.start()
         monitor_threads.append(t)
-    
+
     classify_thread = mp.Process(target=classify, args=(timeout,), daemon=True)
     classify_thread.start()
 
@@ -787,7 +787,7 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
         solver_threads.append(t)
 
     classify_thread.join()
-    
+
     for t in worker_threads:
         t.join()
 
@@ -805,7 +805,7 @@ def get_valid_reg_chain_threads(gadgets_info,target_regs,edges,controllable_reg,
         return result
     else:
         return False
-    
+
 def info_init(binary,file_fold,target_type="funcall4", benchmark_binary_dir=None, benchmark_context_dir=None, benchmark_gadget_dir=None):
     global gadgets_info
     benchmark_binary_dir = benchmark_binary_dir or str(BENCHMARK_BINARY_DIR)
@@ -814,7 +814,7 @@ def info_init(binary,file_fold,target_type="funcall4", benchmark_binary_dir=None
     gadgets_file = os.path.join(benchmark_gadget_dir, file_fold, f"{binary}.bin.txt")
     gadgets_data = tools.load_gadget(gadgets_file)
     gadgets_dict = tools.create_gadget_dict(gadgets_data)
-    
+
     context_dir = os.path.join(benchmark_context_dir, file_fold, binary)
     controllable_mem_file_dir = os.path.join(context_dir, "cyclic_matches.json")
     with open(controllable_mem_file_dir, "r", encoding="utf-8") as file:
@@ -824,9 +824,9 @@ def info_init(binary,file_fold,target_type="funcall4", benchmark_binary_dir=None
     (permission_table, regs_init) = tools.get_map_regs(context_dir)
     controllable_regs = eval(open(os.path.join(context_dir, "controble_regs.txt"),'r').read())
     binary_file = os.path.join(benchmark_binary_dir, file_fold, f"{binary}.bin")
-    elf = ELF(binary_file,checksec=False)  # 加载目标二进制
-    bss_address = elf.bss()  # 获取 .bss 段地址
-    
+    elf = ELF(binary_file,checksec=False)  # Load target binary
+    bss_address = elf.bss()  # Get .bss section address
+
     stack_pivot_chain = ['0x10000 -> ret']
     offset_list = [_ for _ in range(1000)]
     rsp_idx = (regs_init['rsp'] - controble_addr_base)//8
@@ -840,14 +840,14 @@ def info_init(binary,file_fold,target_type="funcall4", benchmark_binary_dir=None
         target_regs = [{'reg_name':'rdi','reg_value':bss_address+0x300},{'reg_name':'rsi','reg_value':0},{'reg_name':'rdx','reg_value':0},{'reg_name':'rax','reg_value':59}]
         target_mem_value = [{bss_address+0x300:b"/bin/sh\x00"}]
     else:
-        target_regs = [{'reg_name':'rdi','reg_value':bss_address+0x300},{'reg_name':'rsi','reg_value':0x1000},{'reg_name':'rdx','reg_value':7},{'reg_name':'rcx','reg_value':10}] 
+        target_regs = [{'reg_name':'rdi','reg_value':bss_address+0x300},{'reg_name':'rsi','reg_value':0x1000},{'reg_name':'rdx','reg_value':7},{'reg_name':'rcx','reg_value':10}]
         target_mem_value = []
     bss_address += 0x308
     gadgets_info = solve_engine.GadgetsInfo(gadgets_file,regs_init,stack_pivot_chain,gadgets_dict,address_map,offset_list,controllable_mem_data,controble_addr_base,target_regs,target_mem_value,controllable_regs,permission_table,bss_address)
     return gadgets_info
 
 def sort_edges_condition(gadgets_info,edges):
-    # 对edges进行排序
+    # Sort edges
     have_condition = []
     have_no_condition = []
     for i in range(len(edges)):
@@ -885,14 +885,14 @@ def sort_edges(gadgets_info,edges):
             edge['src_type'] = 0
         else:
             edge['src_type'] = 1
-        
+
         if edge['rip'] == 'rsp':
             edge['rip_type'] = 0
         else:
             edge['rip_type'] = 1
 
         gadget_info = tools.Analysis_gadget(gadget)
-        
+
         edge['can_change_reg_num'] = len(gadget_info['can_change_regs'])
         edge['condition_reg_num'] = len(gadget_info['condition_reg'])
         edge['valid_mem_reg_num'] = len(gadget_info['valid_mem_reg'])
@@ -920,7 +920,7 @@ def main(binary, file_fold, gadgets_info = None, mem_search_depth=1, reg_search_
             benchmark_gadget_dir=benchmark_gadget_dir,
         )
     gadgets_dict = gadgets_info.gadgets_dict
-    
+
     res_json['Target Register'] = gadgets_info.target_regs
     res_json['Target Memory'] = gadgets_info.target_mem_value
     controllable_reg = gadgets_info.controllable_regs
@@ -966,14 +966,14 @@ def main(binary, file_fold, gadgets_info = None, mem_search_depth=1, reg_search_
                 # print(f"{Color.GREEN}{mem_write_solve}{Color.RESET}")
                 # RES_LOG("LOG ")
                 # exit()
-    
+
         new_regs_states = solve_engine.get_regs_state(gadgets_info,mem_write_solve,0)
         # gadgets_info.after_mem_set_reg = solve_engine.get_regs_state(gadgets_info,mem_write_solve,1)
         gadgets_info.regs_init = new_regs_states
         init_permission_table = gadgets_info.permission_table.copy()
 
         gadgets_info.permission_table.append({'start':list(gadgets_info.target_mem_value[0].items())[0][0],'end':list(gadgets_info.target_mem_value[0].items())[0][0]+len(list(gadgets_info.target_mem_value[0].items())[0][1]),'permission':'r'})
-    
+
     logger.info(f"Find Reg Setting Gadget Chain")
     logger.info(f"Target Register {[_['reg_name'] for _ in gadgets_info.target_regs]}")
     start = time.time()
@@ -986,7 +986,7 @@ def main(binary, file_fold, gadgets_info = None, mem_search_depth=1, reg_search_
     if not reg_res:
         logger.error(f"Fail to set register!")
         return reg_res
-    
+
     logger.success(f"Find Set Registers Gadget Chain!")
     res_json['Register Time'] = find_reg_time
     logger.success(f"Register Time: {find_reg_time}")
@@ -1033,24 +1033,24 @@ def res_show(solve_res, gadgets_info = None):
             print(f"{idx} {value}")
 
 class Color:
-    BLUE = "\033[34m"   # 蓝色
-    GREEN = "\033[32m"  # 绿色
-    RED = "\033[31m"    # 红色
-    RESET = "\033[0m"   # 重置颜色
+    BLUE = "\033[34m"   # blue
+    GREEN = "\033[32m"  # green
+    RED = "\033[31m"    # red
+    RESET = "\033[0m"   # reset color
 
 def log_print(strings,log_filename):
     open(log_filename,'a').write(strings+"\n")
     print(strings)
 
 def test(file_fold):
-    global res_json 
+    global res_json
     global stop_event
     binary_file_list = os.listdir(f"/home/rop/my-rop/benchmark_experiment/rop-benchmark/binaries/x86/reallife/vuln/{file_fold}")
     success = 0
     fail = 0
     logger.add(
-    sink=f"benchmark_{file_fold}.log",  # 日志文件路径
-    level="INFO",    # 关闭 DEBUG
+    sink=f"benchmark_{file_fold}.log",  # log file path
+    level="INFO",    # disable DEBUG
     encoding="utf-8"
     )
     logger.info(f"Start Test {file_fold}")

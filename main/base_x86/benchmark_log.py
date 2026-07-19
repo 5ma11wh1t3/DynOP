@@ -90,7 +90,7 @@ if __name__ == "__main__":
         os.makedirs(log_dir, exist_ok=True)
         log_handler = logger.add(
         sink=os.path.join(log_dir, f"{fold_info['system']}.log"),
-        level="INFO",    # 关闭 DEBUG
+        level="INFO",    # disable DEBUG
         encoding="utf-8"
         )
         benchmark_test(

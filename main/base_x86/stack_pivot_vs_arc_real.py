@@ -26,8 +26,8 @@ def infoinit(case,binary, real_dataset_dir=None):
     controllable_regs = eval(open(os.path.join(context_dir, "controble_regs.txt"),'r').read())
     binary_file = os.path.join(real_dataset_dir, "real_binary", binary)
     try:
-        elf = ELF(binary_file,checksec=False)  # 加载目标二进制
-        bss_address = elf.bss()  # 获取 .bss 段地址
+        elf = ELF(binary_file,checksec=False)  # Load target binary
+        bss_address = elf.bss()  # Get .bss section address
         if permission_table[0]['start']>>32 > 0:
             bss_address = elf.bss()+permission_table[0]['start']
     except:
@@ -39,14 +39,14 @@ def infoinit(case,binary, real_dataset_dir=None):
     target_regs = [{'reg_name':'rdi','reg_value':bss_address+0x300},{'reg_name':'rsi','reg_value':0x1000},{'reg_name':'rdx','reg_value':7},{'reg_name':'rcx','reg_value':10}]
 
     stack_pivot_chain = []
-    
+
     offset_list = []
     s = 0
     for i in range(len(controllable_mem_data)):
         offset_list += [ _ + s for _ in range(int(controllable_mem_data[i]['length'])//8)]
         if i != len(controllable_mem_data) - 1:
             s = s + (int(controllable_mem_data[i+1]['start_addr'],16) - int(controllable_mem_data[i]['start_addr'],16))//8
-    
+
     address_map = {}
     # target_mem_value = [{bss_address+0x300:b"/bin/sh\x00"}]
     target_mem_value = []
@@ -86,12 +86,12 @@ def main():
     os.makedirs(os.path.dirname(args.result_log), exist_ok=True)
     log_handler = logger.add(
         sink=args.result_log,
-        level="INFO",    # 关闭 DEBUG
+        level="INFO",    # disable DEBUG
         encoding="utf-8"
         )
-    
+
     for binary in binaries:
-        for case in cases:    
+        for case in cases:
             logger.info(f"START {binary}-{case}")
             for n in range(5):
                 if n == 4:
