@@ -88,7 +88,7 @@ pip install triton keystone-engine pwntools loguru capstone pyelftools
 
 | Dependency | Purpose | Note |
 |:-----------|:--------|:-----|
-| `triton` | Symbolic execution engine | Core |
+| `triton-library` | Symbolic execution engine | Core |
 | `keystone-engine` | Assembler | Core |
 | `pwntools` | Exploit toolkit | Core |
 | `loguru` | Logging | Core |
